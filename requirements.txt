@@ -2,6 +2,8 @@ dj-database-url==0.4.1
 Django==2.0rc1
 django-static-precompiler==1.5
 gunicorn==19.6.0
+loginform==1.2.0
+lxml==4.1.1
 olefile==0.43
 pep8==1.7.0
 Pillow==4.0.0
