@@ -2,7 +2,6 @@ dj-database-url==0.4.1
 Django==2.0rc1
 django-static-precompiler==1.5
 gunicorn==19.6.0
-loginform==1.2.0
 lxml==4.1.1
 olefile==0.43
 pep8==1.7.0
@@ -13,5 +12,4 @@ reportlab==3.3.0
 virtualenv==15.0.3
 virtualenv-clone==0.2.6
 virtualenvwrapper==4.7.2
-whitenoise==3.2
 xlrd==1.1.0
