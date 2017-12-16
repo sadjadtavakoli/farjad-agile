@@ -2,3 +2,10 @@ venv
 *.pyc
 staticfiles
 .env
+farjad/__pycache__/
+farjad/views/__pycache__/
+members/__pycache__/
+members/forms/__pycache__/
+
+**/migrations/**
+!**/migrations/__init__.py
