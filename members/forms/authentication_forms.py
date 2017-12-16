@@ -6,13 +6,13 @@ from members.models import Member
 
 
 class LoginForm(Form):
-    username = forms.CharField()
+    username_or_phone = forms.CharField()
     password = forms.CharField()
 
     def clean_password(self):
         data = self.cleaned_data
-        username = data.get('username', None)
-        member = Member.objects.get(username=username)
+        username_or_phone = data.get('username_or_phone', None)
+        member = Member.get_member(username_or_phone)
         if member is None:
             raise forms.ValidationError(_('Username or Password is incorrect'))
         password = data.get('password', None)

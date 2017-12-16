@@ -1,5 +1,8 @@
+import re
+
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models import ImageField
 from django.utils.translation import gettext_lazy as _
@@ -20,3 +23,24 @@ class Member(AbstractUser):
         },
     )
     profile_picture = ImageField(upload_to='profile_pictures/', null=True, blank=True)
+    phone = models.CharField(max_length=11, blank=False, null=False)
+    age = models.IntegerField(blank=False, null=False)
+
+    @staticmethod
+    def get_member(phone_email_username):
+        try:
+            if '@' in phone_email_username:
+                kwargs = {'email': phone_email_username}
+            elif re.match(mobile_regex.regex, phone_email_username):
+                kwargs = {'phone': phone_email_username}
+            else:
+                kwargs = {'username': phone_email_username}
+            member = Member.objects.get(**kwargs)
+            return member
+
+        except(TypeError, Member.MultipleObjectsReturned, Member.DoesNotExist):
+            return None
+
+
+mobile_regex = RegexValidator(regex=r'^(09|(\+989))\d{9}$',
+                              message=_('Mobile number should have 11 digits.'))
