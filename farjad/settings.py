@@ -26,6 +26,9 @@ SECRET_KEY = "a=-o+zik)_v*pwiuuyx6p7jp9mo=b7)umis)j(9k3u^hrv95*&"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
 # Application definition
 
 INSTALLED_APPS = [

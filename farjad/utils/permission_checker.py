@@ -5,6 +5,17 @@ from rest_framework.exceptions import PermissionDenied as RestPermissionDenied
 from rest_framework.permissions import BasePermission
 
 
+class FarjadBasePermission(BasePermission):
+    login_required = False
+
+    def has_permission(self, request, view):
+        if request.user.is_authenticated:
+            return True
+        elif self.login_required:
+            raise NotAuthenticated
+        return True
+
+
 class PermissionCheckerMixin:
     permission_classes = [FarjadBasePermission]
 
@@ -18,17 +29,6 @@ class PermissionCheckerMixin:
             except RestPermissionDenied:
                 raise PermissionDenied
         return super().dispatch(request, *args, **kwargs)
-
-
-class FarjadBasePermission(BasePermission):
-    login_required = False
-
-    def has_permission(self, request, view):
-        if request.user.is_authenticated:
-            return True
-        elif self.login_required:
-            raise NotAuthenticated
-        return True
 
 
 class LoginRequired(FarjadBasePermission):
