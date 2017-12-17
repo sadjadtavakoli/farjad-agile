@@ -1,14 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ورود</title>
+ {% block js %}
+
+        <script type="text/javascript" src="{% static 'semantic/semantic.min.js' %}"></script>
+ <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+ {% endblock %}
+     {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'semantic/semantic.min.css' %}">
+    {% endblock %}
+ <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
 </head>
-<body>
-<form id="signin-form" action="" method="post" novalidate autocomplete="off">
-    {% csrf_token %}
-    {{ form.as_table }}
-    <button type="submit"> login</button>
-</form>
+<body data-gr-c-s-loaded="true">
+
+
+
+
+{#<form id="signin-form" action="" method="post" novalidate autocomplete="off">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_table }}#}
+{#    <button type="submit"> login</button>#}
+{#   #}
+{#</form>#}
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <img src="assets/images/logo.png" class="image">
+      <div class="content">
+        ورود کاربر
+      </div>
+    </h2>
+    <form class="ui large form" action="" method="post" novalidate autocomplete="off">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="شماره تلفن">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="رمز عبور">
+          </div>
+        </div>
+        <div class="ui fluid large teal submit button">ورود</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
 </body>
 </html>
