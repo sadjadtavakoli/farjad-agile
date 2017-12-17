@@ -1,0 +1,15 @@
+{% load static %}
+{% load staticfiles %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'members/__navbar/css/__navbar.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="ui inverted menu sign-out">
+        <a class="active item  " href="{% url 'members:logout' %}">
+            Sign Out
+        </a>
+        <div class="bank-icon">
+            <img src="{% static 'members/icons/logo.png' %}" class="ui medium circular image  ">
+        </div>
+    </div>
+{% endblock %}

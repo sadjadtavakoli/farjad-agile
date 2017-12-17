@@ -1,0 +1,28 @@
+.sign-out{
+    direction: rtl;
+    /*background-color: #0b3241 !important;*/
+    margin-bottom: 0rem !important;
+    margin-top: 0rem !important;
+    border-radius: 0rem!important;
+    position: fixed!important;
+    width: 100%;
+    height: 4rem;
+    top: 0;
+
+}
+.content{
+    margin-top: 4rem;
+}
+body{
+    background-color: #d0e6f6!important;
+}
+.bank-icon{
+    position: absolute;
+    left:2rem!important;
+    top:7rem!important;
+    width: 4rem;
+}
+.navbar-logo{
+    height: 4rem!important;
+    width: 4rem!important;
+}
