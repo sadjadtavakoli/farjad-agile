@@ -9,3 +9,4 @@ members/forms/__pycache__/
 
 **/migrations/**
 !**/migrations/__init__.py
+.idea/workspace.xml
