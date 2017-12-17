@@ -2,324 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad527742-c531-40ac-82ce-526a19ee162a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/images/flags.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/images/flags.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/.versions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/accordion.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/accordion.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/ad.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/ad.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/api.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/breadcrumb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/breadcrumb.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/button.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/card.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/card.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/checkbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/checkbox.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/checkbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/colorize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/colorize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/comment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/comment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/container.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/container.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dimmer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dimmer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dimmer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dimmer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/divider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/divider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dropdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/dropdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/embed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/embed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/embed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/embed.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/feed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/feed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/flag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/flag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/form.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/grid.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/header.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/icon.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/image.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/image.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/input.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/input.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/item.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/item.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/label.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/label.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/list.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/loader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/loader.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/menu.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/message.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/message.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/modal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/modal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/modal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/nag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/nag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/nag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/nag.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/popup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/popup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/popup.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/popup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/progress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/progress.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/progress.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/progress.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rail.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rating.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rating.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rating.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/rating.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/reset.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/reveal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/search.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/search.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/search.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/segment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/segment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/shape.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/shape.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/shape.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/shape.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sidebar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sidebar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sidebar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/site.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/site.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/state.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/statistic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/statistic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/step.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/step.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sticky.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sticky.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sticky.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/sticky.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/tab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/tab.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/tab.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/transition.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/transition.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/video.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/video.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/video.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/visibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/visibility.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/visit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/components/visit.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/npm-debug.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/package.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/semantic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/semantic.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farjad/static/semantic/themes/default/assets/fonts/icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/.versions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/accordion.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/accordion.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/ad.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/ad.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/api.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/breadcrumb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/breadcrumb.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/button.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/card.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/card.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/checkbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/checkbox.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/checkbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/colorize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/colorize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/comment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/comment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/container.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/container.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dimmer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dimmer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dimmer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dimmer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/divider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/divider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dropdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/dropdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/embed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/embed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/embed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/embed.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/feed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/feed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/flag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/flag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/form.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/grid.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/header.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/icon.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/image.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/image.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/input.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/input.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/item.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/item.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/label.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/label.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/list.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/loader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/loader.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/menu.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/message.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/message.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/modal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/modal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/modal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/nag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/nag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/nag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/nag.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/popup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/popup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/popup.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/popup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/progress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/progress.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/progress.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/progress.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rail.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rating.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rating.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rating.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/rating.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/reset.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/reveal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/search.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/search.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/search.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/segment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/segment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/shape.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/shape.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/shape.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/shape.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sidebar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sidebar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sidebar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/site.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/site.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/state.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/statistic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/statistic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/step.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/step.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sticky.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sticky.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sticky.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/sticky.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/tab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/tab.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/tab.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/transition.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/transition.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/video.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/video.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/video.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/visibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/visibility.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/visit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/components/visit.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/npm-debug.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/package.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/semantic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/semantic.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/members/static/semantic/themes/default/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/farjad.iml" afterPath="$PROJECT_DIR$/.idea/farjad.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/members/templates/members/login.html" afterPath="$PROJECT_DIR$/members/templates/members/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -399,18 +82,6 @@
               <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="19" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/members/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1183,7 +854,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513448240680</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add semantic code">
+      <created>1513547146854</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1513547146855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1198,14 +876,14 @@
   <component name="ToolWindowManager">
     <frame x="67" y="34" width="1299" height="736" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34397447" sideWeight="0.79016393" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34397447" sideWeight="0.78484106" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34397447" sideWeight="0.20983607" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34397447" sideWeight="0.21515892" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42131147" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1232,7 +910,8 @@
     <MESSAGE value="login for and base of member model" />
     <MESSAGE value="aaaaaaaaaaaaah" />
     <MESSAGE value="login logout model sazi paye vase member" />
-    <option name="LAST_COMMIT_MESSAGE" value="login logout model sazi paye vase member" />
+    <MESSAGE value="add semantic code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add semantic code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1245,9 +924,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="e#639#671#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,9 +932,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,9 +989,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1372,9 +1045,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1494,9 +1165,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="e#639#671#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1506,9 +1175,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1534,9 +1201,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
