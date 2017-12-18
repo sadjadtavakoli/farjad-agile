@@ -9,4 +9,9 @@ members/forms/__pycache__/
 
 **/migrations/**
 !**/migrations/__init__.py
-.idea/workspace.xml
+.idea/*
+db.sqlite3*
+
+farjad/templatetags/__pycache__/
+farjad/utils/__pycache__/
+members/views/__pycache__/
