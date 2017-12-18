@@ -1,7 +1,7 @@
 import re
 
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.contrib.auth.validators import UnicodeUsernameValidator, ASCIIUsernameValidator
 from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models import ImageField
@@ -19,7 +19,7 @@ class Member(AbstractUser):
         blank=False,
         null=False,
         help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
-        validators=[UnicodeUsernameValidator],
+        validators=[ASCIIUsernameValidator],
         error_messages={
             'unique': _("A user with that username already exists."),
         },
@@ -28,7 +28,7 @@ class Member(AbstractUser):
     phone = models.CharField(max_length=11, blank=False, null=False)
     age = models.IntegerField(blank=False, null=False)
     profession = models.CharField(max_length=32)
-    education = models.CharField(max_length=1, choices=EDUCATION_CHOICES)
+    education = models.CharField(max_length=30, choices=EDUCATION_CHOICES)
     city = models.CharField(max_length=60)
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)

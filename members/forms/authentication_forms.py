@@ -7,7 +7,7 @@ from members.models import Member
 
 class LoginForm(Form):
     username_or_phone = forms.CharField()
-    password = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
 
     def clean_password(self):
         data = self.cleaned_data

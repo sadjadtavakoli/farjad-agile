@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView
 
 from members.forms.authentication_forms import LoginForm
 from members.models import Member
@@ -25,3 +25,19 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect(reverse("members:login"))
+
+
+class JoinView(CreateView):
+    template_name = "members/join.html"
+    model = Member
+    fields = ['first_name', 'last_name', 'username', 'birth_date', 'phone',
+              'age', 'profession',
+              'education', 'city', 'province', 'address', 'email']
+
+    def get_success_url(self):
+        return reverse("home")
+
+    def get(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            logout(self.request)
+        return super().get(request, *args, **kwargs)

@@ -22,20 +22,22 @@
                 </div>
             </h2>
             <form class="ui large form" action="" method="post" novalidate autocomplete="off">
+                {% csrf_token %}
                 <div class="ui stacked segment">
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="user icon"></i>
-                            {{  }}
+                            {{ form.username_or_phone }}
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="رمز عبور">
+                            {{ form.password }}
+
                         </div>
                     </div>
-                    <div class="ui fluid large teal submit button">ورود</div>
+                    <button type="submit" class="ui fluid large teal submit button">ورود</button>
                 </div>
 
                 <div class="ui error message"></div>
