@@ -19,7 +19,7 @@ from django.urls.conf import include, path
 from farjad.views.home import HomeView
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls, name='admin'),
+    path(r'admin/', admin.site.urls, name='admin'),
     path(r'', HomeView.as_view(), name="home"),
     path(r'', include('members.urls', namespace="members"))
 ]
