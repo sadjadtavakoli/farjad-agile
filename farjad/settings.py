@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'members',
+    'farjad',
 ]
 
 AUTH_USER_MODEL = 'members.Member'
