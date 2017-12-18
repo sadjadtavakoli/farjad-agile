@@ -9,7 +9,7 @@ members/forms/__pycache__/
 
 **/migrations/**
 !**/migrations/__init__.py
-.idea/*
+#.idea/*
 db.sqlite3*
 
 farjad/templatetags/__pycache__/
