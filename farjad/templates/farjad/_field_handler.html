@@ -3,12 +3,14 @@
         {{ field.label }}
         {% if field.field.required %}<span class="required"></span>{% endif %}</p>
 {% endif %}
-{{ field }}
-{% if field.errors %}
 
+{{ field }}
+
+{% if field.errors %}
     <div class="ui red message ">
         {% for error in field.errors %}
             {{ error }}
         {% endfor %}
     </div>
+
 {% endif %}

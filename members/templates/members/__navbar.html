@@ -5,11 +5,23 @@
 {% endblock %}
 {% block body %}
     <div class="ui inverted menu sign-out">
-        <a class="active item  " href="{% url 'members:logout' %}">
-            Sign Out
-        </a>
+        {% if request.user.is_authenticated %}
+            <a class="active item  " href="{% url 'members:logout' %}">
+                خروج
+            </a>
+        {% else %}
+            <a class="active item  " href="{% url 'members:login' %}">
+                ورود
+            </a>
+            <a class="active item  " href="{% url 'members:join' %}">
+                ثبت‌نام
+            </a>
+
+        {% endif %}
         <div class="bank-icon">
-            <img src="{% static 'members/icons/logo.png' %}" class="ui medium circular image  ">
+            <img src="{% static 'members/icons/logo.png' %}"
+                 class="ui medium circular image  ">
         </div>
     </div>
+
 {% endblock %}

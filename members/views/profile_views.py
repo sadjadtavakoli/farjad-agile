@@ -25,7 +25,7 @@ class ProfileView(DetailView):
 
 class SelfProfileView(PermissionCheckerMixin, DetailView):
     permission_classes = [LoginRequired]
-    template_name = "members/profile.html"
+    template_name = "members/self_profile.html"
     model = Member
     context_object_name = 'profile'
 

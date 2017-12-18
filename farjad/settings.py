@@ -110,9 +110,33 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
+PERIOD = (
+    ("daily", "روزانه"),
+    ("weekly", "هفتگی"),
+    ("monthly", "ماهانه")
+)
 
+GENRE = (
+    ("Horror", "وحشت"),
+    ("Adventure", "ماجراجویی"),
+    ("Comedy", "کمدی"),
+    ("Historical", "تاریخی"),
+    ("Fantasy", "افسانه"),
+    ("Art", "هنری"),
+    ("Psychology", "روانشناسی"),
+    ("Romance", "عاشقانه"),
+    ("Sports", "ورزشی"),
+    ("Trajedy", "تراژدی")
+)
+
+AGE = (
+    ("A", "گروه سنی الف "),
+    ("B", "گروه سنی ب"),
+    ("C", "گروه سنی ج"),
+    ("D", "گروه سنی د"),
+    ("E", "گروه سنی ه")
+
+)
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True

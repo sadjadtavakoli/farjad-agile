@@ -3,7 +3,7 @@
 {% load utils_tags %}
 {% load staticfiles %}
 
-{% block title %}Login{% endblock %}
+{% block title %}join{% endblock %}
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'members/log-in/css/log-in.css' %}">
@@ -37,27 +37,49 @@
 
                         </div>
                     </div>
+
                     <div class="field">
                         <div class="two fields">
-                            <div class="field">
-                                {% field_tag form.email placeholder="ایمیل" %}
-                            </div>
                             <div class="field">
                                 {% field_tag form.username placeholder="نام کاربری" %}
                             </div>
+                            <div class="field">
+                                {% field_tag form.email placeholder="ایمیل" %}
+                            </div>
                         </div>
                     </div>
                     <div class="field">
                         <div class="two fields">
                             <div class="field">
-                                {% field_tag form.birth_date placeholder="تاریخ تولد" %}
+                                {% field_tag form.phone placeholder="شماره همراه" %}
                             </div>
                             <div class="field">
-                                {% field_tag form.phone placeholder="شماره همراه" %}
+                                {% field_tag form.birth_date placeholder="تاریخ تولد" %}
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="ui fluid large teal submit button">ورود
+
+                    <div class="two fields">
+                        <div class="field">
+                            {% field_tag form.city placeholder="شهر" %}
+                        </div>
+                        <div class="field">
+                            {% field_tag form.province placeholder="استان" %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        {% field_tag form.province placeholder="آدرس" %}
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            {% field_tag form.profession placeholder="شغل" %}
+                        </div>
+                        <div class="field selection dropdown">
+                            {% field_tag form.education placeholder="تحصیلات" %}
+                        </div>
+                    </div>
+
+                    <button type="submit" class="ui fluid large teal submit button">ثبت نام
                     </button>
                 </div>
 
