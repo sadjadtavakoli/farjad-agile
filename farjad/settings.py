@@ -58,7 +58,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'farjad.urls'
-
+EDUCATION_CHOICES = (
+    ('under_diploma', 'زیر دیپلم'),
+    ('diploma', 'دیپلم'),
+    ('bs', 'کارشناسی'),
+    ('ms', 'کارشناسی ارشد'),
+    ('phd', 'دکتری'),
+)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

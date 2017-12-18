@@ -1,0 +1,20 @@
+
+body {
+    background-color: #d0e6f6 !important;
+}
+
+.pro_field {
+    width: 10rem !important;
+    height: 3rem !important;
+    line-height: 2rem !important;
+    background-color: #e4f8ff !important;
+}
+
+.logo {
+    margin-bottom: 2rem!important;
+    margin-top: 2rem!important;
+    margin-left: 20rem!important;
+}
+.text{
+    color: black!important;
+}
