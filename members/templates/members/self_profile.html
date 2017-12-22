@@ -1,4 +1,6 @@
 {% extends 'members/__base_panel.html' %}
 {% block content %}
     {{ profile }}
+
+    <a href="{% url 'members:self:edit-profile' %}">ویرایش</a>
 {% endblock %}

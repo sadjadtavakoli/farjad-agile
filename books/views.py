@@ -3,17 +3,15 @@ from django.views.generic.edit import CreateView
 
 from books.models import Books
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
+from members.views.area_setter import PanelAreaSetter
 
 
-class AddBookView(PermissionCheckerMixin, CreateView):
+class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
     permission_classes = [LoginRequired]
     template_name = "books/create_book.html"
     model = Books
     fields = "__all__"
-
-    def dispatch(self, request, *args, **kwargs):
-        self.request.admin_area = "my_books"
-        return super(AddBookView, self).dispatch(request, *args, **kwargs)
+    admin_area = "my_books"
 
     def get_success_url(self):
         return reverse("home")
