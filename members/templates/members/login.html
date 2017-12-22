@@ -16,7 +16,7 @@
 {% block body %}
     {{ block.super }}
 
-    <form class="ui large form" action="" method="post"
+    <form class="ui form" action="" method="post"
           novalidate=""
           autocomplete="off">
         {% csrf_token %}
@@ -33,7 +33,14 @@
                 <i class="lock icon"></i>
             </div>
         </div>
-        <button type="submit" class="ui blue submit button fluid large ">ورود</button>
+        <button type="submit" class="ui blue submit button fluid  ">ورود</button>
     </form>
+    <a href="{% url "members:join" %}">
+
+        <label style="color: forestgreen" class="ui label">ثبت‌نام کنید
+        </label></a>
+    <label class="ui label">هنوز عضو نشده‌اید ؟‌
+    </label>
+
 
 {% endblock %}

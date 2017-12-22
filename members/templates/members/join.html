@@ -15,7 +15,7 @@
 
 {% block body %}
     {{ block.super }}
-    <form class="ui large fluid form" action="" method="post"
+    <form class="ui form" action="" method="post"
           novalidate=""
           autocomplete="off">
         {% csrf_token %}
@@ -72,13 +72,13 @@
             </div>
         </div>
 
-        <button type="submit" class="ui fluid large green submit button">ثبت نام
+        <button type="submit" class="ui fluid  green submit button">ثبت نام
         </button>
 
         <div class="ui error message"></div>
 
     </form>
-    <a  href="{% url "members:login" %}">
+    <a href="{% url "members:login" %}">
 
         <label style="color: dodgerblue" class="ui label">وارد شوید.
         </label></a>
