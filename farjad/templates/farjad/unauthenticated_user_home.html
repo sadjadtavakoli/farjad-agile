@@ -1,5 +1,7 @@
 {% extends 'farjad/__base.html' %}
 
+{% load static %}
+{% load staticfiles %}
 {% block body %}
     <div class="ui top banner"
          style="background-color:  darkslategray;
@@ -7,7 +9,7 @@
         <div style="height: 1%"></div>
         <h2 class="ui center aligned header">
             <img class="ui icon small circular image"
-                 src="http://www.chorevolution.eu/bin/download/Documentation/Download/Icon-book.svg">
+                 src={% static 'members/icons/Icon-book.svg' %}>
         </h2>
         <h2 class="ui white center aligned inverted header">BookAndBook</h2>
 
