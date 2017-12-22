@@ -1,0 +1,9 @@
+{% extends 'members/__base_panel.html' %}
+
+{% block content %}
+    <form class="ui form" action="" method="post" novalidate autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+{% endblock %}
