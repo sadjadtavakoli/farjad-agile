@@ -3,7 +3,8 @@
 {% load utils_tags %}
 {% load staticfiles %}
 
-{% block title %}Login{% endblock %}
+{% block title %}{{ block.super }}> Login{% endblock %}
+
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'members/log-in/css/log-in.css' %}">

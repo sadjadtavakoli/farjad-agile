@@ -24,7 +24,7 @@ class LoginView(FormView):
 class LogoutView(View):
     def get(self, request):
         logout(request)
-        return redirect(reverse("members:login"))
+        return redirect(reverse("home"))
 
 
 class JoinView(CreateView):

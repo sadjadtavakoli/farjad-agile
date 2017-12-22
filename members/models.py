@@ -1,7 +1,7 @@
 import re
 
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.validators import UnicodeUsernameValidator, ASCIIUsernameValidator
+from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models import ImageField
@@ -47,6 +47,22 @@ class Member(AbstractUser):
 
         except(TypeError, Member.MultipleObjectsReturned, Member.DoesNotExist):
             return None
+
+    @property
+    def image_url(self):
+        print("inja")
+        if self.profile_picture is not None and self.profile_picture != "":
+            return self.profile_picture
+        else:
+            return 'static/members/icons/default_profile.png'
+
+    @property
+    def full_name(self):
+        full_name = self.first_name + " " + self.last_name
+        full_name = full_name.strip()
+        if full_name == "":
+            full_name = self.username
+        return full_name
 
 
 mobile_regex = RegexValidator(regex=r'^(09|(\+989))\d{9}$',

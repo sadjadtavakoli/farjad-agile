@@ -1,5 +1,5 @@
-        <div class="ui secondary pointing menu">
-<a class="{% if active == 0 %}active{% endif %} item">
+<div class="ui secondary pointing menu">
+    <a class="{% if active == 0 %}active{% endif %} item">
         Home
     </a>
     <a class="{% if active == 1 %}active{% endif %}item">
@@ -10,6 +10,9 @@
     </a>
     <div class="right menu">
         {% if request.user.is_authenticated %}
+            <a class="ui item" href="{% url 'members:logout' %}">
+                <img class="ui avatar image" src="{{ request.user.image_url }}"></a>
+            <span class="ui item">{{ request.user.full_name }} سلام </span>
             <a class="ui item" href="{% url 'members:logout' %}">
                 خروج
             </a>
@@ -24,7 +27,4 @@
         {% endif %}
 
     </div>
-</div>
-<div class="ui segment">
-    <p></p>
 </div>
