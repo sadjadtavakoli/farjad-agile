@@ -30,6 +30,7 @@ class SelfProfileView(PermissionCheckerMixin, DetailView):
     context_object_name = 'profile'
 
     def get_object(self, queryset=None):
+        self.request.admin_area = "my_profile"
         return self.request.user
 
 

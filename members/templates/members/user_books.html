@@ -1,4 +1,6 @@
 {% extends 'members/__base_panel.html' %}
 {% block content %}
     {{ books }}
+
+    <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
 {% endblock %}

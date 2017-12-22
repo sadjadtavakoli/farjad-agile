@@ -9,7 +9,8 @@
         </div>
         <div class="four wide column">
             <div class="ui vertical fluid right tabular menu">
-                <a class="{% if request.admin_area == 'my_books' %}active {% endif %}item">
+                <a href="{% url 'members:self:books:all' %}"
+                   class="{% if request.admin_area == 'my_books' %}active {% endif %}item">
                     کتاب‌های من
                 </a>
                 <a class="{% if request.admin_area == 'my_requests' %}active {% endif %}item">
@@ -18,7 +19,7 @@
                 <a class="{% if request.admin_area == 'my_extend_requests' %}active {% endif %}item">
                     درخواست‌های تمدید
                 </a>
-                <a class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
+                <a href="{% url 'members:self:profile' %}" class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
                     حساب کاربری
                 </a>
             </div>

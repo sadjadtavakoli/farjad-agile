@@ -1,4 +1,9 @@
-<div class="ui secondary stackable pointing menu">
+<div class="ui secondary stackable pointing menu">{% if request.user.is_authenticated %}
+
+    <a class="item {% if active == 2 %}active{% endif %} "
+       href="{% url 'members:self:books:all' %}">
+        <img class="ui avatar image" src="{{ request.user.image_url }}"></a>
+{% endif %}
     <a class="{% if active == 0 %}active{% endif %} item">
         Home
     </a>
@@ -7,8 +12,7 @@
     </a>
     <div class="right menu">
         {% if request.user.is_authenticated %}
-            <a class="item {% if active == 2 %}active{% endif %} " href="{% url 'members:self:books:all' %}">
-                <img class="ui avatar image" src="{{ request.user.image_url }}"></a>
+
             <span class="item">{{ request.user.full_name }} سلام </span>
             <a class="item" href="{% url 'members:logout' %}">
                 خروج

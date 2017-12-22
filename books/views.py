@@ -11,6 +11,10 @@ class AddBookView(PermissionCheckerMixin, CreateView):
     model = Books
     fields = "__all__"
 
+    def dispatch(self, request, *args, **kwargs):
+        self.request.admin_area = "my_books"
+        return super(AddBookView, self).dispatch(request, *args, **kwargs)
+
     def get_success_url(self):
         return reverse("home")
 

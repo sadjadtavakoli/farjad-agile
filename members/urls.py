@@ -12,7 +12,8 @@ user_books_urlpatterns = ([
 
                           ], 'books')
 self_urlpatterns = ([
-                        path(r'edit_profile/', EditProfileView.as_view(), name="edit-profile"),
+                        path(r'profile', SelfProfileView.as_view(), name="profile"),
+                        path(r'profile/edit/', EditProfileView.as_view(), name="edit-profile"),
                         path(r'books/', include(user_books_urlpatterns)),
                     ], 'self')
 urlpatterns = [
@@ -20,6 +21,5 @@ urlpatterns = [
     path(r'join/', JoinView.as_view(), name="join"),
     path(r'logout/', LogoutView.as_view(), name="logout"),
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
-    path(r'profile/', SelfProfileView.as_view(), name="self"),
     path(r'self/', include(self_urlpatterns)),
 ]

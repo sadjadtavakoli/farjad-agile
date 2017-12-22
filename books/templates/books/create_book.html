@@ -1,8 +1,16 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
+    <div class="ui breadcrumb">
+        <a href="{% url 'members:self:books:all' %}">
+            <div class="section">کتاب‌های من</div>
+        </a>
+        <div class="divider"> <</div>
+    </div>
+
     <form class="ui form" action="" method="post" novalidate autocomplete="off">
         {% csrf_token %}
+
         {{ form }}
         <input type="submit">
     </form>
