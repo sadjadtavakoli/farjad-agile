@@ -14,23 +14,5 @@
 </head>
 
 <body>
-{% include 'farjad/main_navbar.html' with active=request.selected_tab %}
-<div class="ui grid">
-    <div class="twelve wide stretched column">
-        {% block body %}
-
-        {% endblock %}
-    </div>
-    <div class="four wide column">
-        <div class="ui vertical fluid right tabular menu">
-            <a class="{% if request.admin_area == 'my_books' %}active {% endif %}item">
-                کتاب‌های من
-            </a>
-            <a class="{% if request.admin_area == 'my_requests' %}active {% endif %}item">
-                درخواست‌های امانت
-            </a>
-        </div>
-    </div>
-</div>
 </body>
 </html>

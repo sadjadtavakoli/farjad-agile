@@ -1,26 +1,23 @@
-<div class="ui secondary pointing menu">
+<div class="ui secondary stackable pointing menu">
     <a class="{% if active == 0 %}active{% endif %} item">
         Home
     </a>
-    <a class="{% if active == 1 %}active{% endif %}item">
+    <a class="{% if active == 1 %}active{% endif %} item">
         Books
-    </a>
-    <a class="{% if active == 2 %}active{% endif %}item">
-        My Panel
     </a>
     <div class="right menu">
         {% if request.user.is_authenticated %}
-            <a class="ui item" href="{% url 'members:logout' %}">
+            <a class="item {% if active == 2 %}active{% endif %} " href="{% url 'members:self:books' %}">
                 <img class="ui avatar image" src="{{ request.user.image_url }}"></a>
-            <span class="ui item">{{ request.user.full_name }} سلام </span>
-            <a class="ui item" href="{% url 'members:logout' %}">
+            <span class="item">{{ request.user.full_name }} سلام </span>
+            <a class="item" href="{% url 'members:logout' %}">
                 خروج
             </a>
         {% else %}
-            <a class="ui item" href="{% url 'members:login' %}">
+            <a class="item" href="{% url 'members:login' %}">
                 ورود
             </a>
-            <a class="ui item" href="{% url 'members:join' %}">
+            <a class="item" href="{% url 'members:join' %}">
                 ثبت‌نام
             </a>
 

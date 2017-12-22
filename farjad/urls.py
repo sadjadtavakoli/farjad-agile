@@ -21,5 +21,6 @@ from farjad.views.home import HomeView
 urlpatterns = [
     path(r'admin/', admin.site.urls, name='admin'),
     path(r'', HomeView.as_view(), name="home"),
+    path(r'a', HomeView.as_view(), name="n-home"),
     path(r'', include('members.urls', namespace="members")),
 ]

@@ -1,0 +1,27 @@
+{% extends 'farjad/__base.html' %}
+{% block body %}
+    {% include 'farjad/main_navbar.html' with active=2 %}
+    <div class="ui grid">
+        <div class="twelve wide stretched column">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <div class="four wide column">
+            <div class="ui vertical fluid right tabular menu">
+                <a class="{% if request.admin_area == 'my_books' %}active {% endif %}item">
+                    کتاب‌های من
+                </a>
+                <a class="{% if request.admin_area == 'my_requests' %}active {% endif %}item">
+                    درخواست‌های امانت
+                </a>
+                <a class="{% if request.admin_area == 'my_extend_requests' %}active {% endif %}item">
+                    درخواست‌های تمدید
+                </a>
+                <a class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
+                    حساب کاربری
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

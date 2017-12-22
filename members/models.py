@@ -8,6 +8,7 @@ from django.db.models import ImageField
 from django.utils.translation import gettext_lazy as _
 
 from farjad.settings import EDUCATION_CHOICES
+from farjad.utils.utils_view import get_url
 
 
 class Member(AbstractUser):
@@ -50,11 +51,10 @@ class Member(AbstractUser):
 
     @property
     def image_url(self):
-        print("inja")
         if self.profile_picture is not None and self.profile_picture != "":
             return self.profile_picture
         else:
-            return 'static/members/icons/default_profile.png'
+            return get_url(None, 'members/icons/default_profile.png')
 
     @property
     def full_name(self):

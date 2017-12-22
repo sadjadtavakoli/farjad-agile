@@ -17,4 +17,4 @@ class Books(models.Model):
     jeld_num = models.IntegerField()
     description = models.CharField(max_length=1000)
     summary = models.CharField(max_length=5000)
-    owner = models.ForeignKey("members.Member", "books")
+    owner = models.ForeignKey("members.Member", related_name="books", on_delete='CASCADE')

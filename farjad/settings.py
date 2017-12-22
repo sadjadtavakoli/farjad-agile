@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'members',
     'farjad',
+    'books',
 ]
 
 AUTH_USER_MODEL = 'members.Member'
