@@ -13,11 +13,11 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body>
-<div class="ui middle aligned center aligned grid" style="background-image: url(http://www.kumc.edu/images/history%20of%20medicine/library.jpg);
- background-repeat: no-repeat ;
-  background-position:center;
-background-size: cover">
+<body style="background-image: url(http://www.kumc.edu/images/history%20of%20medicine/library.jpg);
+ background-repeat: no-repeat;
+background-size: cover;">
+{% include 'members/unauthenticated_user_navbar.html' %}
+<div class="ui middle aligned center aligned grid">
     <div class="column">
         <div class="ui form">
             <h2 class="ui center aligned header">

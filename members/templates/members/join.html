@@ -15,73 +15,74 @@
 
 {% block body %}
     {{ block.super }}
-    <form class="ui form" action="" method="post"
-          novalidate=""
-          autocomplete="off">
-        {% csrf_token %}
-        <div class="field">
-            <div class="two fields">
-                <div class="field">
-                    {% field_tag form.first_name placeholder="نام" %}
-                </div>
-                <div class="field">
-                    {% field_tag form.last_name placeholder="نام خانوادگی" %}
-                </div>
-
-            </div>
-        </div>
-
-        <div class="field">
-            <div class="two fields">
-                <div class="field">
-                    {% field_tag form.username placeholder="نام کاربری" %}
-                </div>
-                <div class="field">
-                    {% field_tag form.email placeholder="ایمیل" %}
-                </div>
-            </div>
-        </div>
-        <div class="field">
-            <div class="two fields">
-                <div class="field">
-                    {% field_tag form.phone placeholder="شماره همراه" %}
-                </div>
-                <div class="field">
-                    {% field_tag form.birth_date placeholder="تاریخ تولد" %}
-                </div>
-            </div>
-        </div>
-
-        <div class="two fields">
+    <div style="height: 70%">
+        <form class="ui form" action="" method="post"
+              novalidate=""
+              autocomplete="off">
+            {% csrf_token %}
             <div class="field">
-                {% field_tag form.city placeholder="شهر" %}
+                <div class="two fields">
+                    <div class="field">
+                        {% field_tag form.first_name placeholder="نام" %}
+                    </div>
+                    <div class="field">
+                        {% field_tag form.last_name placeholder="نام خانوادگی" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="two fields">
+                    <div class="field">
+                        {% field_tag form.username placeholder="نام کاربری" %}
+                    </div>
+                    <div class="field">
+                        {% field_tag form.email placeholder="ایمیل" %}
+                    </div>
+                </div>
             </div>
             <div class="field">
-                {% field_tag form.province placeholder="استان" %}
+                <div class="two fields">
+                    <div class="field">
+                        {% field_tag form.phone placeholder="شماره همراه" %}
+                    </div>
+                    <div class="field">
+                        {% field_tag form.birth_date placeholder="تاریخ تولد" %}
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="field">
-            {% field_tag form.province placeholder="آدرس" %}
-        </div>
-        <div class="two fields">
+
+            <div class="two fields">
+                <div class="field">
+                    {% field_tag form.city placeholder="شهر" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.province placeholder="استان" %}
+                </div>
+            </div>
             <div class="field">
-                {% field_tag form.profession placeholder="شغل" %}
+                {% field_tag form.province placeholder="آدرس" %}
             </div>
-            <div class="field selection dropdown">
-                {% field_tag form.education placeholder="تحصیلات" %}
+            <div class="two fields">
+                <div class="field">
+                    {% field_tag form.profession placeholder="شغل" %}
+                </div>
+                <div class="field selection dropdown">
+                    {% field_tag form.education placeholder="تحصیلات" %}
+                </div>
             </div>
-        </div>
 
-        <button type="submit" class="ui fluid  green submit button">ثبت نام
-        </button>
+            <button type="submit" class="ui fluid  green submit button">ثبت نام
+            </button>
 
-        <div class="ui error message"></div>
+            <div class="ui error message"></div>
 
-    </form>
-    <a href="{% url "members:login" %}">
+        </form>
+        <a href="{% url "members:login" %}">
 
-        <label style="color: dodgerblue" class="ui label">وارد شوید.
-        </label></a>
-    <label class="ui label"> قبلا ثبت‌نام کرده‌اید‌؟
-    </label>
+            <label style="color: dodgerblue" class="ui label">وارد شوید.
+            </label></a>
+        <label class="ui label"> قبلا ثبت‌نام کرده‌اید‌؟
+        </label></div>
 {% endblock %}
