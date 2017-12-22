@@ -1,0 +1,60 @@
+{% extends 'farjad/__base.html' %}
+
+{% block body %}
+    <div class="ui top banner"
+         style="background-color:  darkslategray;
+          width: 100% ; height: 40% ">
+        <div style="height: 1%"></div>
+        <h2 class="ui center aligned header">
+            <img class="ui icon small circular image"
+                 src="http://www.chorevolution.eu/bin/download/Documentation/Download/Icon-book.svg">
+        </h2>
+        <h2 class="ui white center aligned inverted header">BookAndBook</h2>
+
+    </div>
+
+    <div class="ui horizontal divider">
+
+    </div>
+    <div class="ui segment">
+        <div class="ui two column middle aligned container grid">
+            <div class="column">
+                <div class="ui form">
+                    <form class="ui large form" action="{% url 'members:login' %}" method="post"
+                          novalidate=""
+                          autocomplete="off">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label>Username</label>
+                            <div class="ui left icon input">
+                                <input type="text" name="username_or_phone" required="required"
+                                       id="id_username_or_phone" placeholder="نام کاربری">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <div class="ui left icon input">
+                                <input type="password" name="password" required="required"
+                                       id="id_password"
+                                       placeholder="گذرواژه">
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="ui blue submit button">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="ui vertical divider" style="left: 50%;">
+                Or
+            </div>
+            <div class="center aligned column">
+                <div class="ui big green labeled icon button">
+                    <i class="signup icon"></i>
+                    <a href="{% url "members:join" %}" style="color: inherit"> Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

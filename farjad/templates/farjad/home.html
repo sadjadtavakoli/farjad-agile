@@ -1,12 +1,5 @@
-{#{% extends '__base.html' %}#}
-{#{% extends '../../base_templates/__base_slidebar.html' %}#}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>farjad home</title>
-</head>
-<body>
-hello to farjad project
-</body>
-</html>
+{% if request.user.is_authenticated %}
+    {% include 'farjad/authenticated_users_home.html' %}
+{% else %}
+    {% include 'farjad/unauthenticated_user_home.html' %}
+{% endif %}

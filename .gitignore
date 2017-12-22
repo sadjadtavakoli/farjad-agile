@@ -15,3 +15,4 @@ db.sqlite3*
 farjad/templatetags/__pycache__/
 farjad/utils/__pycache__/
 members/views/__pycache__/
+books/migrations/

@@ -1,0 +1,30 @@
+        <div class="ui secondary pointing menu">
+<a class="{% if active == 0 %}active{% endif %} item">
+        Home
+    </a>
+    <a class="{% if active == 1 %}active{% endif %}item">
+        Books
+    </a>
+    <a class="{% if active == 2 %}active{% endif %}item">
+        My Panel
+    </a>
+    <div class="right menu">
+        {% if request.user.is_authenticated %}
+            <a class="ui item" href="{% url 'members:logout' %}">
+                خروج
+            </a>
+        {% else %}
+            <a class="ui item" href="{% url 'members:login' %}">
+                ورود
+            </a>
+            <a class="ui item" href="{% url 'members:join' %}">
+                ثبت‌نام
+            </a>
+
+        {% endif %}
+
+    </div>
+</div>
+<div class="ui segment">
+    <p></p>
+</div>

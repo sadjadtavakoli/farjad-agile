@@ -1,0 +1,14 @@
+{% extends 'farjad/__base.html' %}
+{% load static %}
+{% load utils_tags %}
+{% load staticfiles %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block title %}{{ block.super }} > Home{% endblock %}
+
+{% block body %}
+    {% include 'farjad/main_navbar.html' with active=0 %}
+{% endblock %}
