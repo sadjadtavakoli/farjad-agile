@@ -1,0 +1,93 @@
+{% extends 'members/__base.html' %}
+{% load static %}
+{% load utils_tags %}
+{% load staticfiles %}
+
+{% block title %}ثبت کتاب{% endblock %}
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'members/log-in/css/log-in.css' %}">
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block body %}
+    {{ block.super }}
+{#    {% include 'members/__navbar.html' %}#}
+{#    <div class="ui middle aligned center aligned grid">#}
+{#        <div class="column">#}
+{#            <h2 class="ui teal image header">#}
+{#                <div class="content">#}
+{#                    ثبت نام کاربر#}
+{#                </div>#}
+{#            </h2>#}
+{#            <form class="ui form" action="" method="post" novalidate autocomplete="off">#}
+{#                {% csrf_token %}#}
+{#                <div class="ui stacked segment">#}
+{#                    <div class="field">#}
+{#                        <div class="two fields">#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.first_name placeholder="نام" %}#}
+{#                            </div>#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.last_name placeholder="نام خانوادگی" %}#}
+{#                            </div>#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="field">#}
+{#                        <div class="two fields">#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.username placeholder="نام کاربری" %}#}
+{#                            </div>#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.email placeholder="ایمیل" %}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="field">#}
+{#                        <div class="two fields">#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.phone placeholder="شماره همراه" %}#}
+{#                            </div>#}
+{#                            <div class="field">#}
+{#                                {% field_tag form.birth_date placeholder="تاریخ تولد" %}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="two fields">#}
+{#                        <div class="field">#}
+{#                            {% field_tag form.city placeholder="شهر" %}#}
+{#                        </div>#}
+{#                        <div class="field">#}
+{#                            {% field_tag form.province placeholder="استان" %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="field">#}
+{#                        {% field_tag form.province placeholder="آدرس" %}#}
+{#                    </div>#}
+{#                    <div class="two fields">#}
+{#                        <div class="field">#}
+{#                            {% field_tag form.profession placeholder="شغل" %}#}
+{#                        </div>#}
+{#                        <div class="field selection dropdown">#}
+{#                            {% field_tag form.education placeholder="تحصیلات" %}#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <button type="submit" class="ui fluid large teal submit button">ثبت نام#}
+{#                    </button>#}
+{#                </div>#}
+{##}
+{#                <div class="ui error message"></div>#}
+{##}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+
+{% endblock %}
