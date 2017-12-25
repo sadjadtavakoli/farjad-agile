@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad527742-c531-40ac-82ce-526a19ee162a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/books/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/templates/books/create_book.html" afterPath="$PROJECT_DIR$/books/templates/books/create_book.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/views.py" afterPath="$PROJECT_DIR$/books/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farjad/templates/farjad/__base.html" afterPath="$PROJECT_DIR$/farjad/templates/farjad/__base.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create_book.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_book.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/templates/books/create_book.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="33" selection-end-column="58" />
+            <state relative-caret-position="360">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#571#603#0#HTML" expanded="true" />
                 <element signature="e#636#658#0#HTML" expanded="true" />
@@ -117,6 +114,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="__base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/farjad/templates/farjad/__base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -151,7 +158,6 @@
         <option value="$PROJECT_DIR$/members/templates/members/profile.html" />
         <option value="$PROJECT_DIR$/books/templates/books/book.html" />
         <option value="$PROJECT_DIR$/books/urls.py" />
-        <option value="$PROJECT_DIR$/farjad/templates/farjad/__base.html" />
         <option value="$PROJECT_DIR$/farjad/templates/farjad/home.html" />
         <option value="$PROJECT_DIR$/farjad/templatetags/utils_tags.py" />
         <option value="$PROJECT_DIR$/members/templates/members/unauthenticated_user_navbar.html" />
@@ -189,6 +195,7 @@
         <option value="$PROJECT_DIR$/books/views.py" />
         <option value="$PROJECT_DIR$/books/forms.py" />
         <option value="$PROJECT_DIR$/books/templates/books/create_book.html" />
+        <option value="$PROJECT_DIR$/farjad/templates/farjad/__base.html" />
       </list>
     </option>
   </component>
@@ -265,6 +272,42 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="farjad">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="farjad">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="farjad">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="templates">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="farjad">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="farjad">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="books">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -303,7 +346,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="field&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;add&#9;null&#9;null&#10;book&#9;null&#9;null&#10;join&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/members/templates/members/join.html&#10;se&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/farjad/settings.py&#10;EditP&#9;null&#9;null&#10;profil&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/profile.html&#10;urls&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/urls.py&#10;books&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;Member&#9;null&#9;null&#10;Book&#9;null&#9;null&#10;url&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/urls.py&#10;HomeView&#9;null&#9;null&#10;git&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.gitignore&#10;sett&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/__base.html&#10;login&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;home&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;logout&#9;null&#9;null&#10;authen&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;in&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;lo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;joi&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;setting&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;un&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/unauthenticated_user_home.html&#10;__Base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base.html&#10;__base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/base_templates/__base.html&#10;fiel&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;settin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;req&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;Membe&#9;null&#9;null&#10;works&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/workspace.xml&#10;misc/&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/misc.xml&#10;misc&#9;null&#9;null&#10;log&#9;null&#9;null&#10;set&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;reu&#9;null&#9;null&#10;requ&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;admin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/admin.py&#10;URLS&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py&#10;apps&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py" />
+    <property name="SearchEverywhereHistoryKey" value="__base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/__base.html&#10;field&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;add&#9;null&#9;null&#10;book&#9;null&#9;null&#10;join&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/members/templates/members/join.html&#10;se&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/farjad/settings.py&#10;EditP&#9;null&#9;null&#10;profil&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/profile.html&#10;urls&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/urls.py&#10;books&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;Member&#9;null&#9;null&#10;Book&#9;null&#9;null&#10;url&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/urls.py&#10;HomeView&#9;null&#9;null&#10;git&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.gitignore&#10;sett&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/__base.html&#10;login&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;home&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;logout&#9;null&#9;null&#10;authen&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;in&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;lo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;joi&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;setting&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;un&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/unauthenticated_user_home.html&#10;__Base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base.html&#10;fiel&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;settin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;req&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;Membe&#9;null&#9;null&#10;works&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/workspace.xml&#10;misc/&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/misc.xml&#10;misc&#9;null&#9;null&#10;log&#9;null&#9;null&#10;set&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;reu&#9;null&#9;null&#10;requ&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;admin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/admin.py&#10;URLS&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py&#10;apps&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -741,7 +784,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514236165174</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add book little bit edit in design">
+      <created>1514237872142</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1514237872142</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -754,7 +804,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1317" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -763,7 +813,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.49389312" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21671827" sideWeight="0.4815106" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21671827" sideWeight="0.4815106" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4122738" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -823,7 +873,8 @@
     <MESSAGE value="add book view completed" />
     <MESSAGE value="self profile and all books" />
     <MESSAGE value="add book page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add book page" />
+    <MESSAGE value="add book little bit edit in design" />
+    <option name="LAST_COMMIT_MESSAGE" value="add book little bit edit in design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,6 +949,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,14 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farjad/templates/farjad/__base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,14 +1256,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/books/templates/books/create_book.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="360">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#571#603#0#HTML" expanded="true" />
             <element signature="e#636#658#0#HTML" expanded="true" />
             <element signature="e#1046#1069#0#HTML" expanded="true" />
             <element signature="e#3743#3765#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farjad/templates/farjad/__base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
