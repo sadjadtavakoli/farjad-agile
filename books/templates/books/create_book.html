@@ -18,18 +18,24 @@
         <div class="divider"> <</div>
     </div>
 
-    {#    <form class="ui form" action="" method="post" novalidate autocomplete="off">#}
-    {#        {% csrf_token %}#}
-    {##}
-    {#        {{ form }}#}
-    {#        <input type="submit">#}
-    {#    </form>#}
 
-    <div class="ui form segment">
+    <div class="ui form segment" style="background-color: white ">
+        <p></p>
+
+        <h2 class="ui header">
+            <i class="settings icon Plus"></i>
+            <div class="content">
+                اضافه کردن کتاب
+                <div class="sub header">برای اضافه کردن کتاب جدید ,اطلاعات زیر را تکمیل کنید.</div>
+            </div>
+
+        </h2>
+
         <form action="" method="post" novalidate="" autocomplete="off">
+            {% csrf_token %}
             <div class="two fields">
-                {% csrf_token %}
                 <div class="field">
+
                     {% field_tag form.title placeholder="عنوان کتاب" %}
                 </div>
                 <div class="field">
@@ -37,7 +43,6 @@
                 </div>
             </div>
             <div class="three fields">
-                {% csrf_token %}
                 <div class="field">
                     {% field_tag form.pub_date placeholder="سال انتشار" %}
                 </div>
@@ -65,13 +70,19 @@
 
             <div class="three fields">
                 <div class="field">
-                    {% field_tag form.page_num placeholder="تعداد صفحات" %}
+                    <label>تعداد صفحات</label>
+
+                    {% field_tag form.page_num %}
                 </div>
                 <div class="field">
-                    {% field_tag form.length placeholder="طول کتاب" %}
+                    <label>طول کتاب</label>
+
+                    {% field_tag form.length %}
                 </div>
                 <div class="field">
-                    {% field_tag form.width placeholder="عرض کتاب" %}
+                    <label>عرض کتاب</label>
+
+                    {% field_tag form.width %}
                 </div>
             </div>
 
@@ -87,22 +98,21 @@
             <div class="field">
 
 
-                <div class="field selection dropdown">
+                <div class="field selection dropdown " hidden>
                     <label>صاحب کتاب</label>
                     {% field_tag form.owner placeholder="صاحب کتاب" %}
                 </div>
             </div>
 
 
-                      <div class="three fields">
-               <div class="field"></div>
-           <div class="field">
-                <button type="submit" class="ui fluid  teal submit button">ثبت کتاب
-            </button>
-           </div>
-                          <div class="field"></div>
+            <div class="three fields">
+                <div class="field"></div>
+                <div class="field">
+                    <button type="submit" class="ui fluid green submit button">ثبت کتاب
+                    </button>
+                </div>
+                <div class="field"></div>
             </div>
-
 
 
         </form>

@@ -16,6 +16,11 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
     def get_success_url(self):
         return reverse("home")
 
+    def get_initial(self):
+        data = super(AddBookView, self).get_initial()
+        data['owner'] = self.request.user
+        return data
+
     def form_valid(self, form):
         res = super(AddBookView, self).form_valid(form)
         instance = form.save(commit=False)
