@@ -4,3 +4,11 @@
         {% if field.field.required %}<span class="required"></span>{% endif %}</p>
 {% endif %}
 {{ field }}
+
+{% if field.errors %}
+
+    {% for foo in field.errors %}
+        {{ foo }}
+    {% endfor %}
+
+{% endif %}
