@@ -1,6 +1,10 @@
 {% extends 'members/__base_panel.html' %}
 {% block content %}
-    {{ books }}
-
+{#    {{ books }}#}
+    {% for book in books %}
+        <div class="ui card">
+        {{book}}
+        </div>
+{% endfor %}
     <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
 {% endblock %}
