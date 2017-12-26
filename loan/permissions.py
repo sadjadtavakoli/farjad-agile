@@ -16,6 +16,7 @@ class LoanBasePermission(LoginRequired):
 
 class LenderPermission(LoanBasePermission):
     def has_permission(self, request, view):
+        super().has_permission(request, view)
         if request.user != request.loan.book.owner:
             raise PermissionDenied
         return True
@@ -23,6 +24,7 @@ class LenderPermission(LoanBasePermission):
 
 class BorrowerPermission(LoanBasePermission):
     def has_permission(self, request, view):
+        super().has_permission(request, view)
         if request.user != request.loan.borrower:
             raise PermissionDenied
         return True

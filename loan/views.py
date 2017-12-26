@@ -55,7 +55,7 @@ class BorrowedBooksList(PanelAreaSetter, PermissionCheckerMixin, ListView):
         return Loan.objects.get_borrowed_books().filter(borrower=self.request.user)
 
 
-class ChangeLoanStateView(APIView):
+class ChangeLoanStateView(PermissionCheckerMixin, APIView):
     response = {}
     action_map = {}
 

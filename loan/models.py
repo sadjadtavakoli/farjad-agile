@@ -18,10 +18,13 @@ class LoanManager(Manager):
 
 class Loan(models.Model):
     objects = LoanManager()
-    book = models.ManyToManyField('books.Books', related_name="loans")
-    borrower = models.ManyToManyField('members.Member', related_name='loans')
+    book = models.OneToOneField('books.Books', related_name="loans", on_delete=models.CASCADE)
+    borrower = models.OneToOneField('members.Member', related_name='loans',
+                                    on_delete=models.CASCADE
 
-    state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='CASCADE',
+                                    )
+
+    state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='PROTECTED',
                                  blank=True, null=True)
 
     def save(self, *args, **kwargs):

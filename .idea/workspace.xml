@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad527742-c531-40ac-82ce-526a19ee162a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loan/permissions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loan/templates/borrowed_books_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loan/templates/borrower_loans_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loan/templates/lender_loans_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loan/templates/loaned_books_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farjad/settings.py" afterPath="$PROJECT_DIR$/farjad/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loan/admin.py" afterPath="$PROJECT_DIR$/loan/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loan/models.py" afterPath="$PROJECT_DIR$/loan/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loan/permissions.py" afterPath="$PROJECT_DIR$/loan/permissions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loan/views.py" afterPath="$PROJECT_DIR$/loan/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/members/templates/members/__base_panel.html" afterPath="$PROJECT_DIR$/members/templates/members/__base_panel.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/members/urls.py" afterPath="$PROJECT_DIR$/members/urls.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -39,8 +32,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loan/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="21" />
+            <state relative-caret-position="234">
+              <caret line="22" column="60" lean-forward="false" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -51,8 +44,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/loan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="31" />
+            <state relative-caret-position="162">
+              <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
               <folding>
                 <element signature="e#26#72#0" expanded="true" />
               </folding>
@@ -86,8 +79,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/members/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+            <state relative-caret-position="216">
+              <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -98,18 +91,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lender_loans_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loan/templates/lender_loans_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -138,11 +121,21 @@
       <file leaf-file-name="permissions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loan/permissions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="201">
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sheet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/farjad/lib/python3.5/site-packages/xlrd/sheet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="315" column="13" lean-forward="false" selection-start-line="315" selection-start-column="13" selection-end-line="315" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,9 +211,9 @@
         <option value="$PROJECT_DIR$/loan/templates/member_loans_list.html" />
         <option value="$PROJECT_DIR$/loan/templates/borrower_borrowed_books.html" />
         <option value="$PROJECT_DIR$/members/templates/members/__base_panel.html" />
-        <option value="$PROJECT_DIR$/members/urls.py" />
         <option value="$PROJECT_DIR$/loan/templates/borrowed_books_list.html" />
         <option value="$PROJECT_DIR$/loan/templates/loaned_books_list.html" />
+        <option value="$PROJECT_DIR$/members/urls.py" />
         <option value="$PROJECT_DIR$/loan/permissions.py" />
         <option value="$PROJECT_DIR$/loan/models.py" />
         <option value="$PROJECT_DIR$/loan/views.py" />
@@ -384,7 +377,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="pan&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base_panel.html&#10;base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base_panel.html&#10;bo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;settin&#9;null&#9;null&#10;req&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;setting&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;__base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/__base.html&#10;field&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;add&#9;null&#9;null&#10;book&#9;null&#9;null&#10;join&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/members/templates/members/join.html&#10;se&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/farjad/settings.py&#10;EditP&#9;null&#9;null&#10;profil&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/profile.html&#10;urls&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/urls.py&#10;books&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;Member&#9;null&#9;null&#10;Book&#9;null&#9;null&#10;url&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/urls.py&#10;HomeView&#9;null&#9;null&#10;git&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.gitignore&#10;sett&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;login&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;home&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;logout&#9;null&#9;null&#10;authen&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;in&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;lo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;joi&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;un&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/unauthenticated_user_home.html&#10;__Base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base.html&#10;fiel&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;Membe&#9;null&#9;null&#10;works&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/workspace.xml&#10;misc/&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/misc.xml&#10;misc&#9;null&#9;null&#10;log&#9;null&#9;null&#10;set&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;reu&#9;null&#9;null&#10;requ&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;admin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/admin.py&#10;URLS&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py&#10;apps&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py" />
+    <property name="SearchEverywhereHistoryKey" value="Loan&#9;null&#9;null&#10;pan&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base_panel.html&#10;base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base_panel.html&#10;bo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;settin&#9;null&#9;null&#10;req&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;setting&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;__base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/__base.html&#10;field&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;add&#9;null&#9;null&#10;book&#9;null&#9;null&#10;join&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/members/templates/members/join.html&#10;se&#9;FILE&#9;file://C:/Users/win81/PycharmProjects/farjad-agile/farjad/settings.py&#10;EditP&#9;null&#9;null&#10;profil&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/profile.html&#10;urls&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/urls.py&#10;books&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/user_books.html&#10;Member&#9;null&#9;null&#10;Book&#9;null&#9;null&#10;url&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/urls.py&#10;HomeView&#9;null&#9;null&#10;git&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.gitignore&#10;sett&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;login&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;home&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;logout&#9;null&#9;null&#10;authen&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/authenticated_users_home.html&#10;in&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;lo&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/login.html&#10;joi&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/join.html&#10;un&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/unauthenticated_user_home.html&#10;__Base&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/templates/members/__base.html&#10;fiel&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/templates/farjad/_field_handler.html&#10;Membe&#9;null&#9;null&#10;works&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/workspace.xml&#10;misc/&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/.idea/misc.xml&#10;misc&#9;null&#9;null&#10;log&#9;null&#9;null&#10;set&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/farjad/settings.py&#10;reu&#9;null&#9;null&#10;requ&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/requirements.txt&#10;admin&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/admin.py&#10;URLS&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py&#10;apps&#9;FILE&#9;file:///home/sadjad/PycharmProjects/farjad/members/apps.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -829,7 +822,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514237872142</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="borrowed books&#10;loaned books&#10;borrow request for borrower and loaner">
+      <created>1514319348549</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1514319348549</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -849,22 +849,22 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21826625" sideWeight="0.51848936" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.49389312" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3359133" sideWeight="0.4815106" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33436534" sideWeight="0.4815106" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4122738" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -912,7 +912,8 @@
     <MESSAGE value="self profile and all books" />
     <MESSAGE value="add book page" />
     <MESSAGE value="add book little bit edit in design" />
-    <option name="LAST_COMMIT_MESSAGE" value="add book little bit edit in design" />
+    <MESSAGE value="borrowed books&#10;loaned books&#10;borrow request for borrower and loaner" />
+    <option name="LAST_COMMIT_MESSAGE" value="borrowed books&#10;loaned books&#10;borrow request for borrower and loaner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -928,13 +929,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/members/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -966,6 +960,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -973,6 +968,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,6 +1026,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,6 +1044,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,6 +1054,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,6 +1107,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,6 +1122,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,6 +1161,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="699">
           <caret line="1002" column="8" lean-forward="false" selection-start-line="1002" selection-start-column="8" selection-end-line="1002" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,16 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/members/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loan/templates/borrowed_books_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1257,38 +1257,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/books/models.py">
+    <entry file="file://$USER_HOME$/.virtualenvs/farjad/lib/python3.5/site-packages/xlrd/sheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="127">
+          <caret line="315" column="13" lean-forward="false" selection-start-line="315" selection-start-column="13" selection-end-line="315" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loan/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        <state relative-caret-position="201">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/books/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/loan/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="21" />
+        <state relative-caret-position="234">
+          <caret line="22" column="60" lean-forward="false" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/members/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/loan/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="31" />
+        <state relative-caret-position="162">
+          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
           <folding>
             <element signature="e#26#72#0" expanded="true" />
           </folding>
