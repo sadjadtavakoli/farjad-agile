@@ -1,14 +1,32 @@
 from django.db import models
 
 # Create your models here.
+from django.db.models import Manager
 from django_fsm import FSMField, transition
 
 
+class LoanManager(Manager):
+    def get_requests(self):
+        return super().get_queryset().filter(
+            state__state__in=[LoanState.STATE_NEW, LoanState.STATE_QUEUE,
+                              LoanState.STATE_READY_TO_PAY])
+
+    def get_borrowed_books(self):
+        return super().get_queryset().filter(
+            state__state=LoanState.STATE_BORROWED)
+
+
 class Loan(models.Model):
+    objects = LoanManager()
     book = models.ManyToManyField('books.Books', related_name="loans")
     borrower = models.ManyToManyField('members.Member', related_name='loans')
 
-    state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='CASCADE')
+    state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='CASCADE',
+                                 blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        self.state = self.state if self.state_id else LoanState.objects.create()
+        return super(Loan, self).save(*args, **kwargs)
 
 
 class LoanState(models.Model):
@@ -68,8 +86,8 @@ class LoanState(models.Model):
         }
         return buttons.get(self.state)
 
-    buyer_action_map = {'borrower-cancel': canceled_by_borrower,
-                        'borrower-payed': payed}
+    borrower_action_map = {'borrower-cancel': canceled_by_borrower,
+                           'borrower-payed': payed}
 
     @property
     def lender_buttons(self):
@@ -89,7 +107,7 @@ class LoanState(models.Model):
         }
         return buttons.get(self.state)
 
-    seller_action_map = {
+    lender_action_map = {
         'mark-as-seen': marked_as_seen,
         'lender-accept': ready_for_pay,
         'lender-reject': rejected,
