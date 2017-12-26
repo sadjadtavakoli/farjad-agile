@@ -1,6 +1,11 @@
 {% extends 'members/__base_panel.html' %}
+{% load utils_tags %}
+{% block js %}
+    {{ block.super }}
+{% endblock %}
 
 {% block content %}
+    {{ block.super }}
     <div class="ui breadcrumb">
         <a href="{% url 'members:self:books:all' %}">
             <div class="section">کتاب‌های من</div>
@@ -8,10 +13,90 @@
         <div class="divider"> <</div>
     </div>
 
-    <form class="ui form" action="" method="post" novalidate autocomplete="off">
-        {% csrf_token %}
+    {#    <form class="ui form" action="" method="post" novalidate autocomplete="off">#}
+    {#        {% csrf_token %}#}
+    {##}
+    {#        {{ form }}#}
+    {#        <input type="submit">#}
+    {#    </form>#}
 
-        {{ form }}
-        <input type="submit">
-    </form>
+    <div class="ui form segment">
+        <form action="" method="post" novalidate="" autocomplete="off">
+            <div class="two fields">
+                {% csrf_token %}
+                <div class="field">
+                    {% field_tag form.title placeholder="عنوان کتاب" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.author placeholder="نویسنده کتاب" %}
+                </div>
+            </div>
+            <div class="three fields">
+                {% csrf_token %}
+                <div class="field">
+                    {% field_tag form.pub_date placeholder="سال انتشار" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.price placeholder="هزینه" %}
+                </div>
+                    <div class="field">
+                    <label></label>
+                    {% field_tag form.jeld_num  placeholder="تعداد انتشار" %}
+                </div>
+            </div>
+            <div class="three fields">
+                <div class="field selection dropdown">
+                    <label>بازه زمانی</label>
+                    {% field_tag form.period placeholder="بازه زمانی" %}
+                </div>
+                <div class="field selection dropdown">
+                    <label>ژانر</label>
+                    {% field_tag form.genre placeholder="ژانر" %}
+                </div>
+                <div class="field selection dropdown">
+                    <label>رده سنی</label>
+                    {% field_tag form.reader_age placeholder="رده سنی" %}
+                </div>
+            </div>
+
+            <div class="three fields">
+                <div class="field">
+                    {% field_tag form.page_num placeholder="تعداد صفحات" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.length placeholder="طول کتاب" %}
+                </div>
+               <div class="field">
+                    {% field_tag form.width placeholder="عرض کتاب" %}
+                </div>
+            </div>
+
+            <div class="field">
+
+
+                     {% field_tag form.description placeholder="توصیف کتاب" %}
+            </div>
+  <div class="field">
+
+                     {% field_tag form.summary placeholder="خلاصه کتاب" %}
+            </div>
+        <div class="field">
+
+
+                <div class="field selection dropdown">
+                    <label>صاحب کتاب</label>
+                    {% field_tag form.owner placeholder="صاحب کتاب" %}
+                </div>
+            </div>
+
+ <button type="submit" class="ui fluid   submit button">ثبت کتاب
+            </button>
+
+        </form>
+    </div>
+
+
+
+
+
 {% endblock %}
