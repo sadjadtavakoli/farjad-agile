@@ -1,6 +1,51 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
-    {{ loans }}
+    <div class="ui relaxed divided items">
+        {% for loan in loans %}
+            <div class="item" style="direction: rtl">
+                <div class="ui  image">
+                    <img src="/static/books/icons/books.jpg">
+                </div>
+                <div class="content" style="margin-right: 1rem">
+                    <div class="ui info message ">
+                        <div class="header " style="direction: rtl">
+                            <a class="header"> کتاب {{ loan.book.title }} </a>
+                            <div class="meta">
+                                نویسنده: {{ loan.book.author }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        {{ loan.book.description }}
+                    </div>
+                    <div class="description">
+                        {{ loan.book.summary }}
+                    </div>
+                    <div style="margin-top: 1rem">
+                        <i class="dollar icon"></i>
+                        {{ loan.book.price }}
+                    </div>
+                    <div class="extra">
+                        <div class="ui left floated ">
+                            <a class="ui tag label" style="margin-top: 0.4rem">{{ loan.state.state }}</a>
+                            <a class="ui tag teal label">{{ loan.book.period }}</a>
+                        </div>
+
+
+                    </div>
+                    <div class="extra">
+                        <div class="ui left floated ">
+                            <a class="ui tag label" style="margin-top: 0.4rem">{{ loan.book.genre }}</a>
+                            <a class="ui  tag teal label">{{ loan.book.reader_age }}</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
