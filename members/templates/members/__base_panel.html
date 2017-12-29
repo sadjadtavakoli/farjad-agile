@@ -8,20 +8,47 @@
             {% endblock %}
         </div>
         <div class="four wide column">
+
             <div class="ui vertical fluid right tabular menu">
                 <a href="{% url 'members:self:books:all' %}"
                    class="{% if request.admin_area == 'my_books' %}active {% endif %}item">
                     کتاب‌های من
                 </a>
-                <a class="{% if request.admin_area == 'my_requests' %}active {% endif %}item">
-                    درخواست‌های امانت
-                </a>
-                <a class="{% if request.admin_area == 'my_extend_requests' %}active {% endif %}item">
-                    درخواست‌های تمدید
-                </a>
-                <a href="{% url 'members:self:profile' %}" class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
+
+                <a href="{% url 'members:self:profile' %}"
+                   class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
                     حساب کاربری
                 </a>
+            </div>
+
+            <h6 class="ui horizontal divider header" style="color: gray; font-size: smaller">
+                امانات من
+            </h6>
+            <div class="ui vertical fluid right tabular menu">
+                <a href="{% url 'members:self:loans:as-lender' %}"
+                   class="{% if request.admin_area == 'lender_requests' %}active {% endif %}item">
+                    درخواست‌های امانت
+                    <div class="ui teal left pointing label">1</div>
+                </a>
+                <a href="{% url 'members:self:books:loaned' %}"
+                   class="{% if request.admin_area == 'leaned_books_list' %}active {% endif %}item">
+                    کتاب‌های امانت داده‌شده </a>
+
+            </div>
+            <h6 class="ui horizontal divider header" style="color: gray; font-size: smaller">
+
+                امانات دیگران
+            </h6>
+            <div class="ui vertical fluid right tabular menu">
+                <a href="{% url 'members:self:loans:as-borrower' %}"
+                   class="{% if request.admin_area == 'borrower_requests' %}active {% endif %}item">
+                    وضعیت درخواست‌های امانت
+                </a>
+
+                <a href="{% url 'members:self:books:borrowed' %}"
+                   class="{% if request.admin_area == 'borrowed_book_list' %}active {% endif %}item">
+                    کتاب‌های امانت گرفته‌شده </a>
+
             </div>
         </div>
     </div>
