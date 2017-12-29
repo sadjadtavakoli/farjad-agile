@@ -1,26 +1,41 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
+    <div class="ui celled list">
 
-    <div class="ui link cards">
         {% for loan in loans %}
-            <div class="ui card ">
-                <div class="content" style="direction: rtl">
-                    <div class="header">{{ loan.book.title }}</div>
+            <div class="item" style="direction: rtl">
+                <div class="left floated content">
+
+  <div class="ui buttons">
+    <div class="ui button">رد کردن</div>
+    <div class="or"> یا</div>
+    <div class="ui positive button">پذیرش</div>
+  </div>
+
+                </div>
+                <img class="ui avatar image" src="/static/members/icons/default_profile.png">
+                <div class="content" style="margin-right: 1.1em">
+                    <div class="header">
+                        {{ loan.borrower.username }}
+                    </div>
+                    <div class="meta">
+                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} درخواست امانت کتاب دارد
+                    </div>
+                </div>
+
+                <img class="ui avatar image" src="/static/books/icons/books.jpg">
+                <div class="content" style="margin-right: 1.1em">
+                    <div class="header">
+                        {{ loan.book.title }}
+                    </div>
                     <div class="meta">
                         {{ loan.book.author }}
                     </div>
-                    <div class="description">
-                        <b>{{ loan.borrower.username }}</b> درخواست امانت داده است
-
-
-                    </div>
-
                 </div>
+                <span> <a class="ui tag label" style="margin-top: 0.4rem">{{ loan.state.state }}</a></span>
+
             </div>
-        {% endfor %}
-    </div>
-
-
-
+ {% endfor %}
+            </div>
 {% endblock %}
