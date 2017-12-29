@@ -1,6 +1,26 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
-    {{ loans }}
+
+    <div class="ui link cards">
+        {% for loan in loans %}
+            <div class="ui card ">
+                <div class="content" style="direction: rtl">
+                    <div class="header">{{ loan.book.title }}</div>
+                    <div class="meta">
+                        {{ loan.book.author }}
+                    </div>
+                    <div class="description">
+                        <b>{{ loan.borrower.username }}</b> درخواست امانت داده است
+
+
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
 
 {% endblock %}
