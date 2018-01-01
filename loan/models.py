@@ -1,8 +1,8 @@
 from django.db import models
-
-# Create your models here.
 from django.db.models import Manager
 from django_fsm import FSMField, transition
+
+from farjad.utils.utils_view import auto_save
 
 
 class LoanManager(Manager):
@@ -18,11 +18,9 @@ class LoanManager(Manager):
 
 class Loan(models.Model):
     objects = LoanManager()
-    book = models.OneToOneField('books.Books', related_name="loans", on_delete=models.CASCADE)
-    borrower = models.OneToOneField('members.Member', related_name='loans',
-                                    on_delete=models.CASCADE
-
-                                    )
+    book = models.ForeignKey('books.Books', related_name="loans", on_delete=models.CASCADE)
+    borrower = models.ForeignKey('members.Member', related_name='loans',
+                                 on_delete=models.CASCADE)
 
     state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='PROTECTED',
                                  blank=True, null=True)
@@ -44,35 +42,46 @@ class LoanState(models.Model):
 
     state = FSMField(protected=True, default=STATE_NEW)
 
+    @auto_save
     @transition(field=state, source=STATE_NEW,
                 target=STATE_QUEUE)
     def marked_as_seen(self):
+        self.save()
         pass
 
+    @auto_save
     @transition(field=state, source=[STATE_QUEUE, STATE_NEW], target=STATE_REJECTED)
     def rejected(self):
         pass
 
+    @auto_save
     @transition(field=state, source=[STATE_QUEUE, STATE_NEW], target=STATE_READY_TO_PAY)
     def ready_for_pay(self):
         pass
 
+    @auto_save
     @transition(field=state, source=STATE_READY_TO_PAY, target=STATE_CANCELED_BY_LENDER)
     def canceled_by_lender(self):
         pass
 
+    @auto_save
     @transition(field=state, source=[STATE_READY_TO_PAY, STATE_QUEUE, STATE_NEW],
                 target=STATE_CANCELED_BY_BORROWER)
     def canceled_by_borrower(self):
         pass
 
+    @auto_save
     @transition(field=state, source=STATE_PAYED, target=STATE_BORROWED)
     def borrowed(self):
         pass
 
+    @auto_save
     @transition(field=state, source=STATE_READY_TO_PAY, target=STATE_PAYED)
     def payed(self):
         pass
+
+    def update_state(self):
+        self.shown_state = self.state
 
     @property
     def borrower_buttons(self):

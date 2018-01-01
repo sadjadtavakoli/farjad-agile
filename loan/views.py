@@ -19,7 +19,15 @@ class LenderLoansRequestList(PanelAreaSetter, PermissionCheckerMixin, ListView):
     template_name = 'lender_loans_list.html'
 
     def get_queryset(self):
-        return Loan.objects.get_requests().filter(book__owner=self.request.user)
+        query = Loan.objects.get_requests().filter(book__owner=self.request.user)
+        for item in query:
+            item.state.update_state()
+        return query
+
+    def get(self, request, *args, **kwargs):
+        for item in self.request.user.new_loan_requests:
+            item.state.marked_as_seen()
+        return super(LenderLoansRequestList, self).get(request, *args, **kwargs)
 
 
 class LoanedBooksList(PanelAreaSetter, PermissionCheckerMixin, ListView):

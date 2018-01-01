@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 from farjad.settings import EDUCATION_CHOICES
 from farjad.utils.utils_view import get_url
+from loan.models import Loan, LoanState
 
 
 class Member(AbstractUser):
@@ -63,6 +64,10 @@ class Member(AbstractUser):
         if full_name == "":
             full_name = self.username
         return full_name
+
+    @property
+    def new_loan_requests(self):
+        return Loan.objects.all().filter(book__owner=self, state__state=LoanState.STATE_NEW)
 
 
 mobile_regex = RegexValidator(regex=r'^(09|(\+989))\d{9}$',
