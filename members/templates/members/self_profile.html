@@ -8,12 +8,13 @@
 
             </div>
         </h2>
-        <div class="three fields" style="margin-top: 5%;">
-            <div class="field">
-                <b>نام</b> : {{ profile.first_name }}
-            </div>
-            <div class="field">
-                <b>نام خانوادگی</b> : {{ profile.last_name }}
+        <img class="ui left floated medium circular image" style="margin-left: 2rem" src={{ profile.image_url }} >
+           <div class="three fields" style="margin-top: 5%;">
+                <div class="field">
+                <b>نام</b>  :   {{ profile.first_name }}
+                </div>
+                <div class="field">
+                <b>نام خانوادگی</b>  :   {{ profile.last_name }}
 
             </div>
             <div class="field">

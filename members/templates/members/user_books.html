@@ -8,24 +8,31 @@
 
     <div class="ui link cards" style="direction: rtl">
         {% for book in books %}
-            <a href="{% url 'books:detail'  book_pk=book.id %}">
-                <div class="ui card">
-                    <div class="content">
-                        <div class="header">{{ book.title }}</div>
-                        <div class="meta">
-                            <span class="right floated time">{{ book.price }}  </span>
-                            <span class="category">{{ book.author }}</span>
-                        </div>
-                        <div class="description">
-                            <p>
-                                {{ book.summary }}
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </a>
+      <div class=" ui meduim card">
+    <div class="image">
+      <img class="tiny" src="/static/books/icons/75801069.jpg" style="height: 24rem">
+    </div>
+    <div class="content">
+      <div class="header">{{ book.title }}</div>
+      <div class="meta">
+        <a>{{ book.author }}</a>
+      </div>
+      <div class="description">
+        {{ book.description }}
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+       مناسب برای رده سنی {{ book.reader_age }}
+      </span>
+      <span class="left floated">
+        <i class="dollar icon"></i>
+        {{ book.price }}
+      </span>
+    </div>
+  </div>
         {% endfor %}
+
     </div>
 
 
