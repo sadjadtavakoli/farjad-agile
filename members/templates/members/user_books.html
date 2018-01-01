@@ -1,28 +1,29 @@
 {% extends 'members/__base_panel.html' %}
 {% block content %}
-    <div class="ui info message" >
-  <div class="header " style="direction: rtl">
-       <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
-  </div>
-</div>
+    <div class="ui info message">
+        <div class="header " style="direction: rtl">
+            <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
+        </div>
+    </div>
 
     <div class="ui link cards">
         {% for book in books %}
-            <div class="ui  card " style="background-color: #74AFAD">
-                <div class="content">
-                    <div class="header">{{ book.title }}</div>
-                    <div class="meta">
-                        <span class="right floated time">{{ book.price }}  </span>
-                        <span class="category">{{ book.author }}</span>
+            <a href="{% url 'books:detail' book_pk=book.id %}">
+                <div class="ui  card">
+                    <div class="content">
+                        <div class="header">{{ book.title }}</div>
+                        <div class="meta">
+                            <span class="right floated time">{{ book.price }}  </span>
+                            <span class="category">{{ book.author }}</span>
+                        </div>
+                        <div class="description">
+                            <p>
+                                {{ book.summary }}
+                            </p>
+                        </div>
                     </div>
-                    <div class="description">
-                        <p>
-                            {{ book.summary }}
-                        </p>
-                    </div>
-
                 </div>
-            </div>
+            </a>
         {% endfor %}
     </div>
 

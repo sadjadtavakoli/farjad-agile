@@ -1,4 +1,6 @@
+from django.shortcuts import get_object_or_404
 from django.urls.base import reverse
+from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
 
 from books.forms import AddBookForm
@@ -29,3 +31,14 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
         instance.owner = self.request.user
         instance.save()
         return res
+
+
+class BookDetailView(DetailView):
+    model = Books
+    template_name = 'books/book_detail.html'
+    context_object_name = 'book'
+
+    def get_object(self, queryset=None):
+        pk = self.kwargs.get('book_pk', None)
+        book = get_object_or_404(Books, id=pk)
+        return book
