@@ -16,8 +16,8 @@ self_books_urlpatterns = ([
 
                           ], 'books')
 self_loans_urlpatterns = ([
-                              path(r'lender', LenderLoansRequestList.as_view(), name="as-lender"),
-                              path(r'borrower', BorrowerLoansRequestList.as_view(),
+                              path(r'lender/', LenderLoansRequestList.as_view(), name="as-lender"),
+                              path(r'borrower/', BorrowerLoansRequestList.as_view(),
                                    name="as-borrower"),
                               path(r'<int:loan_pk>/lender_change_state/',
                                    LenderChangeLoanStateView.as_view(),
@@ -28,7 +28,7 @@ self_loans_urlpatterns = ([
 
                           ], 'loans')
 self_urlpatterns = ([
-                        path(r'profile', SelfProfileView.as_view(), name="profile"),
+                        path(r'profile/', SelfProfileView.as_view(), name="profile"),
                         path(r'profile/edit/', EditProfileView.as_view(), name="edit-profile"),
                         path(r'books/', include(self_books_urlpatterns)),
                         path(r'loans/', include(self_loans_urlpatterns)),
