@@ -1,14 +1,14 @@
 {% extends 'members/__base_panel.html' %}
 {% block content %}
-    <div class="ui info message" >
-  <div class="header " style="direction: rtl">
-       <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
-  </div>
-</div>
+    <div class="ui info message">
+        <div class="header " style="direction: rtl">
+            <a href="{% url "members:self:books:new" %}"> اضافه کردن کتاب جدید</a>
+        </div>
+    </div>
 
     <div class="ui link cards" style="direction: rtl">
         {% for book in books %}
-            <div class="ui  card " >
+            <div class="ui  card ">
                 <div class="content">
                     <div class="header">{{ book.title }}</div>
                     <div class="meta">
