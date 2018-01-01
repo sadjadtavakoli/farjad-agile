@@ -10,6 +10,8 @@
 {% endblock %}
 {% block js %}
     {{ block.super }}
+    <script type="application/javascript"
+            src="{% static 'members/profile/js/join.js' %}"></script>
 {% endblock %}
 
 
@@ -31,11 +33,15 @@
             </div>
 
             <div class="two fields">
-                <div class="field">
-                    {% field_tag form.password placeholder="گذرواژه" %}
-                </div>
+
                 <div class="field">
                     {% field_tag form.username placeholder="نام کاربری" %}
+                </div>
+                <div class="field">
+                    <div class="ui icon input">
+                        {% field_tag form.password placeholder="گذرواژه" type="password" %}
+                        <i class="circular hide link icon" id="id_password_visibility"></i>
+                    </div>
                 </div>
             </div>
             <div class="two fields">
