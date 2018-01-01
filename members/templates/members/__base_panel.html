@@ -28,7 +28,8 @@
                 <a href="{% url 'members:self:loans:as-lender' %}"
                    class="{% if request.admin_area == 'lender_requests' %}active {% endif %}item">
                     درخواست‌های امانت
-                    <div class="ui teal left pointing label">{{ request.user.new_loan_requests.count }}</div>
+                    {% if request.user.new_loan_requests.count %}
+                        <div class="ui teal left pointing label">{{ request.user.new_loan_requests.count }}</div>{% endif %}
                 </a>
                 <a href="{% url 'members:self:books:loaned' %}"
                    class="{% if request.admin_area == 'leaned_books_list' %}active {% endif %}item">

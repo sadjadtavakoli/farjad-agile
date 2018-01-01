@@ -15,41 +15,35 @@
 
 {% block body %}
     {{ block.super }}
-    <div style="height: 70%">
+    <div style="height: 70%;">
         <form class="ui form" action="" method="post"
               novalidate=""
               autocomplete="off">
             {% csrf_token %}
-            <div class="field">
-                <div class="two fields">
-                    <div class="field">
-                        {% field_tag form.first_name placeholder="نام" %}
-                    </div>
-                    <div class="field">
-                        {% field_tag form.last_name placeholder="نام خانوادگی" %}
-                    </div>
-
+            <div class="two fields">
+                <div class="field">
+                    {% field_tag form.last_name placeholder="نام خانوادگی" %}
                 </div>
+                <div class="field">
+                    {% field_tag form.first_name placeholder="نام" %}
+                </div>
+
             </div>
 
-            <div class="field">
-                <div class="two fields">
-                    <div class="field">
-                        {% field_tag form.username placeholder="نام کاربری" %}
-                    </div>
-                    <div class="field">
-                        {% field_tag form.email placeholder="ایمیل" %}
-                    </div>
+            <div class="two fields">
+                <div class="field">
+                    {% field_tag form.password placeholder="گذرواژه" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.username placeholder="نام کاربری" %}
                 </div>
             </div>
-            <div class="field">
-                <div class="two fields">
-                    <div class="field">
-                        {% field_tag form.phone placeholder="شماره همراه" %}
-                    </div>
-                    <div class="field">
-                        {% field_tag form.birth_date placeholder="تاریخ تولد" %}
-                    </div>
+            <div class="two fields">
+                <div class="field">
+                    {% field_tag form.phone placeholder="شماره همراه" %}
+                </div>
+                <div class="field">
+                    {% field_tag form.email placeholder="ایمیل" %}
                 </div>
             </div>
 
@@ -62,7 +56,7 @@
                 </div>
             </div>
             <div class="field">
-                {% field_tag form.province placeholder="آدرس" %}
+                {% field_tag form.address placeholder="آدرس" %}
             </div>
             <div class="two fields">
                 <div class="field">
@@ -75,8 +69,6 @@
 
             <button type="submit" class="ui fluid  green submit button">ثبت نام
             </button>
-
-            <div class="ui error message"></div>
 
         </form>
         <a href="{% url "members:login" %}">

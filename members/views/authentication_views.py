@@ -17,6 +17,8 @@ class LoginView(FormView):
         member = Member.get_member(data['username_or_phone'])
         user = authenticate(
             username=member.username, password=data['password'])
+        print(user)
+        print(self.request.user)
         login(self.request, user)
         return redirect(reverse("home"))
 
@@ -30,8 +32,7 @@ class LogoutView(View):
 class JoinView(CreateView):
     template_name = "members/join.html"
     model = Member
-    fields = ['first_name', 'last_name', 'username', 'birth_date', 'phone',
-              'age', 'profession',
+    fields = ['first_name', 'last_name', 'password', 'username', 'phone', 'profession',
               'education', 'city', 'province', 'address', 'email']
 
     def get_success_url(self):
@@ -41,3 +42,15 @@ class JoinView(CreateView):
         if self.request.user.is_authenticated:
             logout(self.request)
         return super().get(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        ret = super().form_valid(form)
+        data = form.cleaned_data
+        member = Member.objects.get(username=data['username'])
+        member.set_password(data['password'])
+        member.save()
+        user = authenticate(
+            username=data['username'], password=data['password'])
+        login(self.request, user)
+
+        return ret

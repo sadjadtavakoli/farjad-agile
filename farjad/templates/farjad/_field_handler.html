@@ -8,7 +8,8 @@
 {% if field.errors %}
 
     {% for foo in field.errors %}
-        {{ foo }}
+        <div style="color: darkred; ">{{ foo }}</div>
+
     {% endfor %}
 
 {% endif %}

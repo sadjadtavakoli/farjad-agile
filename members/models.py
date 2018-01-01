@@ -27,8 +27,8 @@ class Member(AbstractUser):
         },
     )
     profile_picture = ImageField(upload_to='profile_pictures/', null=True, blank=True)
-    phone = models.CharField(max_length=11, blank=False, null=False)
-    age = models.IntegerField(blank=False, null=False)
+    phone = models.CharField(max_length=11, blank=False, null=False, unique=True)
+    age = models.IntegerField(null=True, blank=True)
     profession = models.CharField(max_length=32)
     education = models.CharField(max_length=30, choices=EDUCATION_CHOICES)
     city = models.CharField(max_length=60)
