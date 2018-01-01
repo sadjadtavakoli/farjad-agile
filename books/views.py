@@ -4,7 +4,7 @@ from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 
-from books.forms import AddBookForm
+from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
 from members.views.area_setter import PanelAreaSetter
@@ -14,7 +14,6 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
     permission_classes = [LoginRequired]
     template_name = "books/create_book.html"
     model = Books
-    # fields = "__all__"
     admin_area = "my_books"
     form_class = AddBookForm
 
@@ -51,7 +50,7 @@ class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
     permission_classes = [LoginRequired]
     template_name = 'books/edit_book.html'
     admin_area = 'my_books'
-    fields = '__all__'
+    form_class = UpdateBookForm
 
     def get_object(self, queryset=None):
         pk = self.kwargs.get('book_pk', None)
@@ -61,4 +60,4 @@ class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
         return book
 
     def get_success_url(self):
-        reverse('')
+        return reverse('books:detail', args=[self.get_object().id])

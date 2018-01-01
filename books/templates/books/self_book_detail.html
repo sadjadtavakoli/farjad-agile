@@ -1,4 +1,10 @@
 {% extends 'members/__base_panel.html' %}
+{% load  static %}
+{% block css %}
+
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/css/book_details.css' %}">
+{% endblock %}
 {% block content %}
     <div class="ui internally celled grid">
         <div class="row">
@@ -12,7 +18,7 @@
                         <div class="four column row">
                             <div class="right floated column" style="direction: rtl"><h5
                                     class="ui right header">
-                                <span style="color: gray">نویسنده :</span>{{ book.author }}
+                                <span class="ftitle">نویسنده:</span> {{ book.author }}
                             </h5></div>
                             <div class="left floated column" style="direction: ltr">
                                 <a href="{% url 'books:edit' book_pk=book.id %}">
@@ -26,8 +32,62 @@
                     </div>
                 </div>
                 <div class="ui divider"></div>
+                <div class="ui top attached message">
+                    <div class="ui grid">
+                        <div class="three column row">
+                            <div class="column">
+                                <span class="ftitle"> دوره امانت: </span>
+                                {{ book.period }}</div>
+                            <div class="column">
+                                <span class="ftitle">هزینه: </span>
+                                {{ book.price }}
+                                <span>تومان</span></div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="inner-Header"> اطالاعات چاپ :</h5>
+                <div class="ui grid">
+                    <div class="three column row">
+                        <div class="column"><span class="ftitle"> سال چاپ: </span>
+                            {{ book.pub_date }}
+                        </div>
+                        <div class="column"><span class="ftitle">ژانر: </span>
+                            {{ book.genre }}
+                        </div>
+                        <div class="column"><span class="ftitle"> تیراژ: </span>
+                            {{ book.jeld_num }}
+                        </div>
+                    </div>
+                </div>
+                <h5 class="inner-Header"> گروه سنی :</h5>
+                <div class="ui grid">
+                    <div class="sixteen wide column"> {{ book.reader_age }}</div>
+                </div>
 
-                <p>{{ book.description }}</p>
+                <h5 class="inner-Header"> سایز :</h5>
+                <div class="ui grid">
+                    <div class="three column row">
+                        <div class="column"><span class="ftitle"> تعداد صفحات: </span>
+                            {{ book.page_num }}
+                        </div>
+                        <div class="column"><span class="ftitle"> طول کتاب: </span>
+                            {{ book.lengh }}
+                        </div>
+                        <div class="column"><span class="ftitle"> عرض کتاب: </span>
+                            {{ book.width }}
+                        </div>
+                    </div>
+                </div>
+                <h5 class="inner-Header"> توضیحات شما :</h5>
+
+                <div class="ui grid">
+                    <div class="sixteen wide column"> {{ book.description }}</div>
+                </div>
+                <h5 class="inner-Header"> خلاصه کتاب :</h5>
+
+                <div class="ui grid">
+                    <div class="sixteen wide column"> {{ book.summary }}</div>
+                </div>
             </div>
         </div>
     </div>

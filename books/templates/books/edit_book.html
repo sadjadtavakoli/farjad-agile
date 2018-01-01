@@ -1,13 +1,101 @@
 {% extends 'members/__base_panel.html' %}
+{% load  static %}
+{% load utils_tags %}
+
+{% block css %}
+
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/css/book_details.css' %}">
+{% endblock %}
 {% block content %}
-    <div class="ui internally celled grid">
-        <div class="row">
-            <div class="five wide column">
-                <img src="{{ form.image_url }}">
-            </div>
-            <div class="ten wide column">
-                {{ form }}
+    <form class="ui form" method="post">
+        {% csrf_token %}
+
+        <div class="ui internally celled grid">
+            <div class="row">
+                <div class="five wide column">
+{#                                        <img src="{{ form.image_url }}">#}
+                </div>
+                <div class="ten wide column" style="direction: rtl">
+{##}
+                    <h1 class="ui header">{% field_tag form.title %}</h1>
+                    <div>
+                        <div class="ui grid">
+                            <div class="four column row">
+                                <div class="right floated column" style="direction: rtl"><h5
+                                        class="ui right header">
+                                    <span class="ftitle">نویسنده:</span> {% field_tag form.author %}
+                                </h5></div>
+                                <div class="left floated column" style="direction: ltr">
+                                    <button type="submit" class="ui green tiny button">
+                                        <i class="Save icon"></i>
+                                        <span>ذخیره </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+                    <div class="ui top attached message">
+                        <div class="ui grid">
+                            <div class="three column row">
+                                <div class="column">
+                                    <span class="ftitle"> دوره امانت: </span>
+                                    {% field_tag form.period %}</div>
+                                <div class="column">
+                                    <span class="ftitle">هزینه: </span>
+                                    {% field_tag form.price %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="inner-Header"> اطالاعات چاپ :</h5>
+                    <div class="ui grid">
+                        <div class="three column row">
+                            <div class="column"><span class="ftitle"> سال چاپ: </span>
+                                {% field_tag form.pub_date %}
+                            </div>
+                            <div class="column"><span class="ftitle">ژانر: </span>
+                                {% field_tag form.genre %}
+                            </div>
+                            <div class="column"><span class="ftitle"> تیراژ: </span>
+                                {% field_tag form.jeld_num %}
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="inner-Header"> سایز :</h5>
+                    <div class="ui grid">
+                        <div class="three column row">
+                            <div class="column"><span class="ftitle"> تعداد صفحات: </span>
+                                {% field_tag form.page_num %}
+                            </div>
+                            <div class="column"><span class="ftitle"> طول کتاب: </span>
+                                {% field_tag form.length %}
+                            </div>
+                            <div class="column"><span class="ftitle"> عرض کتاب: </span>
+                                {% field_tag form.width %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="inner-Header"> گروه سنی :</h5>
+                    <div class="ui grid">
+                        <div class="sixteen wide column"> {% field_tag form.reader_age %}</div>
+                    </div>
+
+                    <h5 class="inner-Header"> توضیحات شما :</h5>
+
+                    <div class="ui grid">
+                        <div class="sixteen wide column"> {% field_tag form.description %}</div>
+                    </div>
+                    <h5 class="inner-Header"> خلاصه کتاب :</h5>
+
+                    <div class="ui grid">
+                        <div class="sixteen wide column"> {% field_tag form.summary %}</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
 {% endblock %}
