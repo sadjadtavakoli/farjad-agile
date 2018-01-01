@@ -18,16 +18,16 @@
 {% block body %}
     {{ block.super }}
     <div style="height: 70%;">
-        <form class="ui form" action="" method="post"
+        <form style="direction: rtl" class="ui form" action="" method="post"
               novalidate=""
               autocomplete="off">
             {% csrf_token %}
             <div class="two fields">
                 <div class="field">
-                    {% field_tag form.last_name placeholder="نام خانوادگی" %}
+                    {% field_tag form.first_name placeholder="نام" %}
                 </div>
                 <div class="field">
-                    {% field_tag form.first_name placeholder="نام" %}
+                    {% field_tag form.last_name placeholder="نام خانوادگی" %}
                 </div>
 
             </div>
