@@ -1,6 +1,7 @@
 from django.db import models
 
 from farjad.settings import PERIOD, GENRE, AGE
+from farjad.utils.utils_view import get_url
 
 
 class Books(models.Model):
@@ -18,3 +19,7 @@ class Books(models.Model):
     description = models.CharField(max_length=1000)
     summary = models.CharField(max_length=5000)
     owner = models.ForeignKey("members.Member", related_name="books", on_delete='CASCADE')
+
+    @property
+    def image_url(self):
+        return get_url(None, 'books/icons/book_icon.png')

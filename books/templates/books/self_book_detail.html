@@ -1,0 +1,34 @@
+{% extends 'members/__base_panel.html' %}
+{% block content %}
+    <div class="ui internally celled grid">
+        <div class="row">
+            <div class="five wide column">
+                <img src="{{ book.image_url }}">
+            </div>
+            <div class="ten wide column" style="direction: rtl">
+                <h1 class="ui header">{{ book.title }}</h1>
+                <div>
+                    <div class="ui grid">
+                        <div class="four column row">
+                            <div class="right floated column" style="direction: rtl"><h5
+                                    class="ui right header">
+                                <span style="color: gray">نویسنده :</span>{{ book.author }}
+                            </h5></div>
+                            <div class="left floated column" style="direction: ltr">
+                                <a href="{% url 'books:edit' book_pk=book.id %}">
+                                    <div class="ui tiny button">
+                                        <i class="Edit icon"></i>
+                                        <span>ویرایش </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+
+                <p>{{ book.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

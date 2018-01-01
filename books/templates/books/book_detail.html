@@ -1,6 +1,5 @@
-{% extends 'members/__base_panel.html' %}
-{% block content %}
-    {{ book }}
-
-
-{% endblock %}
+{% if book.owner == request.user %}
+    {% include 'books/self_book_detail.html' with book=book %}
+{% else %}
+    {% include 'books/others_book_detail.html' with book=book %}
+{% endif %}

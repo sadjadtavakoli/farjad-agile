@@ -1,7 +1,8 @@
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.urls.base import reverse
 from django.views.generic import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 from books.forms import AddBookForm
 from books.models import Books
@@ -33,12 +34,31 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
         return res
 
 
-class BookDetailView(DetailView):
+class BookDetailView(PanelAreaSetter, DetailView):
     model = Books
     template_name = 'books/book_detail.html'
     context_object_name = 'book'
+    admin_area = 'my_books'
 
     def get_object(self, queryset=None):
         pk = self.kwargs.get('book_pk', None)
         book = get_object_or_404(Books, id=pk)
         return book
+
+
+class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
+    model = Books
+    permission_classes = [LoginRequired]
+    template_name = 'books/edit_book.html'
+    admin_area = 'my_books'
+    fields = '__all__'
+
+    def get_object(self, queryset=None):
+        pk = self.kwargs.get('book_pk', None)
+        book = get_object_or_404(Books, id=pk)
+        if book.owner != self.request.user:
+            raise PermissionDenied
+        return book
+
+    def get_success_url(self):
+        reverse('')
