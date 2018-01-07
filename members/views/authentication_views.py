@@ -17,8 +17,6 @@ class LoginView(FormView):
         member = Member.get_member(data['username_or_phone'])
         user = authenticate(
             username=member.username, password=data['password'])
-        print(user)
-        print(self.request.user)
         login(self.request, user)
         return redirect(reverse("home"))
 
