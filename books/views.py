@@ -27,6 +27,7 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
 
     def form_valid(self, form):
         res = super(AddBookView, self).form_valid(form)
+        print(form.cleaned_data)
         instance = form.save(commit=False)
         instance.owner = self.request.user
         instance.save()
