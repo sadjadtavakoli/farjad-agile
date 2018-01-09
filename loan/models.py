@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Manager
 from django_fsm import FSMField, transition
-
+import datetime
 from farjad.utils.utils_view import auto_save
 
 
@@ -22,6 +22,7 @@ class Loan(models.Model):
     borrower = models.ForeignKey('members.Member', related_name='loans',
                                  on_delete=models.CASCADE)
 
+    date = models.DateField(default=datetime.date.today())
     state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='PROTECTED',
                                  blank=True, null=True)
 

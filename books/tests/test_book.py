@@ -24,7 +24,7 @@ class AddBookTest(WebTest):
             'length': 320,
             'jeld_num': 320,
             'width': 12,
-            'owner': Member.objects.first(),
+            'owner': Member.objects.first().id,
             'description': 'description',
             'summary': 'summary',
         }
@@ -39,7 +39,7 @@ class AddBookTest(WebTest):
 
         self.assertEqual(Books.objects.count(), 0)
         response = self.client.post(reverse('members:self:books:new'), self.data, follow=True)
-        self.assertRedirects(response, reverse("home"))
+        self.assertRedirects(response, reverse("members:self:books:all"))
         self.assertEqual(Books.objects.count(), 1)
 
     def test_add_book_invalid_data(self):

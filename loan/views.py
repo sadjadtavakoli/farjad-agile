@@ -1,13 +1,18 @@
 # Create your views here.
+import datetime
+
 from django.views.generic.list import ListView
 from django_fsm import TransitionNotAllowed
 from rest_framework.exceptions import ValidationError
+from rest_framework.generics import CreateAPIView, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from books.models import Books
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
 from loan.models import Loan, LoanState
 from loan.permissions import LenderPermission, BorrowerPermission
+from loan.serializers import LoanSerializer
 from members.views.area_setter import PanelAreaSetter
 
 
@@ -98,3 +103,14 @@ class BorrowerChangeLoanStateView(ChangeLoanStateView):
 
     def get_buttons(self):
         return self.request.loan.state.borrower_buttons
+
+
+class CreateLoanRequestAPIView(CreateAPIView):
+    serializer_class = LoanSerializer
+    permission_classes = (LoginRequired,)
+
+    def create(self, request, *args, **kwargs):
+        book_id = self.request.data['book']
+        book = get_object_or_404(Books, id=book_id)
+        Loan.objects.create(book=book, borrower=self.request.user, date=datetime.date.today())
+        return Response("object created")

@@ -17,11 +17,19 @@ from django.contrib import admin
 from django.urls.conf import include, path
 
 from farjad.views.home import HomeView
+from loan.views import CreateLoanRequestAPIView
 
+api_urlpatterns = ([
+                       path(r'create-loan/', CreateLoanRequestAPIView.as_view(), name="create-loan"),
+
+                   ], 'api')
 urlpatterns = [
+
     path(r'admin/', admin.site.urls, name='admin'),
+    path(r'api/', include(api_urlpatterns)),
     path(r'', HomeView.as_view(), name="home"),
     path(r'a', HomeView.as_view(), name="n-home"),
     path(r'', include('members.urls', namespace="members")),
     path(r'books/', include('books.urls', namespace="books")),
+
 ]
