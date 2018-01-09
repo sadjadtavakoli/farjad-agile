@@ -20,7 +20,8 @@ from farjad.views.home import HomeView
 from loan.views import CreateLoanRequestAPIView
 
 api_urlpatterns = ([
-                       path(r'create-loan/', CreateLoanRequestAPIView.as_view(), name="create-loan"),
+                       path(r'create-loan/', CreateLoanRequestAPIView.as_view(),
+                            name="create-loan")
 
                    ], 'api')
 urlpatterns = [

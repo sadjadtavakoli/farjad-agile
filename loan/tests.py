@@ -3,7 +3,9 @@ import datetime
 from django.test.client import Client
 from django.urls.base import reverse
 from django_webtest import WebTest
+from rest_framework.status import HTTP_200_OK
 
+from books.models import Books
 from members.apps import PASSWORD, USERNAME
 from members.models import Member
 
@@ -36,3 +38,6 @@ class CreateLoanTest(WebTest):
     def test_create_loan(self):
         self.add_books(1)
         self.client.login(username=USERNAME, password=PASSWORD)
+        book = Books.objects.first()
+        response = self.client.post(reverse('api:create-loan'), data={'book': book.id})
+        self.assertEqual(response.status_code, HTTP_200_OK)
