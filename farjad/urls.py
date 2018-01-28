@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls.conf import include, path
 
 from farjad.views.home import HomeView
-from loan.views import CreateLoanRequestAPIView
+from loan.views.loan_views import CreateLoanRequestAPIView
 
 api_urlpatterns = ([
                        path(r'create-loan/', CreateLoanRequestAPIView.as_view(),

@@ -1,8 +1,10 @@
 from django.urls.conf import include, path
 
 from books.views import AddBookView
-from loan.views import LenderLoansRequestList, BorrowerLoansRequestList, BorrowedBooksList, \
-    LoanedBooksList, LenderChangeLoanStateView, BorrowerChangeLoanStateView
+from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestList, \
+    BorrowerChangeLoanStateView
+from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
+    LenderChangeLoanStateView
 from members.views.authentication_views import LoginView, LogoutView, JoinView
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView
 from members.views.user_books_views import UserBooksListView
