@@ -12,7 +12,7 @@ class LoginForm(Form):
     def clean_password(self):
         data = self.cleaned_data
         username_or_phone = data.get('username_or_phone', None)
-        member = Member.get_member(username_or_phone)
+        member = Member.objects.get_member(username_or_phone)
         if member is None:
             raise forms.ValidationError(_('Username or Password is incorrect'))
         password = data.get('password', None)
