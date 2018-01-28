@@ -5,11 +5,30 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models import ImageField
+from django.db.models.manager import Manager
 from django.utils.translation import gettext_lazy as _
 
 from farjad.settings import EDUCATION_CHOICES
 from farjad.utils.utils_view import get_url
 from loan.models import Loan, LoanState
+
+
+class MemberManager(Manager):
+
+    @staticmethod
+    def get_member(phone_email_username):
+        try:
+            if '@' in phone_email_username:
+                kwargs = {'email': phone_email_username}
+            elif re.match(mobile_regex.regex, phone_email_username):
+                kwargs = {'phone': phone_email_username}
+            else:
+                kwargs = {'username': phone_email_username}
+            member = Member.objects.get(**kwargs)
+            return member
+
+        except(TypeError, Member.MultipleObjectsReturned, Member.DoesNotExist):
+            return None
 
 
 class Member(AbstractUser):
@@ -34,21 +53,7 @@ class Member(AbstractUser):
     city = models.CharField(max_length=60)
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
-
-    @staticmethod
-    def get_member(phone_email_username):
-        try:
-            if '@' in phone_email_username:
-                kwargs = {'email': phone_email_username}
-            elif re.match(mobile_regex.regex, phone_email_username):
-                kwargs = {'phone': phone_email_username}
-            else:
-                kwargs = {'username': phone_email_username}
-            member = Member.objects.get(**kwargs)
-            return member
-
-        except(TypeError, Member.MultipleObjectsReturned, Member.DoesNotExist):
-            return None
+    objects = MemberManager()
 
     @property
     def image_url(self):

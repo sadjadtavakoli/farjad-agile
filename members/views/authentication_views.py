@@ -14,7 +14,7 @@ class LoginView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        member = Member.get_member(data['username_or_phone'])
+        member = Member.objects.get_member(data['username_or_phone'])
         user = authenticate(
             username=member.username, password=data['password'])
         login(self.request, user)
