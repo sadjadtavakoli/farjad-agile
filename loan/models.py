@@ -1,7 +1,9 @@
+import datetime
+
 from django.db import models
 from django.db.models import Manager
 from django_fsm import FSMField, transition
-import datetime
+
 from farjad.utils.utils_view import auto_save
 
 
@@ -105,12 +107,10 @@ class LoanState(models.Model):
     @property
     def lender_buttons(self):
         buttons = {
-            LoanState.STATE_NEW: [{'label': 'دیده شده',
-                                   'action': 'mark-as-seen'},
-                                  {'label': 'قبول کردن', 'action': 'lender-accept'},
-                                  {'label': 'رد کردن', 'action': 'lender-reject'}],
-            LoanState.STATE_QUEUE: [{'label': 'قبول کردن', 'action': 'lender-accept'},
-                                    {'label': 'رد کردن', 'action': 'lender-reject'}],
+            LoanState.STATE_NEW: [{'label': 'رد کردن', 'action': 'lender-reject'},
+                                  {'label': 'قبول کردن', 'action': 'lender-accept'}],
+            LoanState.STATE_QUEUE: [{'label': 'رد کردن', 'action': 'lender-reject'},
+                                    {'label': 'قبول کردن', 'action': 'lender-accept'}],
             LoanState.STATE_REJECTED: [],
             LoanState.STATE_PAYED: [],
             LoanState.STATE_READY_TO_PAY: [{'label': 'لغو درخواست', 'action': 'lender-cancel'}],

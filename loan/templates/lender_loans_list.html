@@ -1,16 +1,36 @@
 {% extends 'members/__base_panel.html' %}
-
+{% load static %}
+{% block js %}
+    {{ block.super }}
+    <script type="application/javascript"
+            src="{% static 'loan/js/lender_loan_state.js' %}"></script>
+{% endblock %}
 {% block content %}
     <div class="ui celled list">
+        {% csrf_token %}
+
         {% for loan in loans %}
+
             <div class="item" style="direction: rtl">
                 <div class="left floated content">
+                    <input hidden class="change-state-url"
+                           value="{% url 'members:self:loans:lender-change-state' loan_pk=loan.pk %}">
+                    {% if loan.state.lender_buttons|length == 1 %}
+                        <div class="ui button"
+                             action="{{ loan.state.lender_buttons.0.action }}">{{ loan.state.lender_buttons.0.label }}</div>
+                    {% endif %}
+                    {% if loan.state.lender_buttons|length == 2 %}
 
-                    <div class="ui buttons">
-                        <div class="ui button">رد کردن</div>
-                        <div class="or"> یا</div>
-                        <div class="ui positive button">پذیرش</div>
-                    </div>
+                        <div class="ui buttons">
+                            <div class="ui button"
+                                 action="{{ loan.state.lender_buttons.0.action }}">{{ loan.state.lender_buttons.0.label }}</div>
+
+                            <div class="or"> یا</div>
+                            <div class="ui positive button"
+                                 action="{{ loan.state.lender_buttons.1.action }}">{{ loan.state.lender_buttons.1.label }}</div>
+
+                        </div>
+                    {% endif %}
 
                 </div>
                 <img class="ui avatar image" src="/static/members/icons/default_profile.png">
