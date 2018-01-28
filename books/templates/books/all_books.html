@@ -1,1 +1,6 @@
+{% extends 'farjad/__base.html' %}
+{% block body %}
+    {% include 'farjad/main_navbar.html' with active=1 %}
+
 {{ books }}
+{% endblock %}
