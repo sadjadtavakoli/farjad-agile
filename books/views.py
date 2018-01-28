@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
@@ -61,3 +62,12 @@ class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('books:detail', args=[self.get_object().id])
+
+
+class BooksListView(ListView):
+    model = Books
+    context_object_name = 'books'
+    template_name = 'books/all_books.html'
+
+    def get_queryset(self):
+        return Books.objects.all()
