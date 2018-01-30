@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.urls.base import reverse
+from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 
@@ -51,3 +52,14 @@ class EditProfileView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('members:self:profile')
+
+
+class InvitationTemplateView(PanelAreaSetter, PermissionCheckerMixin, TemplateView):
+    template_name = 'members/invitation_code.html'
+    permission_classes = [LoginRequired]
+    admin_area = "invitation"
+
+    def get_context_data(self, **kwargs):
+        context = super(InvitationTemplateView, self).get_context_data(**kwargs)
+        context['code'] = self.request.user.get_invitation_code()
+        return context

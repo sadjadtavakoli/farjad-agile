@@ -1,0 +1,28 @@
+{% extends 'members/__base_panel.html' %}
+{% load utils_tags %}
+{% load static %}
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/css/submitBook.css' %}">
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+
+    <script type="application/javascript"
+            src="{% static 'members/profile/js/invitation_code.js' %}"></script>
+
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+    <div class="ui form tiny segment container " style="background-color: white;direction: rtl ">
+        <div style="text-align: center; height: 50em">
+            <button id="code-visibility" class="blue ui button"
+                    style="display: flex; font-size: large;justify-content: center;align-items: center; width: 100%; height: 10%">
+                مشاهده کد دعوت
+            </button>
+            <span id="invitation-code"
+                  style="color: white; font-size: large; display: none;justify-content: center;align-items: center; width: 100%; height: 10%; background-color: lightgray">
+                {{ code }}</span>
+        </div>
+    </div>
+{% endblock %}

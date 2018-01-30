@@ -1,4 +1,6 @@
+import random
 import re
+import string
 
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
@@ -11,6 +13,14 @@ from django.utils.translation import gettext_lazy as _
 from farjad.settings import EDUCATION_CHOICES
 from farjad.utils.utils_view import get_url
 from loan.models import Loan, LoanState
+
+
+def generate_code():
+    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+    while Member.objects.filter(invitation_code=code).exists():
+        code = ''.join(
+            random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+    return code
 
 
 class MemberManager(BaseUserManager):
@@ -52,6 +62,7 @@ class Member(AbstractUser):
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
     balance = models.IntegerField(default=0)
+    invitation_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     objects = MemberManager()
 
     @property
@@ -68,6 +79,13 @@ class Member(AbstractUser):
         if full_name == "":
             full_name = self.username
         return full_name
+
+    def get_invitation_code(self):
+        if self.invitation_code is None:
+            self.invitation_code = generate_code()
+            self.save()
+
+        return self.invitation_code
 
     @property
     def new_loan_requests(self):

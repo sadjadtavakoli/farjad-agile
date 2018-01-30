@@ -19,6 +19,10 @@
                    class="{% if request.admin_area == 'my_profile' %}active {% endif %}item">
                     حساب کاربری
                 </a>
+                <a href="{% url 'members:self:invitation' %}"
+                   class="{% if request.admin_area == 'invitation' %}active {% endif %}item">
+دعوت از دوستان
+                </a>
             </div>
 
             <h6 class="ui horizontal divider header" style="color: gray; font-size: smaller">

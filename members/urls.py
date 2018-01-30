@@ -1,4 +1,5 @@
 from django.urls.conf import include, path
+from django.views.generic.base import TemplateView
 
 from books.views import AddBookView
 from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestList, \
@@ -6,7 +7,8 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
 from members.views.authentication_views import LoginView, LogoutView, JoinView
-from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView
+from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
+    InvitationTemplateView
 from members.views.user_books_views import UserBooksListView
 
 app_name = "members"
@@ -32,6 +34,9 @@ self_loans_urlpatterns = ([
                           ], 'loans')
 self_urlpatterns = ([
                         path(r'profile/', SelfProfileView.as_view(), name="profile"),
+                        path(r'invitation/',
+                             InvitationTemplateView.as_view(),
+                             name="invitation"),
                         path(r'profile/edit/', EditProfileView.as_view(), name="edit-profile"),
                         path(r'books/', include(self_books_urlpatterns)),
                         path(r'loans/', include(self_loans_urlpatterns)),
@@ -43,5 +48,3 @@ urlpatterns = [
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
     path(r'self/', include(self_urlpatterns)),
 ]
-
-
