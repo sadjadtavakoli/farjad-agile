@@ -1,8 +1,11 @@
 from django.contrib.auth import login, logout, authenticate
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
 from django.views.generic.edit import FormView, CreateView
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from members.forms.authentication_forms import LoginForm
 from members.models import Member
@@ -32,7 +35,7 @@ class JoinView(CreateView):
     template_name = "members/join.html"
     model = Member
     fields = ['first_name', 'last_name', 'password', 'username', 'phone', 'profession',
-              'education', 'city', 'province', 'address', 'email']
+              'education', 'city', 'province', 'address', 'email', 'invited_with']
 
     def get_success_url(self):
         return reverse("home")
@@ -53,3 +56,14 @@ class JoinView(CreateView):
         login(self.request, user)
 
         return ret
+
+
+class CheckInvitationCode(APIView):
+    def get(self, request, *args, **kwargs):
+        code = self.request.data.get('code', '')
+        is_valid = True
+        try:
+            Member.objects.get(invitation_code=code)
+        except ObjectDoesNotExist:
+            is_valid = False
+        return Response(data={'is_valid': is_valid})

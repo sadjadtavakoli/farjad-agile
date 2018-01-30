@@ -1,5 +1,7 @@
 from django import forms
+from django.core.exceptions import ObjectDoesNotExist
 from django.forms import Form
+from django.forms.models import ModelForm
 from django.utils.translation import gettext_lazy as _
 
 from members.models import Member
@@ -19,3 +21,19 @@ class LoginForm(Form):
         if not member.check_password(password):
             raise forms.ValidationError(_('Username or Password is incorrect'))
         return password
+
+    #
+    # class JoinForm(ModelForm):
+    #     class Meta:
+    #         model = Member
+    #         fields = ['first_name', 'last_name', 'password', 'username', 'phone', 'profession',
+    #                   'education', 'city', 'province', 'address', 'email', 'invited_with']
+    #
+    #     def clean_invitation_code(self):
+    #         data = self.cleaned_data
+    #         invitation_code = data.get('invitation_code', None)
+    #         try:
+    #             Member.objects.get(code=invitation_code)
+    #         except ObjectDoesNotExist:
+    #             raise forms.ValidationError('این کد دعوت معتبر نمی‌باشد.')
+    #         return invitation_code

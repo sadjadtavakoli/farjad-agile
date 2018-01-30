@@ -64,6 +64,7 @@ class Member(AbstractUser):
     balance = models.IntegerField(default=0)
     invitation_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     objects = MemberManager()
+    invited_with = models.CharField(max_length=10, blank=True, null=True)
 
     @property
     def image_url(self):

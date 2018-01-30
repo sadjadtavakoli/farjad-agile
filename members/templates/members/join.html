@@ -73,12 +73,23 @@
                 </div>
             </div>
 
+            <div class="field">
+                <div class="ui labeled left icon input">
+                    <span class="ui tag label">
+                        کد دعوت
+                    </span>
+                    {% field_tag form.invited_with %}
+
+                </div>
+                <div style="display:none; color: darkred; " >این کد دعوت نامعتبر می‌باشد.</div>
+
+            </div>
+
             <button type="submit" class="ui fluid  green submit button">ثبت نام
             </button>
 
         </form>
         <a href="{% url "members:login" %}">
-
             <label style="color: dodgerblue" class="ui label">وارد شوید
             </label></a>
         <label class="ui label"> قبلا ثبت‌نام کرده‌اید‌؟
