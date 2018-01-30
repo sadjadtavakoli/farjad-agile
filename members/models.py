@@ -51,6 +51,7 @@ class Member(AbstractUser):
     city = models.CharField(max_length=60)
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
+    balance = models.IntegerField(default=0)
     objects = MemberManager()
 
     @property
