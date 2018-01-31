@@ -6,6 +6,7 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
     BorrowerChangeLoanStateView
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
+from members.views.authentication_api_views import PhoneValidator
 from members.views.authentication_views import LoginView, LogoutView, JoinView, CheckInvitationCode
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
     InvitationTemplateView
@@ -32,6 +33,12 @@ self_loans_urlpatterns = ([
                                    name="borrower-change-state"),
 
                           ], 'loans')
+
+
+api_urlpatterns = ([
+    path(r'phone-validator/', PhoneValidator.as_view(), name="phone-validator"),
+
+])
 self_urlpatterns = ([
                         path(r'profile/', SelfProfileView.as_view(), name="profile"),
                         path(r'invitation/',
@@ -45,9 +52,11 @@ self_urlpatterns = ([
                         path(r'loans/', include(self_loans_urlpatterns)),
                     ], 'self')
 urlpatterns = [
+    path(r'api/', include(api_urlpatterns), name="api"),
     path(r'login/', LoginView.as_view(), name="login"),
     path(r'join/', JoinView.as_view(), name="join"),
     path(r'logout/', LogoutView.as_view(), name="logout"),
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
     path(r'self/', include(self_urlpatterns)),
 ]
+

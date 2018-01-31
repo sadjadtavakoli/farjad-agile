@@ -24,7 +24,7 @@ class Loan(models.Model):
     borrower = models.ForeignKey('members.Member', related_name='loans',
                                  on_delete=models.CASCADE)
 
-    date = models.DateField(default=datetime.date.today())
+    date = models.DateField(default=0)
     state = models.OneToOneField('loan.LoanState', related_name="+", on_delete='PROTECTED',
                                  blank=True, null=True)
 
@@ -105,6 +105,7 @@ class LoanState(models.Model):
                            'borrower-payed': payed}
 
     @property
+
     def lender_buttons(self):
         buttons = {
             LoanState.STATE_NEW: [{'label': 'رد کردن', 'action': 'lender-reject'},
