@@ -4,7 +4,7 @@
     <div class="ui relaxed divided items">
         {% for loan in loans %}
             <div class="item" style="direction: rtl">
-            <div class="ui  image">
+                <div class="ui  image">
                     <img src="/static/books/icons/75801069.jpg" style="height: 22rem">
                 </div>
                 <div class="content" style="margin-right: 1rem">
@@ -27,6 +27,7 @@
                         <i class="dollar icon"></i>
                         {{ loan.book.price }}
                     </div>
+
                     <div class="extra">
                         <div class="ui left floated ">
                             <a class="ui tag label"
@@ -42,8 +43,15 @@
                                style="margin-top: 0.4rem">{{ loan.book.genre }}</a>
                             <a class="ui  tag teal label">{{ loan.book.reader_age }}</a>
                         </div>
-
-
+                    </div>
+                    <div class="extra">
+                        <div class="right floated content">
+                            <div class="ui buttons">
+                                <div class="ui button">رد کردن</div>
+                                <div class="or"> یا</div>
+                                <div class="ui positive button">پذیرش</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

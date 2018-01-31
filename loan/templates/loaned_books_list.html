@@ -1,6 +1,34 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
-    {{ loans }}
+    <div class="ui celled list">
+        {% for loan in loans %}
+            <div class="item" style="direction: rtl">
+
+                <img class="ui avatar image" src="/static/members/icons/default_profile.png">
+                <div class="content" style="margin-right: 1.1em">
+                    <div class="header">
+                        {{ loan.borrower.username }}
+                    </div>
+                    <div class="meta">
+                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} درخواست امانت
+                        کتاب دارد
+                    </div>
+                </div>
+
+                <img class="ui avatar image" src="/static/books/icons/75801069.jpg">
+                <div class="content" style="margin-right: 1.1em">
+                    <div class="header">
+                        {{ loan.book.title }}
+                    </div>
+                    <div class="meta">
+                        {{ loan.book.author }}
+                    </div>
+                </div>
+                <span> <a class="ui label"
+                          style="margin-top: 0.4rem">{{ loan.state.state }}</a></span>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
