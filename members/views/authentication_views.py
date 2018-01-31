@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
@@ -15,6 +15,7 @@ class LoginView(FormView):
     def form_valid(self, form):
         data = form.cleaned_data
         member = Member.objects.get_member(data['username_or_phone'])
+        print(member.username)
         user = authenticate(
             username=member.username, password=data['password'])
         login(self.request, user)

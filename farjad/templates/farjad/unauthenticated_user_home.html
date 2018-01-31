@@ -7,7 +7,8 @@
          style="background-image: url(http://www.kumc.edu/images/history%20of%20medicine/library.jpg);
           background-repeat: no-repeat;
           width: 100% ; height: 45%; background-size: cover">
-        {% include 'members/unauthenticated_user_navbar.html' %}
+        {% include 'farjad/main_navbar.html' with inverted=1%}
+
 
         <h2 class="ui center aligned header">
             <img class="ui icon small circular image"
@@ -32,7 +33,8 @@
                             <label>Username</label>
                             <div class="ui left icon input">
                                 <input type="text" name="username_or_phone" required="required"
-                                       id="id_username_or_phone" placeholder="نام کاربری یا ایمیل یا شماره همراه">
+                                       id="id_username_or_phone"
+                                       placeholder="نام کاربری یا ایمیل یا شماره همراه">
                                 <i class="user icon"></i>
                             </div>
                         </div>

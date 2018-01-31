@@ -23,7 +23,7 @@ class ChangeLoanStateView(PermissionCheckerMixin, APIView):
         action = self.request.data.get('action')
         try:
             action_method = self.action_map[action]
-            action_method(request.order.state)
+            action_method(request.loan.state)
 
         except (TransitionNotAllowed, KeyError):
             raise ValidationError("این کار شما مجاز نیست . ")
