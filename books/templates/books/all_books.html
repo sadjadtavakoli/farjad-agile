@@ -1,8 +1,8 @@
 {% extends 'farjad/__base.html' %}
+{% load utils_tags %}
+
 {% block body %}
     {% include 'farjad/main_navbar.html' with active=1 %}
-    {#    <h1 class="ui" style="margin-right: 5.5%;">#}
-    {#            <h3 class="ui header" style="direction: rtl"> نمایش همه‌ی کتاب‌ها</h3>#}
     <form class="ui form " method="get" action="{% url 'books:all' %}">
         <div class="fields">
             <div class="two wide field"></div>
@@ -41,17 +41,14 @@
                 <div class="image">
                     <img src="{{ book.image_url }}">
                 </div>
-                <a class="ui button" href="{% url 'books:detail' book_pk=book.pk %}">
+
+                <div class="ui two buttons">
+                <a class="ui button"  style="font-size: small" href="{% url 'books:detail' book_pk=book.pk %}">
                     مشاهده کتاب
                 </a>
-                <div class="content">
-                    <div class="header">{{ book.title }}</div>
-                    <div class="meta">
-                        <a>نویسنده : {{ book.author }}</a>
-                    </div>
-                    <div class="description ">
-                        {{ book.summary }}
-                    </div>
+                    <button style="font-size: small" class="ui blue button ">
+                        درخواست امانت
+                    </button>
                 </div>
                 <div class="extra content">
                     <div class="right floated">
@@ -59,6 +56,18 @@
                     </div>
                     <div class="left floated">{{ book.price }}
                         <span>تومان</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="header">{{ book.title }}</div>
+                    <div class="meta">
+                        <a>نویسنده : {{ book.author }}</a>
+                    </div>
+
+                    <div class="description"
+                         style="white-space: nowrap;width: 100%;
+                         overflow: hidden;text-overflow: ellipsis; ">
+                        {{ book.summary }}
                     </div>
                 </div>
             </div>
