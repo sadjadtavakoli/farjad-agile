@@ -12,8 +12,10 @@ def create_admin(**kwargs):
     try:
         Member.objects.get(username=USERNAME)
     except Member.DoesNotExist:
-        Member.objects.create_superuser(
-            USERNAME, 'farjad@gmail.com', PASSWORD, phone=PHONE, age=AGE)
+        member = Member.objects.create(
+            username=USERNAME, email='farjad@gmail.com', password=PASSWORD, phone=PHONE, age=AGE)
+        member.is_admin = True
+        member.save()
 
 
 class MembersConfig(AppConfig):

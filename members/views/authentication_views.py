@@ -1,5 +1,4 @@
 from django.contrib.auth import login, logout, authenticate
-from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
@@ -51,6 +50,13 @@ class JoinView(CreateView):
         member = Member.objects.get(username=data['username'])
         member.set_password(data['password'])
         member.save()
+        invited_code = data['invited_code']
+        if invited_code != None:
+            inviter_member = Member.objects.get(invitation_code=invited_code)
+            inviter_member.balance += 10000
+            inviter_member.save()
+            member.balance += 5000
+            member.save()
         user = authenticate(
             username=data['username'], password=data['password'])
         login(self.request, user)
