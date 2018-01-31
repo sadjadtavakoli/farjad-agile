@@ -92,6 +92,12 @@ class BooksListView(ListView):
             return function(query)
         return Books.objects.all()
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        context['field'] = self.request.GET.get('field', '')
+        context['query'] = self.request.GET.get('query', '')
+        return context
+
     action_map = {
         'title': query_on_title,
         'author': query_on_author,

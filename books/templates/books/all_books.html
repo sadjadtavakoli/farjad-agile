@@ -1,13 +1,40 @@
 {% extends 'farjad/__base.html' %}
 {% block body %}
     {% include 'farjad/main_navbar.html' with active=1 %}
+    {#    <h1 class="ui" style="margin-right: 5.5%;">#}
+    {#            <h3 class="ui header" style="direction: rtl"> نمایش همه‌ی کتاب‌ها</h3>#}
+    <form class="ui form " method="get" action="{% url 'books:all' %}">
+        <div class="fields">
+            <div class="two wide field"></div>
+            <div class="twelve wide field">
+                <div class="ui right action left icon input">
+                    <button class="ui basic button">
+                        <i class="search icon"></i>
+                        جست‌وجو
+                    </button>
+                    <input placeholder="Search" type="text" name="query" value="{{ query }}">
+                    <label>
+                        <select class="ui compact selection dropdown" name="field">
+                            <option  {% if field == '' %} selected {% endif %} value="">All
+                            </option>
+                            <option {% if field == 'title' %} selected {% endif %} value="title">
+                                Title
+                            </option>
+                            <option {% if field == 'author' %} selected {% endif %}value="author">
+                                Author
+                            </option>
+                            <option {% if field == 'genre' %} selected {% endif %}  value="genre">
+                                Genre
+                            </option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="two wide field"></div>
+        </div>
 
-    <h1 class="ui"style="margin-right: 5.5%;">
-    <a href="">
-            <h1 class="ui header" style="direction: rtl"> نمایش همه‌ی کتاب‌ها
-            </h1>
-    </a>
-        </h1>
+    </form>
+    {#    </h1>#}
     <div class="ui link cards" style="direction: rtl;margin-right: 5%">
         {% for book in books %}
             <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
@@ -38,5 +65,4 @@
         {% endfor %}
 
     </div>
-
 {% endblock %}
