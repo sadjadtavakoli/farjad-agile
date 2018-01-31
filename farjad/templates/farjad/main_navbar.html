@@ -12,8 +12,8 @@
     </a>
     <div class="right menu">
         {% if request.user.is_authenticated %}
-
-            <span class="item">{{ request.user.full_name }} سلام </span>
+            <span class="item">اعتبار: {{ request.user.balance }} تومان</span>
+            <span class="item">سلام, {{request.user.full_name}}</span>
             <a class="item" href="{% url 'members:logout' %}">
                 خروج
             </a>
