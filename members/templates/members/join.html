@@ -18,6 +18,7 @@
 {% block body %}
     {{ block.super }}
     <div style="height: 70%;">
+        <input hidden id="code-verification" value="{% url 'members:self:invitation-check' %}">
         <form style="direction: rtl" class="ui form" action="" method="post"
               novalidate=""
               autocomplete="off">
@@ -81,11 +82,11 @@
                     {% field_tag form.invited_with %}
 
                 </div>
-                <div style="display:none; color: darkred; " >این کد دعوت نامعتبر می‌باشد.</div>
+                <div id="invitation-error" style="display:none; color: darkred; " >این کد دعوت نامعتبر می‌باشد.</div>
 
             </div>
 
-            <button type="submit" class="ui fluid  green submit button">ثبت نام
+            <button type="submit" id="submit-button" class="ui fluid  green submit button">ثبت نام
             </button>
 
         </form>

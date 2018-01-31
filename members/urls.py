@@ -6,7 +6,7 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
     BorrowerChangeLoanStateView
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
-from members.views.authentication_views import LoginView, LogoutView, JoinView
+from members.views.authentication_views import LoginView, LogoutView, JoinView, CheckInvitationCode
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
     InvitationTemplateView
 from members.views.user_books_views import UserBooksListView
@@ -37,6 +37,9 @@ self_urlpatterns = ([
                         path(r'invitation/',
                              InvitationTemplateView.as_view(),
                              name="invitation"),
+                        path(r'invitation-checking/',
+                             CheckInvitationCode.as_view(),
+                             name="invitation-check"),
                         path(r'profile/edit/', EditProfileView.as_view(), name="edit-profile"),
                         path(r'books/', include(self_books_urlpatterns)),
                         path(r'loans/', include(self_loans_urlpatterns)),

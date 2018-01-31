@@ -62,8 +62,6 @@ class CheckInvitationCode(APIView):
     def get(self, request, *args, **kwargs):
         code = self.request.data.get('code', '')
         is_valid = True
-        try:
-            Member.objects.get(invitation_code=code)
-        except ObjectDoesNotExist:
+        if not Member.objects.filter(invitation_code=code).exists():
             is_valid = False
         return Response(data={'is_valid': is_valid})
