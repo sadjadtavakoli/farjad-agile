@@ -64,10 +64,37 @@ class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
         return reverse('books:detail', args=[self.get_object().id])
 
 
+def query_on_title(query):
+    queryset = Books.objects.all()
+    return queryset.filter(title__icontains=query)
+
+
+def query_on_genre(query):
+    queryset = Books.objects.all()
+    return queryset.filter(genre__icontains=query)
+
+
+def query_on_author(query):
+    queryset = Books.objects.all()
+    return queryset.filter(author__icontains=query)
+
+
 class BooksListView(ListView):
     model = Books
     context_object_name = 'books'
     template_name = 'books/all_books.html'
 
     def get_queryset(self):
+        field = self.request.GET.get('field', '')
+        query = self.request.GET.get('query', '')
+        function = self.action_map.get(field, None)
+        if function is not None:
+            return function(query)
         return Books.objects.all()
+
+    action_map = {
+        'title': query_on_title,
+        'author': query_on_author,
+        'genre': query_on_genre,
+
+    }
