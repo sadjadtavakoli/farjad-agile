@@ -4,7 +4,7 @@ from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
@@ -34,6 +34,10 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
         instance.owner = self.request.user
         instance.save()
         return res
+
+
+class AddBookAPIView(CreateAPIView):
+    serializer_class = BookSerializer
 
 
 class BookDetailView(PanelAreaSetter, DetailView):
