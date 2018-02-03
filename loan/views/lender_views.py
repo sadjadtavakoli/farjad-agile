@@ -31,7 +31,8 @@ class LoanedBooksList(PanelAreaSetter, PermissionCheckerMixin, ListView):
     template_name = 'loaned_books_list.html'
 
     def get_queryset(self):
-        return Loan.objects.get_borrowed_books().filter(book__owner=self.request.user)
+
+     return Loan.objects.get_borrowed_books().filter(book__owner=self.request.user)
 
 
 class LenderChangeLoanStateView(ChangeLoanStateView):

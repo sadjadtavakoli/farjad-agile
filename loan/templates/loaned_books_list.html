@@ -11,8 +11,8 @@
                         {{ loan.borrower.username }}
                     </div>
                     <div class="meta">
-                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} درخواست امانت
-                        کتاب دارد
+                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} کتاب را
+                        امانت گرفته است.
                     </div>
                 </div>
 
@@ -25,8 +25,13 @@
                         {{ loan.book.author }}
                     </div>
                 </div>
-                <span> <a class="ui label"
-                          style="margin-top: 0.4rem">{{ loan.state.state }}</a></span>
+                <span class="meta">               <b>تاریخ شروع:</b>
+                    {{ loan.date }}
+                </span>
+                <span class="meta" style="margin-right: 0.75rem">               <b>تاریخ پایان:</b>
+                    {{ loan.date }}
+                </span>
+
             </div>
         {% endfor %}
     </div>
