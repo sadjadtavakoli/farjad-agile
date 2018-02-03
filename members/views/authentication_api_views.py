@@ -14,6 +14,4 @@ class PhoneValidator(APIView):
             member = Member.objects.get(phone=phone_number)
             response = True
             member_name = member.full_name
-            token = Token.objects.create(user=member)
-            print(token)
         return Response(data={'existence': response , "name": member_name})
