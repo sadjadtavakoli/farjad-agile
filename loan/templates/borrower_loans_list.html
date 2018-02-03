@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="ui relaxed divided items">
+
         {% for loan in loans %}
             <div class="item" style="direction: rtl">
                 <div class="ui  image">
@@ -27,25 +28,33 @@
                         <i class="dollar icon"></i>
                         {{ loan.book.price }}
                     </div>
-
-                    <div class="extra">
-                        <div class="ui left floated ">
-                            <a class="ui tag label"
-                               style="margin-top: 0.4rem">{{ loan.state.shown_state }}</a>
-                            <a class="ui tag teal label">{{ loan.book.period }}</a>
+                    <div class="description">
+                        <div class="three fields">
+                            <span class="field">
+                                <b>بازه زمانی:</b> {{ loan.book.period }}
+                            </span>
+                            <span class="field" style="margin-right: 6rem">
+                                <b>رده سنی:</b> {{ loan.book.reader_age }}
+                            </span>
+                            <span class="field" style="margin-right: 6rem">
+                                <b>ژانر:</b> {{ loan.book.genre }}
+                            </span>
+                            <span class="field" style="margin-right: 6rem">
+                                <b>سال انتشار:</b> {{ loan.book.pub_date }}
+                            </span>
                         </div>
 
 
                     </div>
-                    <div class="extra">
-                        <div class="ui left floated ">
-                            <a class="ui tag label"
-                               style="margin-top: 0.4rem">{{ loan.book.genre }}</a>
-                            <a class="ui  tag teal label">{{ loan.book.reader_age }}</a>
-                        </div>
-                    </div>
-                    <div class="extra">
-                        <div class="right floated content">
+{#                    <div class="extra">#}
+{#                        <div class="ui left floated ">#}
+{#                            <a class="ui  label"#}
+{#                               style="margin-top: 0.4rem">{{ loan.state.shown_state }}</a>#}
+{#                        </div>#}
+{#                    </div>#}
+
+                    <div class="extra" style="margin-top: 3rem">
+                        <div class="left floated content">
                             <div class="ui buttons">
                                 <div class="ui button">رد کردن</div>
                                 <div class="or"> یا</div>

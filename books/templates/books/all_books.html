@@ -49,6 +49,14 @@
             <input hidden id="book-id" value="{{ book.pk }}">
 
             <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
+            <div class="ui two buttons">
+                    <a class="ui button" style="font-size: small"
+                       href="{% url 'members:profile' book.owner.pk %}">
+ صاحب کتاب: {{ book.owner.username }}
+                        {{ book.ownwer.first_name }}  {{ book.ownwer.last_name }}
+                    </a>
+
+                </div>
                 <div class="image">
                     <img src="{{ book.image_url }}">
                 </div>
