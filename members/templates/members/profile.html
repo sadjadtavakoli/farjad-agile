@@ -1,1 +1,73 @@
-{{ profile }}
+{% extends 'farjad/__base.html' %}
+{% block body %}
+{% include 'farjad/main_navbar.html' with active=2 %}
+    <div class="ui form tiny segment container " style="margin-top:4rem;background-color: white;direction: rtl ">
+        <h2 class="ui header" style="margin-top: 1%">
+
+            <div class="content">
+                اطلاعات حساب {{ profile.username }}
+            </div>
+        </h2>
+        <img class="ui left floated medium circular image" style="margin-left: 2rem"
+             src={{ profile.image_url }}>
+        <div class="three fields" style="margin-top: 5%;">
+            <div class="field">
+                <b>نام</b> : {{ profile.first_name }}
+            </div>
+            <div class="field">
+                <b>نام خانوادگی</b> : {{ profile.last_name }}
+
+            </div>
+            <div class="field">
+                <b>پست الکترونیک</b> : {{ profile.email }}
+
+            </div>
+        </div>
+        <div class="three fields" style="margin-top: 5%;">
+            <div class="field">
+                <b>تاریخ تولد</b> : {{ profile.birth_date }}
+            </div>
+            <div class="field">
+                <b>شماره تلفن</b> : {{ profile.phone }}
+
+            </div>
+            <div class="field">
+                <b>سن</b> : {{ profile.age }}
+
+            </div>
+        </div>
+        <div class="three fields" style="margin-top: 5%;">
+            <div class="field">
+                <b>شغل</b> : {{ profile.profession }}
+            </div>
+            <div class="field">
+                <b>مدرک تحصیلی</b> : {{ profile.education }}
+
+            </div>
+
+        </div>
+        <div class="three fields" style="margin-top: 5%;">
+            <div class="field">
+                <b>شهر</b> : {{ profile.city }}
+            </div>
+            <div class="field">
+                <b>استان</b> : {{ profile.province }}
+
+            </div>
+            <div class="field">
+                <b>آدرس</b> : {{ profile.address }}
+
+            </div>
+        </div>
+        <div class="three fields" style="margin-top: 5%;">
+            <div class="field">
+
+            </div>
+
+            <div class="field">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

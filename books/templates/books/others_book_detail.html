@@ -1,11 +1,14 @@
-{% extends 'members/__base_panel.html' %}
+{% extends 'farjad/__base.html' %}
+
 {% load  static %}
 {% block css %}
 
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'books/css/book_details.css' %}">
 {% endblock %}
-{% block content %}
+
+{% block body %}
+    {% include 'farjad/main_navbar.html' with active=2 %}
     <div class="ui internally celled grid">
         <div class="row">
             <div class="five wide column">
@@ -16,14 +19,17 @@
                 <div>
                     <div class="ui grid">
                         <div class="four column row">
-                            <div class="right floated column" style="direction: rtl"><h5
+                            <div class="right floated column"><h5
                                     class="ui right header">
                                 <span class="ftitle">نویسنده:</span> {{ book.author }}
                             </h5></div>
-                            <div class="left floated column" style="direction: ltr">
+                            <div class="left floated column" style="direction: ltr;">
                                 <a href="{% url 'books:edit' book_pk=book.id %}">
                                 </a>
                             </div>
+                            <a href="{% url 'members:profile' book.owner.pk %}">
+                            <img class="ui left floated medium circular image" style="width: 125px;height: 125px; margin-top:-4rem;margin-left: 5rem"
+                                 src={{book.owner.image_url }}></a>
                         </div>
                     </div>
                 </div>

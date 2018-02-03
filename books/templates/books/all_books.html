@@ -20,19 +20,19 @@
                         <i class="search icon"></i>
                         جست‌وجو
                     </button>
-                    <input placeholder="Search" type="text" name="query" value="{{ query }}">
+                    <input placeholder="جست و جو" type="text" name="query" value="{{ query }}"style="direction: rtl">
                     <label>
-                        <select class="ui compact selection dropdown" name="field">
-                            <option  {% if field == '' %} selected {% endif %} value="">All
+                        <select style="direction: rtl" class="ui compact selection dropdown" name="field">
+                            <option style="direction: rtl"  {% if field == '' %} selected {% endif %} value="">همه
                             </option>
                             <option {% if field == 'title' %} selected {% endif %} value="title">
-                                Title
+                                عنوان
                             </option>
                             <option {% if field == 'author' %} selected {% endif %}value="author">
-                                Author
+                                نام نویسنده
                             </option>
                             <option {% if field == 'genre' %} selected {% endif %}  value="genre">
-                                Genre
+                                ژانر
                             </option>
                         </select>
                     </label>
@@ -49,10 +49,18 @@
             {% with  book_dic.book_info as book %}
                 <input hidden id="book-id" value="{{ book.pk }}">
 
-                <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
-                    <div class="image">
-                        <img src="{{ book.image_url }}">
-                    </div>
+            <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
+            <div class="ui two buttons">
+                    <a class="ui button" style="font-size: small"
+                       href="{% url 'members:profile' book.owner.pk %}">
+ صاحب کتاب: {{ book.owner.username }}
+                        {{ book.ownwer.first_name }}  {{ book.ownwer.last_name }}
+                    </a>
+
+                </div>
+                <div class="image">
+                    <img src="{{ book.image_url }}">
+                </div>
 
                     <div class="ui two buttons">
                         <a class="ui button" style="font-size: small"

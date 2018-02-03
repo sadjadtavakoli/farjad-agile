@@ -73,6 +73,10 @@ class Member(AbstractUser):
         else:
             return get_url(None, 'members/icons/default_profile.png')
 
+    def increase_balance(self, amount):
+        self.balance+= amount
+        self.save()
+
     @property
     def full_name(self):
         full_name = self.first_name + " " + self.last_name

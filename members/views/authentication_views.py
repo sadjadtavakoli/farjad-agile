@@ -54,10 +54,8 @@ class JoinView(CreateView):
         invited_code = data.get('invited_code', None)
         if invited_code != None:
             inviter_member = Member.objects.get(invitation_code=invited_code)
-            inviter_member.balance += 10000
-            inviter_member.save()
-            member.balance += 5000
-            member.save()
+            inviter_member.increase_balance (10000)
+            member.increase_balance (5000)
         user = authenticate(
             username=data['username'], password=data['password'])
         login(self.request, user)
