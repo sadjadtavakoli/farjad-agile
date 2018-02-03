@@ -4,9 +4,11 @@ from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
+from rest_framework.generics import ListAPIView, CreateAPIView
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
+from books.serializsers import BookSerializer
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
 from members.views.area_setter import PanelAreaSetter
 
@@ -32,6 +34,10 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
         instance.owner = self.request.user
         instance.save()
         return res
+
+
+class AddBookAPIView(CreateAPIView):
+    serializer_class = BookSerializer
 
 
 class BookDetailView(PanelAreaSetter, DetailView):
@@ -107,3 +113,9 @@ class BooksListView(ListView):
         'genre': query_on_genre,
 
     }
+
+
+class BooksListAPIView(ListAPIView):
+    model = Books
+    serializer_class = BookSerializer
+    queryset = Books.objects.all()

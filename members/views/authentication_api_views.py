@@ -9,10 +9,11 @@ class PhoneValidator(APIView):
     def post(self, request, *args, **kwargs):
         phone_number = self.request.data['phone_number']
         response = False
-        member_name = ""
+        data = {'existence': response}
         if Member.objects.filter(phone=phone_number).exists():
             member = Member.objects.get(phone=phone_number)
             response = True
             member_name = member.full_name
             token, created = Token.objects.get_or_create(user=member)
-        return Response(data={'existence': response, "name": member_name, 'token': token.key})
+            data = {'existence': response, "name": member_name, 'token': token.key}
+        return Response(data=data)
