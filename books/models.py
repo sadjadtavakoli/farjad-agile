@@ -23,3 +23,8 @@ class Books(models.Model):
     @property
     def image_url(self):
         return get_url(None, 'books/icons/book_icon.png')
+
+    def loan_state(self, user):
+        if user.loans.filter(book=self).exists():
+            return user.loans.get(book=self).state.state
+        return ""

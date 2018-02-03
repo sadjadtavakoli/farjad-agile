@@ -96,6 +96,9 @@ class BooksListView(ListView):
         context = super().get_context_data(object_list=object_list, **kwargs)
         context['field'] = self.request.GET.get('field', '')
         context['query'] = self.request.GET.get('query', '')
+        context['books'] = [{'book_info': book, 'loan_state': book.loan_state(self.request.user)}
+                            for book in
+                            self.get_queryset()]
         return context
 
     action_map = {
