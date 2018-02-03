@@ -10,7 +10,6 @@
             </div>
     </a>
         </div>
-
     <div class="ui link cards" style="direction: rtl">
         {% for book in books %}
             <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
@@ -18,7 +17,8 @@
                     <img src="{{ book.image_url }}">
                 </div>
                 <a class="ui button" href="{% url 'books:detail' book_pk=book.pk %}">
-                    مشاهده کتاب
+                    <span> مشاهده کتاب</span>
+
                 </a>
                 <div class="content">
                     <div class="header">{{ book.title }}</div>
