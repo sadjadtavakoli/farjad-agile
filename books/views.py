@@ -8,6 +8,7 @@ from rest_framework.generics import ListAPIView
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
+from books.serializsers import BookSerializer
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
 from members.views.area_setter import PanelAreaSetter
 
@@ -112,6 +113,5 @@ class BooksListView(ListView):
 
 class BooksListAPIView(ListAPIView):
     model = Books
-    serializer_class = RegionSerializer
-    queryset = Region.objects.filter(located_country=Country.objects.get_iran())
-
+    serializer_class = BookSerializer
+    queryset = Books.objects.all()
