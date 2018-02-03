@@ -44,4 +44,4 @@ class CreateLoanRequestAPIView(CreateAPIView):
         book_id = self.request.data['book']
         book = get_object_or_404(Books, id=book_id)
         Loan.objects.create(book=book, borrower=self.request.user, date=datetime.date.today())
-        return Response("object created")
+        return Response(data={'status': 200})

@@ -1,8 +1,16 @@
 {% extends 'farjad/__base.html' %}
 {% load utils_tags %}
+{% load static %}
 
+{% block js %}
+    {{ block.super }}
+    <script type="application/javascript"
+            src="{% static 'books/js/all_books.js' %}"></script>
+
+{% endblock %}
 {% block body %}
     {% include 'farjad/main_navbar.html' with active=1 %}
+    {% csrf_token %}
     <form class="ui form " method="get" action="{% url 'books:all' %}">
         <div class="fields">
             <div class="two wide field"></div>
@@ -36,18 +44,27 @@
     </form>
     {#    </h1>#}
     <div class="ui link cards" style="direction: rtl;margin-right: 5%">
+        <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
         {% for book in books %}
+            <input hidden id="book-id" value="{{ book.pk }}">
+
             <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
                 <div class="image">
                     <img src="{{ book.image_url }}">
                 </div>
 
                 <div class="ui two buttons">
-                <a class="ui button"  style="font-size: small" href="{% url 'books:detail' book_pk=book.pk %}">
-                    مشاهده کتاب
-                </a>
-                    <button style="font-size: small" class="ui blue button ">
+                    <a class="ui button" style="font-size: small"
+                       href="{% url 'books:detail' book_pk=book.pk %}">
+                        مشاهده کتاب
+                    </a>
+                    <input hidden class="book-id" value="{{ book.pk }}">
+
+                    <button style="font-size: small" class="ui blue button loan-request">
                         درخواست امانت
+                    </button>
+                    <button style="font-size: small; display: none" class="ui red button cancel-request">
+                        لغو درخواست
                     </button>
                 </div>
                 <div class="extra content">
