@@ -17,25 +17,13 @@ $('document').ready(function () {
             headers: {
                 "X-CSRFToken": $('input[name=csrfmiddlewaretoken]').val()
             },
-            success: function () {
-                button.siblings('.cancel-request').css('display', 'flex');
+            success: function (response) {
+                console.log(button.siblings('.loan-state'));
+                button.siblings('.loan-state').css('display', 'flex');
                 button.css('display', 'none');
+                button.siblings('.loan-state').text(response['state']);
+
             }
         });
     });
-
-    $('.cancel-request').on('click', function () {
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: {
-                'book': $(this).siblings('.book-id').val()
-            },
-            headers: {
-                "X-CSRFToken": $('input[name=csrfmiddlewaretoken]').val()
-            },
-            success: function (response) {
-            }
-        });
-    })
 });

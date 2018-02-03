@@ -1,5 +1,3 @@
-import datetime
-
 from django.db import models
 from django.db.models import Manager
 from django_fsm import FSMField, transition
@@ -105,7 +103,6 @@ class LoanState(models.Model):
                            'borrower-payed': payed}
 
     @property
-
     def lender_buttons(self):
         buttons = {
             LoanState.STATE_NEW: [{'label': 'رد کردن', 'action': 'lender-reject'},
