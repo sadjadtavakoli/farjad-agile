@@ -4,6 +4,7 @@ from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
+from rest_framework.generics import ListAPIView
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
@@ -107,3 +108,10 @@ class BooksListView(ListView):
         'genre': query_on_genre,
 
     }
+
+
+class BooksListAPIView(ListAPIView):
+    model = Books
+    serializer_class = RegionSerializer
+    queryset = Region.objects.filter(located_country=Country.objects.get_iran())
+
