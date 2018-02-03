@@ -14,14 +14,25 @@
 {% endblock %}
 {% block content %}
     {{ block.super }}
+
     <div class="ui form tiny segment container " style="background-color: white;direction: rtl ">
+        <h2 class="ui header" style="direction: rtl">
+
+            <div class="content">
+                معرفی دوستان {{ profile.username }}
+            </div>
+        </h2>
+        <div style="font-size: 18px; margin-top: 2rem;">
+            برای دعوت از دوستان خود و دریافت جایزه میتوانید از طریق زیر کد دعوت دریافت نمایید :
+        </div>
         <div style="text-align: center; height: 50em">
             <button id="code-visibility" class="blue ui button"
-                    style="display: flex; font-size: large;justify-content: center;align-items: center; width: 100%; height: 10%">
+                    style="margin-top:4rem;display: flex; font-size: large;justify-content: center;align-items: center; width: 100%; height: 10%">
                 مشاهده کد دعوت
             </button>
             <span id="invitation-code"
-                  style="color: white; font-size: large; display: none;justify-content: center;align-items: center; width: 100%; height: 10%; background-color: lightgray">
+                  style="margin-top: 4rem; color: white; font-size: large; display: none;justify-content: center;align-items: center; width: 100%; height: 10%; background-color: lightgray">
+             :
                 {{ code }}</span>
         </div>
     </div>
