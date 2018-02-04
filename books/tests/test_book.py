@@ -32,7 +32,6 @@ class AddBookTest(WebTest):
     def test_add_book_valid_data(self):
         response = self.client.get(reverse('members:self:books:new'))
         self.assertEqual(response.status_code, 302)
-
         self.client.login(username=USERNAME, password=PASSWORD)
         response = self.client.get(reverse('members:self:books:new'))
         self.assertEqual(response.status_code, 200)

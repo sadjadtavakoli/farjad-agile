@@ -13,7 +13,7 @@ def create_admin(**kwargs):
         Member.objects.get(username=USERNAME)
     except Member.DoesNotExist:
         member = Member.objects.create(
-            username=USERNAME, email='farjad@gmail.com', password=PASSWORD, phone=PHONE, age=AGE)
+            username=USERNAME, email='farjad@gmail.com', balance=0, password=PASSWORD, phone=PHONE, age=AGE)
         member.is_admin = True
         member.save()
 
