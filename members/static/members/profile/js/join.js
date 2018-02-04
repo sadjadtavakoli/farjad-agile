@@ -22,11 +22,12 @@ $('document').ready(function () {
     var url = $("#code-verification").attr('value');
     code.addEventListener('input', function () {
         var text = $(this).val();
+        console.log(text);
         if (text.length != 0) {
             console.log("sadad");
             $('#submit-button').attr('disabled', true);
         } else {
-            $('#invitation-error').css('display', 'none')
+            $('#invitation-error').css('display', 'none');
             $('#submit-button').removeAttr('disabled');
         }
 

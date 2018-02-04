@@ -3,7 +3,6 @@ from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
 from django.views.generic.edit import FormView, CreateView
-from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -54,8 +53,8 @@ class JoinView(CreateView):
         invited_code = data.get('invited_code', None)
         if invited_code != None:
             inviter_member = Member.objects.get(invitation_code=invited_code)
-            inviter_member.increase_balance (10000)
-            member.increase_balance (5000)
+            inviter_member.increase_balance(10000)
+            member.increase_balance(5000)
         user = authenticate(
             username=data['username'], password=data['password'])
         login(self.request, user)
@@ -66,6 +65,7 @@ class CheckInvitationCode(APIView):
     def get(self, request, *args, **kwargs):
         code = self.request.data.get('code', '')
         is_valid = True
+        print(code)
         if not Member.objects.filter(invitation_code=code).exists():
             is_valid = False
         return Response(data={'is_valid': is_valid})
