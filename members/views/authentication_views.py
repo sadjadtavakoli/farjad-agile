@@ -67,5 +67,5 @@ class CheckInvitationCode(APIView):
         is_valid = True
         print(code)
         if not Member.objects.filter(invitation_code=code).exists():
-            is_valid = False
+            is_valid = True
         return Response(data={'is_valid': is_valid})
