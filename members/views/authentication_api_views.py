@@ -10,9 +10,7 @@ class PhoneValidator(APIView):
         phone_number = self.request.data['phone_number']
         response = False
         data = {'existence': response}
-        print(phone_number)
         if Member.objects.filter(phone=phone_number).exists():
-            print("inja")
             member = Member.objects.get(phone=phone_number)
             response = True
             member_name = member.full_name

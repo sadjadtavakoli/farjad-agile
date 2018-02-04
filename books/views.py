@@ -1,15 +1,19 @@
-from django.core.exceptions import PermissionDenied
+from django.core.exceptions import PermissionDenied, ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
 from django.urls.base import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
+from rest_framework.authtoken.models import Token
+from rest_framework.exceptions import ValidationError
 from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.mixins import UpdateModelMixin
 
 from books.forms import AddBookForm, UpdateBookForm
 from books.models import Books
 from books.serializsers import BookSerializer
 from farjad.utils.permission_checker import PermissionCheckerMixin, LoginRequired
+from members.models import Member
 from members.views.area_setter import PanelAreaSetter
 
 
@@ -34,10 +38,6 @@ class AddBookView(PanelAreaSetter, PermissionCheckerMixin, CreateView):
         instance.owner = self.request.user
         instance.save()
         return res
-
-
-class AddBookAPIView(CreateAPIView):
-    serializer_class = BookSerializer
 
 
 class BookDetailView(PanelAreaSetter, DetailView):
@@ -119,3 +119,28 @@ class BooksListAPIView(ListAPIView):
     model = Books
     serializer_class = BookSerializer
     queryset = Books.objects.all()
+
+
+class CreateBookAPIView(CreateAPIView):
+    serializer_class = BookSerializer
+
+    def post(self, request, *args, **kwargs):
+        data = self.request.data
+        token = data.get('token', None)
+        try:
+            Token.objects.get(key=token)
+        except Token.DoesNotExist:
+            raise ValidationError(detail='token is not valid')
+        else:
+            request.data['owner'] = Member.objects.get(username=Token.objects.get(key=token).user.username)
+        return super(CreateBookAPIView, self).post(request, *args, **kwargs)
+    # def create(self, request, *args, **kwargs):
+    #     data = self.request.data
+    #     token = data.get('token', None)
+    #     try:
+    #         Token.objects.get(key=token)
+    #     except Token.DoesNotExist:
+    #         raise ValidationError(detail='token is not valid')
+    #     else:
+    #         request.data['owner'] = Member.objects.get(username=Token.objects.get(key=token).user.username)
+    #         return super(CreateBookAPIView, self).create(request, *args, **kwargs)
