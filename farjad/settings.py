@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'loan',
     'farjad',
     'books',
+    'comment'
 ]
 
 AUTH_USER_MODEL = 'members.Member'
