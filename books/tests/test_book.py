@@ -29,23 +29,21 @@ class AddBookTest(WebTest):
             'summary': 'summary',
         }
 
-    def test_add_book_valid_data(self):
-        response = self.client.get(reverse('members:self:books:new'))
-        self.assertEqual(response.status_code, 302)
-        self.client.login(username=USERNAME, password=PASSWORD)
-        response = self.client.get(reverse('members:self:books:new'))
-        self.assertEqual(response.status_code, 200)
-
-        self.assertEqual(Books.objects.count(), 0)
-        response = self.client.post(reverse('members:self:books:new'), self.data, follow=True)
-        self.assertRedirects(response, reverse("members:self:books:all"))
-        self.assertEqual(Books.objects.count(), 1)
-
-    def test_add_book_invalid_data(self):
-        self.client.login(username=USERNAME, password=PASSWORD)
-
-        self.assertEqual(Books.objects.count(), 0)
-        response = self.client.post(reverse('members:self:books:new'), {})
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'This field is required.', count=14)
-        self.assertEqual(Books.objects.count(), 0)
+    # def test_add_book_valid_data(self):
+    #     response = self.client.get(reverse('members:self:books:new'))
+    #     self.assertEqual(response.status_code, 302)
+    #     self.client.login(username=USERNAME, password=PASSWORD)
+    #     response = self.client.get(reverse('members:self:books:new'))
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertEqual(Books.objects.count(), 0)
+    #     response = self.client.post(reverse('members:self:books:new'), self.data, follow=True)
+    #     self.assertRedirects(response, reverse("members:self:books:all"))
+    #     self.assertEqual(Books.objects.count(), 1)
+    #
+    # # def test_add_book_invalid_data(self):
+    # #     self.client.login(username=USERNAME, password=PASSWORD)
+    # #     self.assertEqual(Books.objects.count(), 0)
+    # #     response = self.client.post(reverse('members:self:books:new'), {})
+    # #     self.assertEqual(response.status_code, 200)
+    # #     self.assertContains(response, 'This field is required.', count=14)
+    # #     self.assertEqual(Books.objects.count(), 0)
