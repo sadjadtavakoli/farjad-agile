@@ -1,5 +1,4 @@
 from django import forms
-from django.core.exceptions import ObjectDoesNotExist
 from django.forms import Form
 from django.forms.models import ModelForm
 from django.utils.translation import gettext_lazy as _
@@ -21,6 +20,27 @@ class LoginForm(Form):
         if not member.check_password(password):
             raise forms.ValidationError(_('Username or Password is incorrect'))
         return password
+
+
+class AuthenticateForm(ModelForm):
+    class Meta:
+        model = Member
+        fields = ['phone', 'invitation_code']
+
+    # class Meta:
+    #     model = Member
+    #     fields = ['phone']
+
+    # def clean_phone(self):
+    #     data = self.cleaned_data
+    #     username_or_phone = data.get('username_or_phone', None)
+    #     member = Member.objects.get_member(username_or_phone)
+    #     if member is None:
+    #         raise forms.ValidationError(_('Username or Password is incorrect'))
+    #     password = data.get('password', None)
+    #     if not member.check_password(password):
+    #         raise forms.ValidationError(_('Username or Password is incorrect'))
+    #     return password
 
     #
     # class JoinForm(ModelForm):

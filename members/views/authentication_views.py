@@ -6,8 +6,8 @@ from django.views.generic.edit import FormView, CreateView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from members.forms.authentication_forms import LoginForm
-from members.models import Member
+from members.forms.authentication_forms import LoginForm, AuthenticateForm
+from members.models import Member, PhoneCodeMapper
 
 
 class LoginView(FormView):
@@ -69,3 +69,23 @@ class CheckInvitationCode(APIView):
         if not Member.objects.filter(invitation_code=code).exists():
             is_valid = True
         return Response(data={'is_valid': is_valid})
+
+
+class NewAuthenticateView(APIView):
+    template_name = 'members/new_authenticated_page.html'
+    success_url = reverse('members:code-checking')
+
+    def get(self, request, *args, **kwargs):
+        is_valid = True
+        phone = self.request.POST.get('phone', '')
+        PhoneCodeMapper.objects.create(phone=phone, code='12345')
+        return Response(data={'is_valid': is_valid})
+
+
+class NewAuthenticationCodeChecking(FormView):
+    template_name = 'members/new_authenticated_code_checking.html'
+    form_class = AuthenticateForm
+
+    def post(self, request, *args, **kwargs):
+        phone = self.request.POST.get('phone', '')
+        code = self.request.POST.get('code', '')
