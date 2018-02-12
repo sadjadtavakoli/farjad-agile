@@ -76,22 +76,24 @@ class MemberManager(BaseUserManager):
         return self._create_user(phone, password, **extra_fields)
 
 
-class PhoneFieldAdder:
-    phone = models.CharField(max_length=11, blank=False, null=False, unique=True,
+class PhoneCodeMapper(models.Model):
+    code = models.CharField(max_length=5, blank=True, null=True, unique=False)
+    phone = models.CharField(max_length=11, blank=False, null=False, unique=False,
                              validators=[mobile_regex],
                              error_messages={
                                  'unique': _("A user with that phone already exists."),
                              })
 
 
-class PhoneCodeMapper(PhoneFieldAdder, models):
-    code = models.CharField(max_length=5, blank=True, null=True, unique=False)
-
-
-class Member(PhoneFieldAdder, AbstractUser):
+class Member(AbstractUser):
     username = None
     USERNAME_FIELD = 'phone'
     REQUIRED_FIELDS = []
+    phone = models.CharField(max_length=11, blank=False, null=False, unique=True,
+                             validators=[mobile_regex],
+                             error_messages={
+                                 'unique': _("A user with that phone already exists."),
+                             })
     birth_date = models.DateField(null=True, blank=True)
     profile_picture = ImageField(upload_to='profile_pictures/', null=True, blank=True)
     age = models.IntegerField(null=True, blank=True)

@@ -71,21 +71,26 @@ class CheckInvitationCode(APIView):
         return Response(data={'is_valid': is_valid})
 
 
-class NewAuthenticateView(APIView):
-    template_name = 'members/new_authenticated_page.html'
-    success_url = reverse('members:code-checking')
-
+class AuthenticationCodeCheckingApiView(APIView):
     def get(self, request, *args, **kwargs):
         is_valid = True
         phone = self.request.POST.get('phone', '')
+        # inja bayad code generate she
         PhoneCodeMapper.objects.create(phone=phone, code='12345')
+        # inja bayad sms bshe vase yaro
         return Response(data={'is_valid': is_valid})
 
 
-class NewAuthenticationCodeChecking(FormView):
-    template_name = 'members/new_authenticated_code_checking.html'
+class NewAuthenticationView(FormView):
+    template_name = 'members/new_authentication_code_checking.html'
     form_class = AuthenticateForm
+
+    def get_success_url(self):
+        return reverse('home')
 
     def post(self, request, *args, **kwargs):
         phone = self.request.POST.get('phone', '')
         code = self.request.POST.get('code', '')
+        print(phone)
+        print(code)
+        return super(NewAuthenticationView, self).post(request, *args, **kwargs)
