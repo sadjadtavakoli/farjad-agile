@@ -56,7 +56,6 @@ class CheckInvitationCode(APIView):
     def get(self, request, *args, **kwargs):
         code = self.request.data.get('code', '')
         is_valid = True
-        print(code)
         if not Member.objects.filter(invitation_code=code).exists():
             is_valid = True
         return Response(data={'is_valid': is_valid})
@@ -67,6 +66,7 @@ class AuthenticationCodeCheckingApiView(APIView):
         phone = self.request.data.get('phone', '')
         if not re.match(mobile_regex.regex, phone):
             return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
+
         # inja bayad code generate she
         PhoneCodeMapper.objects.create(phone=phone, code='12345')
         # inja bayad sms bshe vase yaro

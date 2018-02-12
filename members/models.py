@@ -18,14 +18,6 @@ mobile_regex = RegexValidator(
     message=_('Mobile number should start with 09 and should have 11 digits.'))
 
 
-def generate_code():
-    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
-    while Member.objects.filter(invitation_code=code).exists():
-        code = ''.join(
-            random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
-    return code
-
-
 class MemberManager(BaseUserManager):
     def get_member(self, phone_email_username):
         try:
