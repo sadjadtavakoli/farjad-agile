@@ -3,7 +3,7 @@ from django.forms import Form
 from django.forms.models import ModelForm
 from django.utils.translation import gettext_lazy as _
 
-from members.models import Member
+from members.models import Member, PhoneCodeMapper
 
 
 class LoginForm(Form):
@@ -28,6 +28,14 @@ class AuthenticateForm(ModelForm):
     class Meta:
         model = Member
         fields = ['phone', 'code']
+
+    def clean_code(self, **kwargs):
+        data = self.cleaned_data
+        phone = data.get('phone', '')
+        code = data.get('code', '')
+        if not PhoneCodeMapper.objects.filter(phone=phone, code=code).exists():
+            raise forms.ValidationError('Invalid Code')
+        return code
 
         # class Meta:
         #     model = Member

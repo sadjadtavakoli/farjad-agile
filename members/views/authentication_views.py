@@ -1,3 +1,5 @@
+import re
+
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect
 from django.urls.base import reverse
@@ -7,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from members.forms.authentication_forms import LoginForm, AuthenticateForm
-from members.models import Member, PhoneCodeMapper
+from members.models import Member, PhoneCodeMapper, mobile_regex
 
 
 class LoginView(FormView):
@@ -72,13 +74,16 @@ class CheckInvitationCode(APIView):
 
 
 class AuthenticationCodeCheckingApiView(APIView):
-    def get(self, request, *args, **kwargs):
-        is_valid = True
-        phone = self.request.POST.get('phone', '')
+    def post(self, request, *args, **kwargs):
+        print(request.data)
+        phone = self.request.data.get('phone', '')
+        print(phone)
+        if not re.match(mobile_regex.regex, phone):
+            return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
         # inja bayad code generate she
         PhoneCodeMapper.objects.create(phone=phone, code='12345')
         # inja bayad sms bshe vase yaro
-        return Response(data={'is_valid': is_valid})
+        return Response(data={'is_valid': True})
 
 
 class NewAuthenticationView(FormView):
@@ -88,9 +93,9 @@ class NewAuthenticationView(FormView):
     def get_success_url(self):
         return reverse('home')
 
-    def post(self, request, *args, **kwargs):
-        phone = self.request.POST.get('phone', '')
-        code = self.request.POST.get('code', '')
-        print(phone)
-        print(code)
-        return super(NewAuthenticationView, self).post(request, *args, **kwargs)
+        # def post(self, request, *args, **kwargs):
+        #     phone = self.request.POST.get('phone', '')
+        #     code = self.request.POST.get('code', '')
+        #     if not PhoneCodeMapper.objects.filter(phone=phone , code=code).exists():
+        #         return Response
+        #     return super(NewAuthenticationView, self).post(request, *args, **kwargs)

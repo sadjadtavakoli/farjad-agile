@@ -21,9 +21,9 @@
     <input type="hidden" id="code-url" value="{% url 'members:authentication:code' %}">
     <form class="ui form second-form" action="" method="post"
           novalidate=""
-          autocomplete="off" hidden="hidden">
+          autocomplete="off" {% if not form.code.errors %}hidden="hidden"{% endif %}>
         {% csrf_token %}
-        {% field_tag form.phone hidden="hidden" %}
+        <span hidden="hidden">{{ form.phone }}</span>
         <div class="field">
             <div class="ui left icon input">
                 {% field_tag form.code placeholder="کد 5 رقمی" %}
@@ -32,22 +32,16 @@
         </div>
         <button type="submit" class="ui blue submit button fluid ">ورود</button>
     </form>
-    <form class="ui form first-form"
-          autocomplete="off">
+    <div class="ui form first-form" {% if form.code.errors %}hidden="hidden"{% endif %}>
         <div class="field">
             <div class="ui input">
-                <input type="text" name="phone" required="" id="id_phone" placeholder="شماره همراه"
+                <input type="text" required="" id="phone-one" placeholder="شماره همراه"
                        maxlength="11">
+                <div style="color: darkred; " id="one-error"></div>
+
             </div>
         </div>
         <button type="button" class="ui blue submit-phone button fluid ">ارسال کد</button>
-    </form>
-    <a href="{% url "members:join" %}">
-
-        <label style="color: forestgreen" class="ui label">ثبت‌نام کنید
-        </label></a>
-    <label class="ui label">هنوز عضو نشده‌اید ؟‌
-    </label>
-
+    </div>
 
 {% endblock %}

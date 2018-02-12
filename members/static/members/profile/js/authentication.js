@@ -4,21 +4,25 @@
 $('document').ready(function () {
 
     $('.submit-phone').on('click', function () {
-        var phone = $(this).siblings('.field').find('#id_phone').val();
+        var phone = $(this).parent().find('#phone-one').val();
         var url = $('#code-url').val();
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: url,
             data: {
                 'phone': phone
             },
+            headers: {
+                "X-CSRFToken": $('input[name=csrfmiddlewaretoken]').val()
+            },
             success: function (response) {
-                if (response['is_valid'] = 'True') {
+                console.log(response);
+                if (response['is_valid'] == true) {
                     $('#id_phone').attr('value', phone);
                     $('.first-form').attr('hidden', 'hidden');
                     $('.second-form').removeAttr('hidden');
                 } else {
-                    console.log('an')
+                    $('#one-error').html(response['error'])
                 }
             }
         });
