@@ -1,6 +1,6 @@
 import re
 
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout
 from django.shortcuts import redirect
 from django.urls.base import reverse
 from django.views.generic.base import View
@@ -8,22 +8,8 @@ from django.views.generic.edit import FormView, CreateView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from members.forms.authentication_forms import LoginForm, AuthenticateForm
+from members.forms.authentication_forms import AuthenticateForm
 from members.models import Member, PhoneCodeMapper, mobile_regex
-
-
-class LoginView(FormView):
-    template_name = 'members/login.html'
-    form_class = LoginForm
-
-    def form_valid(self, form):
-        data = form.cleaned_data
-        member = Member.objects.get_member(data['username_or_phone'])
-        print(member.username)
-        user = authenticate(
-            username=member.username, password=data['password'])
-        login(self.request, user)
-        return redirect(reverse("home"))
 
 
 class LogoutView(View):
@@ -35,7 +21,7 @@ class LogoutView(View):
 class JoinView(CreateView):
     template_name = "members/join.html"
     model = Member
-    fields = ['first_name', 'last_name', 'password', 'username', 'phone', 'profession',
+    fields = ['first_name', 'last_name', 'phone', 'profession',
               'education', 'city', 'province', 'address', 'email', 'invited_with']
 
     def get_success_url(self):
@@ -46,20 +32,23 @@ class JoinView(CreateView):
             logout(self.request)
         return super().get(request, *args, **kwargs)
 
+    def get_initial(self):
+        code_pk = self.kwargs.get('code_pk', '')
+        phone = PhoneCodeMapper.objects.get(pk=code_pk).phone
+        initial = super(JoinView, self).get_initial()
+        initial['phone'] = phone
+        return initial
+
     def form_valid(self, form):
         ret = super().form_valid(form)
         data = form.cleaned_data
-        member = Member.objects.get(username=data['username'])
-        member.set_password(data['password'])
-        member.save()
+        member = Member.objects.get(phone=data['phone'])
         invited_code = data.get('invited_code', None)
         if invited_code != None:
             inviter_member = Member.objects.get(invitation_code=invited_code)
             inviter_member.increase_balance(10000)
             member.increase_balance(5000)
-        user = authenticate(
-            username=data['username'], password=data['password'])
-        login(self.request, user)
+        login(self.request, member)
         return ret
 
 
@@ -75,9 +64,7 @@ class CheckInvitationCode(APIView):
 
 class AuthenticationCodeCheckingApiView(APIView):
     def post(self, request, *args, **kwargs):
-        print(request.data)
         phone = self.request.data.get('phone', '')
-        print(phone)
         if not re.match(mobile_regex.regex, phone):
             return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
         # inja bayad code generate she
@@ -87,15 +74,20 @@ class AuthenticationCodeCheckingApiView(APIView):
 
 
 class NewAuthenticationView(FormView):
-    template_name = 'members/new_authentication_code_checking.html'
+    template_name = 'members/new_authentication.html'
     form_class = AuthenticateForm
 
     def get_success_url(self):
         return reverse('home')
 
-        # def post(self, request, *args, **kwargs):
-        #     phone = self.request.POST.get('phone', '')
-        #     code = self.request.POST.get('code', '')
-        #     if not PhoneCodeMapper.objects.filter(phone=phone , code=code).exists():
-        #         return Response
-        #     return super(NewAuthenticationView, self).post(request, *args, **kwargs)
+    def form_valid(self, form):
+        data = form.cleaned_data
+        phone = data['phone']
+        if Member.objects.filter(phone=phone).exists():
+            member = Member.objects.get(phone=phone)
+            login(request=self.request, user=member)
+            return super(NewAuthenticationView, self).form_valid(form)
+        else:
+            return redirect(reverse('members:join',
+                                    kwargs={
+                                        'code_pk': PhoneCodeMapper.objects.get(phone=phone).pk}))

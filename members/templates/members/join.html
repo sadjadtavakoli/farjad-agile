@@ -34,20 +34,8 @@
             </div>
 
             <div class="two fields">
-
                 <div class="field">
-                    {% field_tag form.username placeholder="نام کاربری" %}
-                </div>
-                <div class="field">
-                    <div class="ui icon input">
-                        {% field_tag form.password placeholder="گذرواژه" type="password" %}
-                        <i class="circular hide link icon" id="id_password_visibility"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="two fields">
-                <div class="field">
-                    {% field_tag form.phone placeholder="شماره همراه" %}
+                    {% field_tag form.phone disable="disable" placeholder="شماره همراه" %}
                 </div>
                 <div class="field">
                     {% field_tag form.email placeholder="ایمیل" %}

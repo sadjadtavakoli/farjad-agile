@@ -62,8 +62,8 @@ authentication_urlpatterns = ([
 urlpatterns = [
     path(r'api/', include(api_urlpatterns), name="api"),
     path(r'login/', LoginView.as_view(), name="login"),
-    path(r'authentication/', include(authentication_urlpatterns), name="authentication"),
-    path(r'join/', JoinView.as_view(), name="join"),
+    path(r'authentication/', include(authentication_urlpatterns)),
+    path(r'join/<int:code_pk>/', JoinView.as_view(), name="join"),
     path(r'logout/', LogoutView.as_view(), name="logout"),
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
     path(r'self/', include(self_urlpatterns)),
