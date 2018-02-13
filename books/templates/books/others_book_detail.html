@@ -106,7 +106,7 @@
             <div class="ten wide column" style=" margin-right: 20%">
                 <h3 class="ui header">نظرات
                     کاربران</h3>
-                {% for comment in book.comments.all  %}
+                {% for comment in book.comments.all %}
                     <h4 class="ui header">
                         <img src="{{ comment.writer.image_url }}">
                         <div class="content">
@@ -116,19 +116,26 @@
                     </h4>
                     {{ comment.text }}
                 {% endfor %}
-                <div class="ui reply form" style="margin-top: 10%">
-                    <h4>نظر شما:</h4>
-                    <div class="field">
+                {% if request.user.is_authenticated %}
+                    <div class="ui reply form" style="margin-top: 10%">
+                        <h4>نظر شما:</h4>
+                        <div class="field">
                     <textarea id="new-comment">
 
                     </textarea>
+                        </div>
+                        <div class="ui button teal submit labeled icon left floated ">
+                            <i class="icon edit"></i> ثبت نظر
+                        </div>
                     </div>
-                    <div class="ui button teal submit labeled icon left floated ">
-                        <i class="icon edit"></i> ثبت نظر
+                {% else %}
+                    <div class="ui reply form" style="margin-top: 5%; margin-bottom: 20%">
+
+                        شما برای نظر دادن باید
+                        <a href="{% url 'members:authentication:phone' %}">وارد</a> شوید
                     </div>
-                </div>
 
-
+                {% endif %}
             </div>
         </div>
     </div>
