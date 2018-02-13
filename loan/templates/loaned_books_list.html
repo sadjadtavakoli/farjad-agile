@@ -1,7 +1,7 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
-    <div class="ui link cards" style="direction: rtl;margin-right: 5%">
+    <div class="ui cards" style="direction: rtl;margin-right: 5%">
         <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
         {% for loan in loans %}
             {% with  loan.book as book %}
@@ -10,11 +10,14 @@
                 <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
 
                     <div class="content">
-                        <img class="ui avatar image"
-                             src="{{ loan.borrower.image_url }}"> {{ loan.borrower.full_name }}
+                        <a href="{% url 'members:profile' loan.borrower.pk %}"
+                           style="color: inherit">
+                            <img class="ui avatar image"
+                                 src="{{ loan.borrower.image_url }}"> {{ loan.borrower.full_name }}
+                        </a>
                     </div>
                     <div class="extra content">
-                     از {{ loan.date }}   تا   {{ loan.deadline }}
+                        از {{ loan.date }} تا {{ loan.deadline }}
                     </div>
 
                     <div class="image">

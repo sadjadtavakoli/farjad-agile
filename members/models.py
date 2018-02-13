@@ -1,3 +1,4 @@
+import datetime
 import re
 
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
@@ -96,7 +97,6 @@ class Member(AbstractUser):
                              })
     birth_date = models.DateField(null=True, blank=True)
     profile_picture = ImageField(upload_to='profile_pictures/', null=True, blank=True)
-    age = models.IntegerField(null=True, blank=True)
     profession = models.CharField(max_length=32)
     education = models.CharField(max_length=30, choices=EDUCATION_CHOICES)
     city = models.CharField(max_length=60)
@@ -106,6 +106,12 @@ class Member(AbstractUser):
     invitation_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     objects = MemberManager()
     invited_with = models.CharField(max_length=10, blank=True, null=True)
+
+    @property
+    def age(self):
+        if self.birth_date is not None:
+            return datetime.date.today() - self.birth_date
+        return None
 
     @property
     def image_url(self):

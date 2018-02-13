@@ -46,70 +46,77 @@
 
     </form>
     {#    </h1>#}
-        <div class="ui link cards" style="direction: rtl;margin-right: 5%">
-            <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
-            {% for book_dic in books %}
-                {% with  book_dic.book_info as book %}
-                    <input hidden id="book-id" value="{{ book.pk }}">
+    <div class="ui cards" style="direction: rtl;margin-right: 5%">
+        <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
+        {% for book_dic in books %}
+            {% with  book_dic.book_info as book %}
+                <input hidden id="book-id" value="{{ book.pk }}">
 
-                    <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
-                        <div class="ui two buttons">
-                            <a class="ui button" style="font-size: small"
-                               href="{% url 'members:profile' book.owner.pk %}">
-                                صاحب کتاب: {{ book.owner.full_name }}
-                            </a>
+                <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
+                    <div class="ui two buttons">
+                        <a class="ui button" style="font-size: small"
+                           href="{% url 'members:profile' book.owner.pk %}">
+                            صاحب کتاب: {{ book.owner.full_name }}
+                        </a>
 
+                    </div>
+                    <div class="image">
+                        <img src="{{ book.image_url }}">
+                    </div>
+
+                    <div class="ui two buttons">
+                        <a class="ui button" style="font-size: small"
+                           href="{% url 'books:detail' book_pk=book.pk %}">
+                            مشاهده کتاب
+                        </a>
+                        <input hidden class="book-id" value="{{ book.pk }}">
+
+                        <button style="font-size: small;
+                                {% if not book_dic.not_valid_state %}
+                                    display: none
+                                {% endif %}"
+                                class="ui blue button loan-request">
+                            درخواست امانت
+                        </button>
+                        <button disabled style="font-size: small;
+                                {% if book_dic.not_valid_state %}
+                                    display: none
+                                {% endif %}"
+                                class="ui green button loan-state">
+                            {{ book_dic.loan_state }}
+                        </button>
+                    </div>
+
+                    <div class="content">
+                        <div class="header">{{ book.title }}</div>
+                        <div class="meta">
+                            <a>نویسنده : {{ book.author }}</a>
                         </div>
-                        <div class="image">
-                            <img src="{{ book.image_url }}">
-                        </div>
 
-                        <div class="ui two buttons">
-                            <a class="ui button" style="font-size: small"
-                               href="{% url 'books:detail' book_pk=book.pk %}">
-                                مشاهده کتاب
-                            </a>
-                            <input hidden class="book-id" value="{{ book.pk }}">
-
-                            <button style="font-size: small;
-                                    {% if not book_dic.not_valid_state %}
-                                        display: none
-                                    {% endif %}"
-                                    class="ui blue button loan-request">
-                                درخواست امانت
-                            </button>
-                            <button disabled style="font-size: small;
-                                    {% if book_dic.not_valid_state %}
-                                        display: none
-                                    {% endif %}"
-                                    class="ui green button loan-state">
-                                {{ book_dic.loan_state }}
-                            </button>
-                        </div>
-                        <div class="extra content">
-                            <div class="right floated">
-                                <span>مناسب برای رده سنی</span> {{ book.reader_age }}
-                            </div>
-                            <div class="left floated">{{ book.price }}
-                                <span>تومان</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="header">{{ book.title }}</div>
-                            <div class="meta">
-                                <a>نویسنده : {{ book.author }}</a>
-                            </div>
-
-                            <div class="description"
-                                 style="white-space: nowrap;width: 100%;
+                        <div class="description"
+                             style="white-space: nowrap;width: 100%;
                              overflow: hidden;text-overflow: ellipsis; ">
-                                {{ book.summary }}
-                            </div>
+                            {{ book.summary }}
                         </div>
                     </div>
-                {% endwith %}
+                    <div class="extra content">
+                        <div class="right floated">
+                            <span>دوره امانت: </span> {{ book.get_period_display }}
+                        </div>
+                        <div class="left floated">{{ book.price }}
+                            <span>تومان</span>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="right floated">
+                            <span>مناسب برای رده سنی</span> {{ book.reader_age }}
+                        </div>
+                    </div>
 
-            {% endfor %}
+                </div>
+            {% endwith %}
 
-        </div>
+        {% endfor %}
+
+    </div>
 {% endblock %}

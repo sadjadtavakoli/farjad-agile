@@ -17,18 +17,15 @@
                            value="{% url 'members:self:loans:lender-change-state' loan_pk=loan.pk %}">
                     {% include 'state_buttons.html' with buttons=loan.state.lender_buttons %}
                 </div>
-                <img class="ui avatar image" src="/static/members/icons/default_profile.png">
+                <img class="ui avatar image" src="{{ loan.borrower.image_url }}">
                 <div class="content" style="margin-right: 1.1em">
                     <div class="header">
-                        {{ loan.borrower.username }}
-                    </div>
-                    <div class="meta">
-                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} درخواست امانت
+                        {{ loan.borrower.full_name }} درخواست امانت
                         کتاب دارد
                     </div>
                 </div>
 
-                <img class="ui avatar image" src="/static/books/icons/75801069.jpg">
+                <img class="ui avatar image" src=" {{ loan.book.image_url }}">
                 <div class="content" style="margin-right: 1.1em">
                     <div class="header">
                         {{ loan.book.title }}
