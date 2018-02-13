@@ -35,7 +35,8 @@
 
             <div class="two fields">
                 <div class="field">
-                    {% field_tag form.phone disable="disable" placeholder="شماره همراه" %}
+                    <input value="{{ phone }}" disabled>
+                    {% field_tag form.phone hidden="hidden" placeholder="شماره همراه" %}
                 </div>
                 <div class="field">
                     {% field_tag form.email placeholder="ایمیل" %}

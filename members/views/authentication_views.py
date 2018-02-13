@@ -32,6 +32,13 @@ class JoinView(CreateView):
             logout(self.request)
         return super().get(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super(JoinView, self).get_context_data(**kwargs)
+        code_pk = self.kwargs.get('code_pk', '')
+        phone = PhoneCodeMapper.objects.get(pk=code_pk).phone
+        context['phone'] = phone
+        return context
+
     def get_initial(self):
         code_pk = self.kwargs.get('code_pk', '')
         phone = PhoneCodeMapper.objects.get(pk=code_pk).phone
@@ -54,10 +61,10 @@ class JoinView(CreateView):
 
 class CheckInvitationCode(APIView):
     def get(self, request, *args, **kwargs):
-        code = self.request.data.get('code', '')
+        code = request.GET.get('code', '').upper()
         is_valid = True
         if not Member.objects.filter(invitation_code=code).exists():
-            is_valid = True
+            is_valid = False
         return Response(data={'is_valid': is_valid})
 
 

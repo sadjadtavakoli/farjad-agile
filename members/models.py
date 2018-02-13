@@ -9,7 +9,7 @@ from django.db.models.fields.files import ImageField
 from django.utils.translation import gettext_lazy as _
 
 from farjad.settings import EDUCATION_CHOICES
-from farjad.utils.utils_view import get_url, get_random
+from farjad.utils.utils_view import get_url, get_random, auto_save
 from loan.models import Loan, LoanState
 
 mobile_regex = RegexValidator(
@@ -103,7 +103,7 @@ class Member(AbstractUser):
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
     balance = models.IntegerField(default=0)
-    invitation_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
+    invitation_code = models.CharField(max_length=10, blank=True, null=True)
     objects = MemberManager()
     invited_with = models.CharField(max_length=10, blank=True, null=True)
 
@@ -120,9 +120,9 @@ class Member(AbstractUser):
         else:
             return get_url(None, 'members/icons/default_profile.png')
 
+    @auto_save
     def increase_balance(self, amount):
         self.balance += amount
-        self.save()
 
     @property
     def full_name(self):

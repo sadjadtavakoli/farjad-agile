@@ -4,20 +4,6 @@
 
 
 $('document').ready(function () {
-    var item = document.getElementById("id_password_visibility");
-    item.addEventListener("click", function () {
-
-        if (item.classList.contains("eye")) {
-            $('#id_password').attr('type', 'password');
-            item.classList.remove('eye');
-            item.classList.add('hide')
-        } else {
-            $('#id_password').attr('type', 'text');
-            item.classList.remove('hide');
-            item.classList.add('eye')
-        }
-
-    });
     var code = document.getElementById("id_invited_with");
     var url = $("#code-verification").attr('value');
     code.addEventListener('input', function () {
@@ -39,7 +25,7 @@ $('document').ready(function () {
                     'code': text
                 },
                 success: function (response) {
-                    if (response['is_valid'] == 'False') {
+                    if (response['is_valid'] == false) {
                         $('#invitation-error').css('display', 'flex')
                     } else {
                         $('#submit-button').removeAttr('disabled');
