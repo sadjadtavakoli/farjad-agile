@@ -34,20 +34,8 @@
             </div>
 
             <div class="two fields">
-
                 <div class="field">
-                    {% field_tag form.username placeholder="نام کاربری" %}
-                </div>
-                <div class="field">
-                    <div class="ui icon input">
-                        {% field_tag form.password placeholder="گذرواژه" type="password" %}
-                        <i class="circular hide link icon" id="id_password_visibility"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="two fields">
-                <div class="field">
-                    {% field_tag form.phone placeholder="شماره همراه" %}
+                    {% field_tag form.phone disable="disable" placeholder="شماره همراه" %}
                 </div>
                 <div class="field">
                     {% field_tag form.email placeholder="ایمیل" %}
@@ -82,7 +70,9 @@
                     {% field_tag form.invited_with %}
 
                 </div>
-                <div id="invitation-error" style="display:none; color: darkred; " >این کد دعوت نامعتبر می‌باشد.</div>
+                <div id="invitation-error" style="display:none; color: darkred; ">این کد دعوت
+                    نامعتبر می‌باشد.
+                </div>
 
             </div>
 
@@ -90,9 +80,5 @@
             </button>
 
         </form>
-        <a href="{% url "members:login" %}">
-            <label style="color: dodgerblue" class="ui label">وارد شوید
-            </label></a>
-        <label class="ui label"> قبلا ثبت‌نام کرده‌اید‌؟
-        </label></div>
+    </div>
 {% endblock %}

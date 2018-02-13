@@ -18,11 +18,8 @@
                 خروج
             </a>
         {% else %}
-            <a class="item" href="{% url 'members:login' %}">
+            <a class="item" href="{% url 'members:authentication:phone' %}">
                 ورود
-            </a>
-            <a class="item" href="{% url 'members:join' %}">
-                ثبت‌نام
             </a>
 
         {% endif %}

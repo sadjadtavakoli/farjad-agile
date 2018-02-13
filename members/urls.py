@@ -1,5 +1,4 @@
 from django.urls.conf import include, path
-from django.views.generic.base import TemplateView
 
 from books.views import AddBookView
 from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestList, \
@@ -7,7 +6,9 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
 from members.views.authentication_api_views import PhoneValidator
-from members.views.authentication_views import LoginView, LogoutView, JoinView, CheckInvitationCode
+from members.views.authentication_views import LogoutView, JoinView, \
+    CheckInvitationCode, \
+    NewAuthenticationView, AuthenticationCodeCheckingApiView
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
     InvitationTemplateView
 from members.views.user_books_views import UserBooksListView
@@ -34,7 +35,6 @@ self_loans_urlpatterns = ([
 
                           ], 'loans')
 
-
 api_urlpatterns = ([
     path(r'phone-validator/', PhoneValidator.as_view(), name="phone-validator"),
 
@@ -51,12 +51,19 @@ self_urlpatterns = ([
                         path(r'books/', include(self_books_urlpatterns)),
                         path(r'loans/', include(self_loans_urlpatterns)),
                     ], 'self')
+authentication_urlpatterns = ([
+                                  path(r'', NewAuthenticationView.as_view(),
+                                       name="phone"),
+                                  path(r'code-checking',
+                                       AuthenticationCodeCheckingApiView.as_view(),
+                                       name="code"),
+                                  path(r'join/<int:code_pk>/', JoinView.as_view(), name="join"),
+
+                              ], 'authentication')
 urlpatterns = [
     path(r'api/', include(api_urlpatterns), name="api"),
-    path(r'login/', LoginView.as_view(), name="login"),
-    path(r'join/', JoinView.as_view(), name="join"),
+    path(r'authentication/', include(authentication_urlpatterns)),
     path(r'logout/', LogoutView.as_view(), name="logout"),
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
     path(r'self/', include(self_urlpatterns)),
 ]
-

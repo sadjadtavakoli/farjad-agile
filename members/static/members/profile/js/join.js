@@ -39,7 +39,7 @@ $('document').ready(function () {
                     'code': text
                 },
                 success: function (response) {
-                    if (response['is_valid'] == false) {
+                    if (response['is_valid'] == 'False') {
                         $('#invitation-error').css('display', 'flex')
                     } else {
                         $('#submit-button').removeAttr('disabled');

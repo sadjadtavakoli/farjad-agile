@@ -1,6 +1,4 @@
-import random
 import re
-import string
 
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
@@ -10,7 +8,7 @@ from django.db.models.fields.files import ImageField
 from django.utils.translation import gettext_lazy as _
 
 from farjad.settings import EDUCATION_CHOICES
-from farjad.utils.utils_view import get_url
+from farjad.utils.utils_view import get_url, get_random
 from loan.models import Loan, LoanState
 
 mobile_regex = RegexValidator(
@@ -18,11 +16,17 @@ mobile_regex = RegexValidator(
     message=_('Mobile number should start with 09 and should have 11 digits.'))
 
 
-def generate_code():
-    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+def generate_unique_login_code():
+    code = get_random(5)
+    while PhoneCodeMapper.objects.filter(code=code).exists():
+        code = get_random(5)
+    return code
+
+
+def generate_invitation_unique_code():
+    code = get_random(10)
     while Member.objects.filter(invitation_code=code).exists():
-        code = ''.join(
-            random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+        code = get_random(10)
     return code
 
 
@@ -44,10 +48,8 @@ class MemberManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, phone, password=None, **extra_fields):
-        """Create and save a User with the given email and password."""
         if not phone:
             raise ValueError('The given phone must be set')
-        # email = self.normalize_email(email)
         user = self.model(phone=phone, **extra_fields)
 
         if password is not None:
@@ -58,13 +60,11 @@ class MemberManager(BaseUserManager):
         return user
 
     def create_user(self, phone, **extra_fields):
-        """Create and save a regular User with the given email and password."""
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
         return self._create_user(phone, **extra_fields)
 
     def create_superuser(self, phone, password=None, **extra_fields):
-        """Create and save a SuperUser with the given email and password."""
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -76,8 +76,19 @@ class MemberManager(BaseUserManager):
         return self._create_user(phone, password, **extra_fields)
 
 
+class PhoneCodeMapper(models.Model):
+    code = models.CharField(max_length=5, blank=True, null=True, unique=True)
+    phone = models.CharField(max_length=11, blank=False, null=False, unique=True,
+                             validators=[mobile_regex],
+                             error_messages={
+                                 'unique': _("A user with that phone already exists."),
+                             })
+
+
 class Member(AbstractUser):
     username = None
+    USERNAME_FIELD = 'phone'
+    REQUIRED_FIELDS = []
     phone = models.CharField(max_length=11, blank=False, null=False, unique=True,
                              validators=[mobile_regex],
                              error_messages={
@@ -95,8 +106,6 @@ class Member(AbstractUser):
     invitation_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     objects = MemberManager()
     invited_with = models.CharField(max_length=10, blank=True, null=True)
-    USERNAME_FIELD = 'phone'
-    REQUIRED_FIELDS = []
 
     @property
     def image_url(self):
@@ -119,7 +128,7 @@ class Member(AbstractUser):
 
     def get_invitation_code(self):
         if self.invitation_code is None:
-            self.invitation_code = generate_code()
+            self.invitation_code = generate_invitation_unique_code()
             self.save()
 
         return self.invitation_code
