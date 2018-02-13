@@ -6,12 +6,20 @@
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'books/css/book_details.css' %}">
 {% endblock %}
+{% block js %}
+
+    {{ block.super }}
+    <script type="application/javascript"
+            src="{% static 'books/js/create_comment.js' %}"></script>
+{% endblock %}
 
 {% block body %}
+    {% csrf_token %}
     {% include 'farjad/main_navbar.html' with active=2 %}
+    <input type="hidden" id="create-comment-url" value="{% url 'books:comment' book_pk=book.pk %}">
     <div class="ui internally celled grid">
         <div class="row">
-            <div class="five wide column">
+            <div class="three wide column">
                 <img src="{{ book.image_url }}">
             </div>
             <div class="ten wide column" style="direction: rtl">
@@ -28,8 +36,9 @@
                                 </a>
                             </div>
                             <a href="{% url 'members:profile' book.owner.pk %}">
-                            <img class="ui left floated medium circular image" style="width: 125px;height: 125px; margin-top:-4rem;margin-left: 5rem"
-                                 src={{book.owner.image_url }}></a>
+                                <img class="ui left floated medium circular image"
+                                     style="width: 125px;height: 125px; margin-top:-4rem;margin-left: 5rem"
+                                     src={{ book.owner.image_url }}></a>
                         </div>
                     </div>
                 </div>
@@ -90,6 +99,36 @@
                 <div class="ui grid">
                     <div class="sixteen wide column"> {{ book.summary }}</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row" style="direction: rtl">
+            <div class="ten wide column" style=" margin-right: 20%">
+                <h3 class="ui header">نظرات
+                    کاربران</h3>
+                {% for comment in book.comments.all  %}
+                    <h4 class="ui header">
+                        <img src="{{ comment.writer.image_url }}">
+                        <div class="content">
+                            {{ comment.writer.full_name }}
+                            <div class="sub header">{{ comment.date }}</div>
+                        </div>
+                    </h4>
+                    {{ comment.text }}
+                {% endfor %}
+                <div class="ui reply form" style="margin-top: 10%">
+                    <h4>نظر شما:</h4>
+                    <div class="field">
+                    <textarea id="new-comment">
+
+                    </textarea>
+                    </div>
+                    <div class="ui button teal submit labeled icon left floated ">
+                        <i class="icon edit"></i> ثبت نظر
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

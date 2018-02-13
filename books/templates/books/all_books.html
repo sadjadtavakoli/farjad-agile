@@ -63,30 +63,35 @@
                     <div class="image">
                         <img src="{{ book.image_url }}">
                     </div>
+                    {% if request.user.is_authenticated %}
+                        <div class="ui two buttons">
+                            <a class="ui button" style="font-size: small"
+                               href="{% url 'books:detail' book_pk=book.pk %}">
+                                مشاهده کتاب
+                            </a>
+                            <input hidden class="book-id" value="{{ book.pk }}">
 
-                    <div class="ui two buttons">
+                            <button style="font-size: small;
+                                    {% if not book_dic.not_valid_state %}
+                                        display: none
+                                    {% endif %}"
+                                    class="ui blue button loan-request">
+                                درخواست امانت
+                            </button>
+                            <button disabled style="font-size: small;
+                                    {% if book_dic.not_valid_state %}
+                                        display: none
+                                    {% endif %}"
+                                    class="ui green button loan-state">
+                                {{ book_dic.loan_state }}
+                            </button>
+                        </div>
+                    {% else %}
                         <a class="ui button" style="font-size: small"
                            href="{% url 'books:detail' book_pk=book.pk %}">
                             مشاهده کتاب
                         </a>
-                        <input hidden class="book-id" value="{{ book.pk }}">
-
-                        <button style="font-size: small;
-                                {% if not book_dic.not_valid_state %}
-                                    display: none
-                                {% endif %}"
-                                class="ui blue button loan-request">
-                            درخواست امانت
-                        </button>
-                        <button disabled style="font-size: small;
-                                {% if book_dic.not_valid_state %}
-                                    display: none
-                                {% endif %}"
-                                class="ui green button loan-state">
-                            {{ book_dic.loan_state }}
-                        </button>
-                    </div>
-
+                    {% endif %}
                     <div class="content">
                         <div class="header">{{ book.title }}</div>
                         <div class="meta">

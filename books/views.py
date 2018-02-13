@@ -104,11 +104,16 @@ class BooksListView(ListView):
         context = super().get_context_data(object_list=object_list, **kwargs)
         context['field'] = self.request.GET.get('field', '')
         context['query'] = self.request.GET.get('query', '')
-        context['books'] = [{'book_info': book,
-                             'loan_state': book.loan_state(self.request.user),
-                             'not_valid_state': book.has_not_valid_state(self.request.user)}
-                            for book in
-                            self.get_queryset()]
+        if self.request.user.is_authenticated:
+            context['books'] = [{'book_info': book,
+                                 'loan_state': book.loan_state(self.request.user),
+                                 'not_valid_state': book.has_not_valid_state(self.request.user)}
+                                for book in
+                                self.get_queryset()]
+        else:
+            context['books'] = [{'book_info': book}
+                                for book in
+                                self.get_queryset()]
         return context
 
     action_map = {
