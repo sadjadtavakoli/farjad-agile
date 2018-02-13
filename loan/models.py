@@ -1,3 +1,4 @@
+from dateutil.relativedelta import relativedelta
 from django.db import models
 from django.db.models import Manager
 from django_fsm import FSMField, transition
@@ -9,7 +10,8 @@ class LoanManager(Manager):
     def get_requests(self):
         return super().get_queryset().filter(
             state__state__in=[LoanState.STATE_NEW, LoanState.STATE_QUEUE,
-                              LoanState.STATE_READY_TO_PAY, LoanState.STATE_PAYED])
+                              LoanState.STATE_READY_TO_PAY, LoanState.STATE_PAYED,
+                              LoanState.STATE_BORROWED])
 
     def get_borrowed_books(self):
         return super().get_queryset().filter(
@@ -30,6 +32,15 @@ class Loan(models.Model):
         self.state = self.state if self.state_id else LoanState.objects.create()
         return super(Loan, self).save(*args, **kwargs)
 
+    @property
+    def deadline(self):
+        delta = relativedelta(days=1)
+        if self.book.period == 'weekly':
+            delta = relativedelta(weeks=1)
+        elif self.book.period == 'monthly':
+            delta = relativedelta(month=1)
+        return self.date + delta
+
 
 class LoanState(models.Model):
     STATE_NEW = 'NEW'
@@ -37,6 +48,7 @@ class LoanState(models.Model):
     STATE_REJECTED = 'REJECTED'
     STATE_READY_TO_PAY = 'READY_TO_PAY'
     STATE_BORROWED = 'BORROWED'
+    STATE_FINISHED = 'FINISHED'
     STATE_CANCELED_BY_BORROWER = 'CANCELED-BY-BORROWER'
     STATE_CANCELED_BY_LENDER = 'CANCELED-BY-LENDER'
     STATE_PAYED = 'PAYED'
@@ -77,6 +89,11 @@ class LoanState(models.Model):
         pass
 
     @auto_save
+    @transition(field=state, source=STATE_BORROWED, target=STATE_FINISHED)
+    def finished(self):
+        pass
+
+    @auto_save
     @transition(field=state, source=STATE_READY_TO_PAY, target=STATE_PAYED)
     def payed(self):
         pass
@@ -92,7 +109,7 @@ class LoanState(models.Model):
             LoanState.STATE_REJECTED: [],
             LoanState.STATE_READY_TO_PAY: [{'label': 'لغو درخواست', 'action': 'borrower-cancel'},
                                            {'label': 'پرداخت', 'action': 'borrower-payed'}],
-            LoanState.STATE_BORROWED: [],
+            LoanState.STATE_BORROWED: [{'label': 'بازگشت', 'action': 'borrower-return'}],
             LoanState.STATE_CANCELED_BY_BORROWER: [],
             LoanState.STATE_CANCELED_BY_LENDER: [],
             LoanState.STATE_PAYED: [{'label': 'ثبت‌شدن کتاب', 'action': 'commit'}],
@@ -101,7 +118,8 @@ class LoanState(models.Model):
 
     borrower_action_map = {'borrower-cancel': canceled_by_borrower,
                            'borrower-payed': payed,
-                           'commit': borrowed}
+                           'commit': borrowed,
+                           'borrower-return': finished}
 
     @property
     def lender_buttons(self):

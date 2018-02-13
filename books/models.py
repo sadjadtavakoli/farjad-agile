@@ -33,5 +33,5 @@ class Books(models.Model):
     def has_not_valid_state(self, user):
         state = self.loan_state(user)
         forbidden = [LoanState.STATE_REJECTED, LoanState.STATE_CANCELED_BY_BORROWER,
-                     LoanState.STATE_CANCELED_BY_LENDER, ""]
+                     LoanState.STATE_CANCELED_BY_LENDER, "", LoanState.STATE_FINISHED]
         return state in forbidden
