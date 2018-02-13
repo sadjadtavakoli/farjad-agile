@@ -31,7 +31,7 @@ def sms_sending(mobile_number, code):
         params = {
             'sender': '',  # optional
             'receptor': mobile_number,
-            'message': 'سلام, کد ورود شما به سیستم'+code+'می‌باشد.',
+            'message': 'سلام, کد ورود شما به سیستم' + code + 'می‌باشد.',
 
         }
         response = api.sms_send(params)

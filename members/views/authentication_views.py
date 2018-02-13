@@ -83,8 +83,6 @@ class NewAuthenticationView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        print(data)
-        print("inja")
         phone = data['phone']
         if Member.objects.filter(phone=phone).exists():
             member = Member.objects.get(phone=phone)
