@@ -50,7 +50,7 @@ class JoinView(CreateView):
         ret = super().form_valid(form)
         data = form.cleaned_data
         member = Member.objects.get(phone=data['phone'])
-        invited_code = data.get('invited_code', None)
+        invited_code = data.get('invited_with', None)
         if invited_code is not None:
             inviter_member = Member.objects.get(invitation_code=invited_code)
             inviter_member.increase_balance(10000)
