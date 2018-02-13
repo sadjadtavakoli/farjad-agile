@@ -11,7 +11,7 @@ class AuthenticateForm(Form):
     def clean(self):
         data = self.cleaned_data
         phone = data.get('phone', '')
-        code = data.get('code', '')
+        code = data.get('code', '').upper()
         if not PhoneCodeMapper.objects.filter(phone=phone, code=code).exists():
             self.add_error('code', 'Invalid Code')
         return data
