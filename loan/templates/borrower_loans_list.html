@@ -1,14 +1,24 @@
 {% extends 'members/__base_panel.html' %}
+{% load static %}
 
+{% block js %}
+    {{ block.super }}
+    <script type="application/javascript"
+            src="{% static 'loan/js/lender_loan_state.js' %}"></script>
+{% endblock %}
 {% block content %}
     <div class="ui relaxed divided items">
-
+        {% csrf_token %}
         {% for loan in loans %}
+
             <div class="item" style="direction: rtl">
                 <div class="ui  image">
                     <img src="/static/books/icons/75801069.jpg" style="height: 22rem">
                 </div>
                 <div class="content" style="margin-right: 1rem">
+                    <input hidden class="change-state-url"
+                           value="{% url 'members:self:loans:borrower-change-state' loan_pk=loan.pk %}">
+
                     <div class="ui info message ">
                         <div class="header " style="direction: rtl">
                             <a class="header"> کتاب {{ loan.book.title }} </a>
@@ -46,20 +56,12 @@
 
 
                     </div>
-{#                    <div class="extra">#}
-{#                        <div class="ui left floated ">#}
-{#                            <a class="ui  label"#}
-{#                               style="margin-top: 0.4rem">{{ loan.state.shown_state }}</a>#}
-{#                        </div>#}
-{#                    </div>#}
-
                     <div class="extra" style="margin-top: 3rem">
+                        وضعیت:
+                        <span class="ui label state"
+                              style="margin-top: 0.4rem">{{ loan.state.state }}</span>
                         <div class="left floated content">
-                            <div class="ui buttons">
-                                <div class="ui button">رد کردن</div>
-                                <div class="or"> یا</div>
-                                <div class="ui positive button">پذیرش</div>
-                            </div>
+                            {% include 'state_buttons.html' with buttons=loan.state.borrower_buttons %}
                         </div>
                     </div>
                 </div>

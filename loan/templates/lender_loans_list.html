@@ -15,23 +15,7 @@
                 <div class="left floated content">
                     <input hidden class="change-state-url"
                            value="{% url 'members:self:loans:lender-change-state' loan_pk=loan.pk %}">
-                    {% if loan.state.lender_buttons|length == 1 %}
-                        <div class="ui button"
-                             action="{{ loan.state.lender_buttons.0.action }}">{{ loan.state.lender_buttons.0.label }}</div>
-                    {% endif %}
-                    {% if loan.state.lender_buttons|length == 2 %}
-
-                        <div class="ui buttons">
-                            <div class="ui button"
-                                 action="{{ loan.state.lender_buttons.0.action }}">{{ loan.state.lender_buttons.0.label }}</div>
-
-                            <div class="or"> یا</div>
-                            <div class="ui positive button"
-                                 action="{{ loan.state.lender_buttons.1.action }}">{{ loan.state.lender_buttons.1.label }}</div>
-
-                        </div>
-                    {% endif %}
-
+                    {% include 'state_buttons.html' with buttons=loan.state.lender_buttons %}
                 </div>
                 <img class="ui avatar image" src="/static/members/icons/default_profile.png">
                 <div class="content" style="margin-right: 1.1em">
@@ -53,7 +37,8 @@
                         {{ loan.book.author }}
                     </div>
                 </div>
-                <span class="ui label state" style="margin-top: 0.4rem">{{ loan.state.state }}</span>
+                <span class="ui label state"
+                      style="margin-top: 0.4rem">{{ loan.state.state }}</span>
             </div>
         {% endfor %}
     </div>

@@ -9,7 +9,7 @@ class LoanManager(Manager):
     def get_requests(self):
         return super().get_queryset().filter(
             state__state__in=[LoanState.STATE_NEW, LoanState.STATE_QUEUE,
-                              LoanState.STATE_READY_TO_PAY])
+                              LoanState.STATE_READY_TO_PAY, LoanState.STATE_PAYED])
 
     def get_borrowed_books(self):
         return super().get_queryset().filter(
@@ -95,12 +95,13 @@ class LoanState(models.Model):
             LoanState.STATE_BORROWED: [],
             LoanState.STATE_CANCELED_BY_BORROWER: [],
             LoanState.STATE_CANCELED_BY_LENDER: [],
-            LoanState.STATE_PAYED: [],
+            LoanState.STATE_PAYED: [{'label': 'ثبت‌شدن کتاب', 'action': 'commit'}],
         }
         return buttons.get(self.state)
 
     borrower_action_map = {'borrower-cancel': canceled_by_borrower,
-                           'borrower-payed': payed}
+                           'borrower-payed': payed,
+                           'commit': borrowed}
 
     @property
     def lender_buttons(self):

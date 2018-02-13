@@ -2,6 +2,7 @@ from django.db import models
 
 from farjad.settings import PERIOD, GENRE, AGE
 from farjad.utils.utils_view import get_url
+from loan.models import LoanState
 
 
 class Books(models.Model):
@@ -26,5 +27,11 @@ class Books(models.Model):
 
     def loan_state(self, user):
         if user.loans.filter(book=self).exists():
-            return user.loans.get(book=self).state.state
+            return user.loans.filter(book=self).last().state.state
         return ""
+
+    def has_not_valid_state(self, user):
+        state = self.loan_state(user)
+        forbidden = [LoanState.STATE_REJECTED, LoanState.STATE_CANCELED_BY_BORROWER,
+                     LoanState.STATE_CANCELED_BY_LENDER, ""]
+        return state in forbidden
