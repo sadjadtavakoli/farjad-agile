@@ -70,7 +70,9 @@
                     {% field_tag form.invited_with %}
 
                 </div>
-                <div id="invitation-error" style="display:none; color: darkred; " >این کد دعوت نامعتبر می‌باشد.</div>
+                <div id="invitation-error" style="display:none; color: darkred; ">این کد دعوت
+                    نامعتبر می‌باشد.
+                </div>
 
             </div>
 
@@ -78,9 +80,5 @@
             </button>
 
         </form>
-        <a href="{% url "members:login" %}">
-            <label style="color: dodgerblue" class="ui label">وارد شوید
-            </label></a>
-        <label class="ui label"> قبلا ثبت‌نام کرده‌اید‌؟
-        </label></div>
+    </div>
 {% endblock %}

@@ -6,7 +6,7 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
 from members.views.authentication_api_views import PhoneValidator
-from members.views.authentication_views import LoginView, LogoutView, JoinView, \
+from members.views.authentication_views import LogoutView, JoinView, \
     CheckInvitationCode, \
     NewAuthenticationView, AuthenticationCodeCheckingApiView
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
@@ -57,13 +57,12 @@ authentication_urlpatterns = ([
                                   path(r'code-checking',
                                        AuthenticationCodeCheckingApiView.as_view(),
                                        name="code"),
+                                  path(r'join/<int:code_pk>/', JoinView.as_view(), name="join"),
 
                               ], 'authentication')
 urlpatterns = [
     path(r'api/', include(api_urlpatterns), name="api"),
-    path(r'login/', LoginView.as_view(), name="login"),
     path(r'authentication/', include(authentication_urlpatterns)),
-    path(r'join/<int:code_pk>/', JoinView.as_view(), name="join"),
     path(r'logout/', LogoutView.as_view(), name="logout"),
     path(r'profile/<int:member_id>/', ProfileView.as_view(), name="profile"),
     path(r'self/', include(self_urlpatterns)),

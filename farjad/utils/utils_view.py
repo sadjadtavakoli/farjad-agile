@@ -2,8 +2,7 @@ import random
 import string
 
 from django.conf import settings
-
-from members.models import Member, PhoneCodeMapper
+from kavenegar import KavenegarAPI, APIException, HTTPException
 
 
 def get_url(image, location):
@@ -22,19 +21,22 @@ def auto_save(func):
     return autosave
 
 
-def generate_invitation_unique_code():
-    code = get_random(10)
-    while Member.objects.filter(invitation_code=code).exists():
-        code = get_random(10)
-    return code
-
-
 def get_random(length):
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length))
 
 
-def generate_unique_login_code():
-    code = get_random(5)
-    while PhoneCodeMapper.objects.filter(code=code).exists():
-        code = get_random(5)
-    return code
+def sms_sending(mobile_number, code):
+    try:
+        api = KavenegarAPI('5532514D484F77647533444F3762464863476D564B566C64712B412B575A354A')
+        params = {
+            'sender': '',  # optional
+            'receptor': mobile_number,
+            'message': 'سلام, کد ورود شما به سیستم'+code+'می‌باشد.',
+
+        }
+        response = api.sms_send(params)
+        print(response)
+    except APIException as e:
+        print(e)
+    except HTTPException as e:
+        print(e)

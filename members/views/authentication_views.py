@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from members.forms.authentication_forms import AuthenticateForm
-from members.models import Member, PhoneCodeMapper, mobile_regex
+from members.models import Member, PhoneCodeMapper, mobile_regex, generate_unique_login_code
 
 
 class LogoutView(View):
@@ -44,11 +44,11 @@ class JoinView(CreateView):
         data = form.cleaned_data
         member = Member.objects.get(phone=data['phone'])
         invited_code = data.get('invited_code', None)
-        if invited_code != None:
+        if invited_code is not None:
             inviter_member = Member.objects.get(invitation_code=invited_code)
             inviter_member.increase_balance(10000)
             member.increase_balance(5000)
-        login(self.request, member)
+        custom_login(self.request, member)
         return ret
 
 
@@ -66,10 +66,11 @@ class AuthenticationCodeCheckingApiView(APIView):
         phone = self.request.data.get('phone', '')
         if not re.match(mobile_regex.regex, phone):
             return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
-
-        # inja bayad code generate she
-        PhoneCodeMapper.objects.create(phone=phone, code='12345')
-        # inja bayad sms bshe vase yaro
+        code = generate_unique_login_code()
+        PhoneCodeMapper.objects.filter(phone=phone).delete()
+        PhoneCodeMapper.objects.create(phone=phone, code=code)
+        # sms_sending(phone, code)
+        print(code)
         return Response(data={'is_valid': True})
 
 
@@ -82,12 +83,19 @@ class NewAuthenticationView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
+        print(data)
+        print("inja")
         phone = data['phone']
         if Member.objects.filter(phone=phone).exists():
             member = Member.objects.get(phone=phone)
-            login(request=self.request, user=member)
+            custom_login(request=self.request, user=member)
             return super(NewAuthenticationView, self).form_valid(form)
         else:
-            return redirect(reverse('members:join',
-                                    kwargs={
-                                        'code_pk': PhoneCodeMapper.objects.get(phone=phone).pk}))
+            return redirect(reverse(
+                'members:authentication:join',
+                kwargs={'code_pk': PhoneCodeMapper.objects.get(phone=phone).pk}))
+
+
+def custom_login(request, user):
+    login(request=request, user=user)
+    PhoneCodeMapper.objects.get(phone=user.phone).delete()

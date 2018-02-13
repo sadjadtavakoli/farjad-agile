@@ -1,4 +1,4 @@
-{% extends 'members/__base_authentication.html' %}
+{% extends 'farjad/__base.html' %}
 {% load static %}
 {% load utils_tags %}
 {% load staticfiles %}
@@ -17,31 +17,53 @@
 
 
 {% block body %}
-    {{ block.super }}
-    <input type="hidden" id="code-url" value="{% url 'members:authentication:code' %}">
-    <form class="ui form second-form" action="" method="post"
-          novalidate=""
-          autocomplete="off" {% if not form.code.errors %}hidden="hidden"{% endif %}>
-        {% csrf_token %}
-        <span hidden="hidden">{{ form.phone }}</span>
-        <div class="field">
-            <div class="ui left icon input">
-                {% field_tag form.code placeholder="کد 5 رقمی" %}
-                <i class="lock icon"></i>
-            </div>
-        </div>
-        <button type="submit" class="ui blue submit button fluid ">ورود</button>
-    </form>
-    <div class="ui form first-form" {% if form.code.errors %}hidden="hidden"{% endif %}>
-        <div class="field">
-            <div class="ui input">
-                <input type="text" required="" id="phone-one" placeholder="شماره همراه"
-                       maxlength="11">
-                <div style="color: darkred; " id="one-error"></div>
+    <div style="background-image: url(http://www.kumc.edu/images/history%20of%20medicine/library.jpg);
+ background-repeat: no-repeat;
+background-size: cover;height: 100%; ">
+        {% include 'farjad/main_navbar.html' with inverted=1 %}
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <div class="ui form">
+                    <h2 class="ui center aligned header">
+                        <img class="ui icon small circular image"
+                             src={% static 'members/icons/Icon-book.svg' %}>
+                    </h2>
+                    <h1 style="color: oldlace">
+                        BookAndBook</h1>
 
+                    {{ block.super }}
+                    <input type="hidden" id="code-url"
+                           value="{% url 'members:authentication:code' %}">
+                    <form class="ui form second-form" action="" method="post"
+                          novalidate=""
+                          autocomplete="off"
+                          {% if not form.code.errors %}hidden="hidden"{% endif %}>
+                        {% csrf_token %}
+                        <span hidden="hidden">{{ form.phone }}</span>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                {% field_tag form.code placeholder="کد 5 رقمی" %}
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="ui blue submit button fluid ">ورود</button>
+                    </form>
+                    <div class="ui form first-form"
+                         {% if form.code.errors %}hidden="hidden"{% endif %}>
+                        <div class="field">
+                            <div class="ui input">
+                                <input type="text" required="" id="phone-one"
+                                       placeholder="شماره همراه"
+                                       maxlength="11">
+                                <div style="color: darkred; " id="one-error"></div>
+
+                            </div>
+                        </div>
+                        <button type="button" class="ui blue submit-phone button fluid ">ارسال کد
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="button" class="ui blue submit-phone button fluid ">ارسال کد</button>
     </div>
-
 {% endblock %}
