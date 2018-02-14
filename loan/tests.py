@@ -34,9 +34,9 @@ class CreateLoanTest(WebTest):
             }
             self.client.post(reverse('members:self:books:new'), data, follow=True)
 
-    # def test_create_loan(self):
-    #     self.add_books(1)
-    #     self.client.login(username=USERNAME, password=PASSWORD)
-    #     book = Books.objects.first()
-    #     response = self.client.post(reverse('api:create-loan'), data={'book': book.id})
-    #     self.assertEqual(response.status_code, 302)
+    def test_create_loan(self):
+        self.add_books(1)
+        self.client.login(username=USERNAME, password=PASSWORD)
+        book = Books.objects.first()
+        response = self.client.post(reverse('api:create-loan'), data={'book': book.id})
+        self.assertEqual(response.status_code, 302)

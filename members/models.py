@@ -1,5 +1,4 @@
 import datetime
-import re
 
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
@@ -32,20 +31,6 @@ def generate_invitation_unique_code():
 
 
 class MemberManager(BaseUserManager):
-    def get_member(self, phone_email_username):
-        try:
-            if '@' in phone_email_username:
-                kwargs = {'email': phone_email_username}
-            elif re.match(mobile_regex.regex, phone_email_username):
-                kwargs = {'phone': phone_email_username}
-            else:
-                kwargs = {'username': phone_email_username}
-            member = super().get(**kwargs)
-            return member
-
-        except(TypeError, Member.MultipleObjectsReturned, Member.DoesNotExist):
-            return None
-
     use_in_migrations = True
 
     def _create_user(self, phone, password=None, **extra_fields):

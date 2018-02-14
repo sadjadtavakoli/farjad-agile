@@ -1,11 +1,9 @@
 import datetime
 
 from django.test.client import Client
-from django.urls.base import reverse
 from django_webtest import WebTest
 
 from books.models import Books
-from members.apps import USERNAME, PASSWORD
 from members.models import Member
 
 
@@ -16,7 +14,7 @@ class AddCommentTest(WebTest):
             'date': datetime.date.today(),
             'likes': 20,
             'text': 'خلاصه نظر',
-            "writer":Member.objects.first().id,
-            "book":Books.objects.first()
+            "writer": Member.objects.first().id,
+            "book": Books.objects.first()
 
         }
