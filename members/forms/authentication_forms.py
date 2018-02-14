@@ -1,39 +1,17 @@
 from django import forms
-from django.core.exceptions import ObjectDoesNotExist
 from django.forms import Form
-from django.forms.models import ModelForm
-from django.utils.translation import gettext_lazy as _
 
-from members.models import Member
+from members.models import PhoneCodeMapper
 
 
-class LoginForm(Form):
-    username_or_phone = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+class AuthenticateForm(Form):
+    code = forms.CharField(max_length=5)
+    phone = forms.CharField(max_length=11)
 
-    def clean_password(self):
+    def clean(self):
         data = self.cleaned_data
-        username_or_phone = data.get('username_or_phone', None)
-        member = Member.objects.get_member(username_or_phone)
-        if member is None:
-            raise forms.ValidationError(_('Username or Password is incorrect'))
-        password = data.get('password', None)
-        if not member.check_password(password):
-            raise forms.ValidationError(_('Username or Password is incorrect'))
-        return password
-
-    #
-    # class JoinForm(ModelForm):
-    #     class Meta:
-    #         model = Member
-    #         fields = ['first_name', 'last_name', 'password', 'username', 'phone', 'profession',
-    #                   'education', 'city', 'province', 'address', 'email', 'invited_with']
-    #
-    #     def clean_invitation_code(self):
-    #         data = self.cleaned_data
-    #         invitation_code = data.get('invitation_code', None)
-    #         try:
-    #             Member.objects.get(code=invitation_code)
-    #         except ObjectDoesNotExist:
-    #             raise forms.ValidationError('این کد دعوت معتبر نمی‌باشد.')
-    #         return invitation_code
+        phone = data.get('phone', '')
+        code = data.get('code', '').upper()
+        if not PhoneCodeMapper.objects.filter(phone=phone, code=code).exists():
+            self.add_error('code', 'Invalid Code')
+        return data

@@ -1,0 +1,16 @@
+{% if buttons|length == 1 %}
+    <div class="ui button"
+         action="{{ buttons.0.action }}">{{ buttons.0.label }}</div>
+{% endif %}
+{% if buttons|length == 2 %}
+
+    <div class="ui buttons">
+        <div class="ui button"
+             action="{{ buttons.0.action }}">{{ buttons.0.label }}</div>
+
+        <div class="or"> یا</div>
+        <div class="ui positive button"
+             action="{{ buttons.1.action }}">{{ buttons.1.label }}</div>
+
+    </div>
+{% endif %}

@@ -10,7 +10,7 @@
             </div>
     </a>
         </div>
-    <div class="ui link cards" style="direction: rtl">
+    <div class="ui cards" style="direction: rtl">
         {% for book in books %}
             <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
                 <div class="image">
@@ -32,6 +32,11 @@
                 <div class="extra content">
                     <div class="right floated">
                         <span>مناسب برای رده سنی</span> {{ book.reader_age }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="right floated">
+                        <span>دوره امانت: </span> {{ book.get_period_display}}
                     </div>
                     <div class="left floated">{{ book.price }}
                         <span>تومان</span>

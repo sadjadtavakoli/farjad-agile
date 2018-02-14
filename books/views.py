@@ -104,9 +104,16 @@ class BooksListView(ListView):
         context = super().get_context_data(object_list=object_list, **kwargs)
         context['field'] = self.request.GET.get('field', '')
         context['query'] = self.request.GET.get('query', '')
-        context['books'] = [{'book_info': book, 'loan_state': book.loan_state(self.request.user)}
-                            for book in
-                            self.get_queryset()]
+        if self.request.user.is_authenticated:
+            context['books'] = [{'book_info': book,
+                                 'loan_state': book.loan_state(self.request.user),
+                                 'not_valid_state': book.has_not_valid_state(self.request.user)}
+                                for book in
+                                self.get_queryset()]
+        else:
+            context['books'] = [{'book_info': book}
+                                for book in
+                                self.get_queryset()]
         return context
 
     action_map = {
@@ -138,9 +145,13 @@ class CreateBookAPIView(CreateAPIView):
             raise ValidationError(detail='token is not valid')
         else:
             owner = Member.objects.get(username=Token.objects.get(key=token[0]).user.username)
-            book = Books.objects.create(owner=owner, title=data['title'], reader_age=data['reader_age'],
-                                        description=data['description'], summary=data['summary'], author=data['author'],
-                                        genre=data['genre'], pub_date=data['pub_date'], period=data['period'],
-                                        page_num=data['page_num'], length=data['length'], width=data['width'],
+            book = Books.objects.create(owner=owner, title=data['title'],
+                                        reader_age=data['reader_age'],
+                                        description=data['description'], summary=data['summary'],
+                                        author=data['author'],
+                                        genre=data['genre'], pub_date=data['pub_date'],
+                                        period=data['period'],
+                                        page_num=data['page_num'], length=data['length'],
+                                        width=data['width'],
                                         price=data['price'], jeld_num=data['jeld_num'])
             return Response(data={'book_pk': book.pk})

@@ -1,39 +1,51 @@
 {% extends 'members/__base_panel.html' %}
 
 {% block content %}
-    <div class="ui celled list">
+    <div class="ui cards" style="direction: rtl;margin-right: 5%">
+        <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
         {% for loan in loans %}
-            <div class="item" style="direction: rtl">
+            {% with  loan.book as book %}
+                <input hidden id="book-id" value="{{ book.pk }}">
 
-                <img class="ui avatar image" src="/static/members/icons/default_profile.png">
-                <div class="content" style="margin-right: 1.1em">
-                    <div class="header">
-                        {{ loan.borrower.username }}
+                <div class="ui card" href="{% url 'books:detail' book_pk=book.pk %}">
+
+                    <div class="content">
+                        <a href="{% url 'members:profile' loan.borrower.pk %}"
+                           style="color: inherit">
+                            <img class="ui avatar image"
+                                 src="{{ loan.borrower.image_url }}"> {{ loan.borrower.full_name }}
+                        </a>
                     </div>
-                    <div class="meta">
-                        {{ loan.borrower.first_name }} {{ loan.borrower.last_name }} کتاب را
-                        امانت گرفته است.
+                    <div class="extra content">
+                        از {{ loan.date }} تا {{ loan.deadline }}
                     </div>
+
+                    <div class="image">
+                        <img src="{{ book.image_url }}">
+                    </div>
+
+                    <a class="ui button" style="font-size: small"
+                       href="{% url 'books:detail' book_pk=book.pk %}">
+                        مشاهده کتاب
+                    </a>
+                    <div class="content">
+                        <div class="header">{{ book.title }}</div>
+                        <div class="meta">
+                            <a>نویسنده : {{ book.author }}</a>
+                        </div>
+
+                        <div class="description"
+                             style="white-space: nowrap;width: 100%;
+                         overflow: hidden;text-overflow: ellipsis; ">
+                            {{ book.summary }}
+                        </div>
+                    </div>
+
                 </div>
+            {% endwith %}
 
-                <img class="ui avatar image" src="/static/books/icons/75801069.jpg">
-                <div class="content" style="margin-right: 1.1em">
-                    <div class="header">
-                        {{ loan.book.title }}
-                    </div>
-                    <div class="meta">
-                        {{ loan.book.author }}
-                    </div>
-                </div>
-                <span class="meta">               <b>تاریخ شروع:</b>
-                    {{ loan.date }}
-                </span>
-                <span class="meta" style="margin-right: 0.75rem">               <b>تاریخ پایان:</b>
-                    {{ loan.date }}
-                </span>
-
-            </div>
         {% endfor %}
+
     </div>
 
 {% endblock %}
