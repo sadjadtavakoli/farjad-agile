@@ -87,7 +87,7 @@ class Member(AbstractUser):
     city = models.CharField(max_length=60)
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
-    balance = models.IntegerField(default=0)
+    balance = models.IntegerField(default=1000)
     invitation_code = models.CharField(max_length=10, blank=True, null=True)
     objects = MemberManager()
     invited_with = models.CharField(max_length=10, blank=True, null=True)
@@ -108,6 +108,10 @@ class Member(AbstractUser):
     @auto_save
     def increase_balance(self, amount):
         self.balance += amount
+
+    @auto_save
+    def decrease_balance(self, amount):
+        self.balance -= amount
 
     @property
     def full_name(self):

@@ -17,6 +17,11 @@ class LoanManager(Manager):
         return super().get_queryset().filter(
             state__state=LoanState.STATE_BORROWED)
 
+    def create(self, **kwargs):
+        obj = super(LoanManager, self).create()
+        obj.borrower.decrease_balance(obj.book.balance)
+        return obj
+
 
 class Loan(models.Model):
     objects = LoanManager()

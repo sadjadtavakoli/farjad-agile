@@ -18,11 +18,15 @@ $('document').ready(function () {
                 "X-CSRFToken": $('input[name=csrfmiddlewaretoken]').val()
             },
             success: function (response) {
+
                 console.log(button.siblings('.loan-state'));
                 button.siblings('.loan-state').css('display', 'flex');
                 button.css('display', 'none');
                 button.siblings('.loan-state').text(response['state']);
 
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
             }
         });
     });
