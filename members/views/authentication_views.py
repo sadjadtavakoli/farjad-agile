@@ -1,5 +1,3 @@
-import re
-
 from django.contrib.auth import login, logout
 from django.shortcuts import redirect
 from django.urls.base import reverse
@@ -9,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from members.forms.authentication_forms import AuthenticateForm
-from members.models import Member, PhoneCodeMapper, mobile_regex, generate_unique_login_code
+from members.models import Member, PhoneCodeMapper
 
 
 class LogoutView(View):
@@ -66,19 +64,6 @@ class CheckInvitationCode(APIView):
         if not Member.objects.filter(invitation_code=code).exists():
             is_valid = False
         return Response(data={'is_valid': is_valid})
-
-
-class AuthenticationCodeCheckingApiView(APIView):
-    def post(self, request, *args, **kwargs):
-        phone = self.request.data.get('phone', '')
-        if not re.match(mobile_regex.regex, phone):
-            return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
-        code = generate_unique_login_code()
-        PhoneCodeMapper.objects.filter(phone=phone).delete()
-        PhoneCodeMapper.objects.create(phone=phone, code=code)
-        # sms_sending(phone, code)
-        print(code)
-        return Response(data={'is_valid': True})
 
 
 class NewAuthenticationView(FormView):
