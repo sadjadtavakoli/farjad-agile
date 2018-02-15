@@ -17,50 +17,45 @@
 
             </div>
         </h2>
-<form action="" method="post" id="edit_profile_form"
-         enctype="multipart/form-data" autocomplete="off">
+        <form action="" method="post" id="edit_profile_form"
+              enctype="multipart/form-data" autocomplete="off">
             {% csrf_token %}
             <div class="three fields" style="margin-top: 5%;">
                 <div class="field">
                     <label>نام</label>
 
-               <span>    {% field_tag form.first_name  %}</span>
+                    <span>    {% field_tag form.first_name %}</span>
                 </div>
                 <div class="field">
                     <label>نام خانوادگی</label>
-                   <span> {% field_tag form.last_name %}</span>
+                    <span> {% field_tag form.last_name %}</span>
                 </div>
-            </div>
-            <div class="three fields">
                 <div class="field">
-                    <label>نام کاربری</label>
-                    {% field_tag form.username  %}
-                </div>
-                   <div class="field">
                     <label>پست الکترونیک</label>
                     {% field_tag form.email %}
                 </div>
             </div>
-    <div class="three fields">
+
+            <div class="three fields">
                 <div class="field">
                     <label>تاریخ تولد</label>
 
-                    {% field_tag form.birth_date  %}
+                    {% field_tag form.birth_date %}
                 </div>
                 <div class="field">
                     <label>شماره تلفن</label>
                     {% field_tag form.phone %}
                 </div>
-           <div class="field">
-                    <label>سن</label>
-                    {% field_tag form.age %}
-                </div>
+                {#           <div class="field">#}
+                {#                    <label>سن</label>#}
+                {#                    {% field_tag form.age %}#}
+                {#                </div>#}
             </div>
-        <div class="three fields">
+            <div class="three fields">
                 <div class="field">
                     <label>شغل</label>
 
-                    {% field_tag form.profession  %}
+                    {% field_tag form.profession %}
                 </div>
                 <div class="field">
                     <label>مدرک تحصیلی</label>
@@ -71,13 +66,13 @@
                 <div class="field">
                     <label>شهر</label>
 
-                    {% field_tag form.city  %}
+                    {% field_tag form.city %}
                 </div>
                 <div class="field">
                     <label>استان</label>
-                    {% field_tag form.province%}
+                    {% field_tag form.province %}
                 </div>
-                  <div class="field">
+                <div class="field">
                     <label>آدرس</label>
                     {% field_tag form.address %}
                 </div>

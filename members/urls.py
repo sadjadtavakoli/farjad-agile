@@ -5,10 +5,13 @@ from loan.views.borrower_views import BorrowedBooksList, BorrowerLoansRequestLis
     BorrowerChangeLoanStateView
 from loan.views.lender_views import LoanedBooksList, LenderLoansRequestList, \
     LenderChangeLoanStateView
-from members.views.authentication_api_views import PhoneValidator
+from members.views.authentication_api_views import PhoneValidator, AuthenticationCodeGenerateApiView, \
+    AuthenticationCodeValidator
 from members.views.authentication_views import LogoutView, JoinView, \
     CheckInvitationCode, \
-    NewAuthenticationView, AuthenticationCodeCheckingApiView
+    NewAuthenticationView
+from members.views.create_member_api import CreateMemberAPIView
+from members.views.invitation_code_api_views import InvitationCodeGenerate
 from members.views.profile_views import ProfileView, EditProfileView, SelfProfileView, \
     InvitationTemplateView
 from members.views.user_books_views import UserBooksListView
@@ -37,6 +40,8 @@ self_loans_urlpatterns = ([
 
 api_urlpatterns = ([
     path(r'phone-validator/', PhoneValidator.as_view(), name="phone-validator"),
+    path(r'invitation-code-generate/',InvitationCodeGenerate.as_view(), name="invitation-code-generate"),
+    path(r'create/', CreateMemberAPIView.as_view(), name="create"),
 
 ])
 self_urlpatterns = ([
@@ -55,9 +60,10 @@ authentication_urlpatterns = ([
                                   path(r'', NewAuthenticationView.as_view(),
                                        name="phone"),
                                   path(r'code-checking',
-                                       AuthenticationCodeCheckingApiView.as_view(),
+                                       AuthenticationCodeGenerateApiView.as_view(),
                                        name="code"),
                                   path(r'join/<int:code_pk>/', JoinView.as_view(), name="join"),
+                                path(r"authentication-code-validator",AuthenticationCodeValidator.as_view(),name="authentication-code-validator")
 
                               ], 'authentication')
 urlpatterns = [

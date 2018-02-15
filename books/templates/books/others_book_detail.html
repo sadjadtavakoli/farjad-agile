@@ -48,10 +48,14 @@
                 <div>
                     <div class="ui grid">
                         <div class="four column row">
-                            <div class="right floated column"><h5
-                                    class="ui right header">
-                                <span class="ftitle">نویسنده:</span> {{ book.author }}
-                            </h5></div>
+                            <div class="right floated column">
+                                <h5
+                                        class="ui right header">
+                                    <span class="ftitle">نویسنده:</span> {{ book.author }}
+                                    <h5><span class="ftitle">نام صاحب کتاب:</span> {{ book.owner.last_name}} {{ book.owner.first_name}}</h5>
+                                </h5>
+                            </div>
+
                             <div class="left floated column" style="direction: ltr;">
                                 <a href="{% url 'books:edit' book_pk=book.id %}">
                                 </a>
