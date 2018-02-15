@@ -46,4 +46,5 @@ class CreateLoanRequestAPIView(CreateAPIView):
 
         loan = Loan.objects.create(book=book, borrower=self.request.user,
                                    date=datetime.date.today())
+
         return Response(data={'state': loan.state.state})

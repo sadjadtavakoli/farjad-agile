@@ -87,5 +87,5 @@ class NewAuthenticationView(FormView):
 
 
 def custom_login(request, user):
-    login(request=request, user=user)
+    login(request=request, user=user, backend='django.contrib.auth.backends.ModelBackend')
     PhoneCodeMapper.objects.get(phone=user.phone).delete()

@@ -1,14 +1,14 @@
 {% extends 'farjad/__base.html' %}
 {% block body %}
-{% include 'farjad/main_navbar.html' with active=2 %}
+    {% include 'farjad/main_navbar.html' with active=2 %}
     <div class="ui form tiny segment container " style="margin-top:4rem;background-color: white;direction: rtl ">
         <h2 class="ui header" style="margin-top: 1%">
 
             <div class="content">
-                اطلاعات حساب
+                اطلاعات حساب کاربری
             </div>
         </h2>
-        <img class="ui left floated medium circular image" style="margin-left: 2rem"
+        <img class="ui left floated medium circular image" style="margin-left: 2rem; margin-top: -3rem;"
              src={{ profile.image_url }}>
         <div class="three fields" style="margin-top: 5%;">
             <div class="field">
@@ -23,16 +23,11 @@
 
             </div>
         </div>
+
         <div class="three fields" style="margin-top: 5%;">
             <div class="field">
                 <b>تاریخ تولد</b> : {{ profile.birth_date }}
             </div>
-            <div class="field">
-                <b>سن</b> : {{ profile.age }}
-
-            </div>
-        </div>
-        <div class="three fields" style="margin-top: 5%;">
             <div class="field">
                 <b>شغل</b> : {{ profile.profession }}
             </div>
