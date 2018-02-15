@@ -4,6 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from farjad.utils.utils_view import sms_sending
 from members.models import Member, mobile_regex, generate_unique_login_code, PhoneCodeMapper
 
 
@@ -20,16 +21,16 @@ class PhoneValidator(APIView):
             data = {'existence': response, "name": member_name, 'token': token.key}
         return Response(data=data)
 
+
 class AuthenticationCodeValidator(APIView):
     def post(self, request, *args, **kwargs):
         phone_number = self.request.data['phone_number']
-        authentication_code=self.request.data['authentication_code']
-        response=False
+        authentication_code = self.request.data['authentication_code']
         if not re.match(mobile_regex.regex, phone_number):
             return Response(data={'is_valid': False, 'error': 'enter valid phone number'})
 
-        if PhoneCodeMapper.objects.filter(phone=phone_number,code=authentication_code).exists():
-            response=True
+        if PhoneCodeMapper.objects.filter(phone=phone_number, code=authentication_code).exists():
+            response = True
         else:
             return Response(data={'is_valid': False, 'error': 'wrong authentication'})
 
@@ -44,6 +45,5 @@ class AuthenticationCodeGenerateApiView(APIView):
         code = generate_unique_login_code()
         PhoneCodeMapper.objects.filter(phone=phone).delete()
         PhoneCodeMapper.objects.create(phone=phone, code=code)
-        # sms_sending(phone, code)
-        print("authenticate_code",code)
+        sms_sending(phone, code)
         return Response(data={'is_valid': True})
