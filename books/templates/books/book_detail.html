@@ -1,5 +1,5 @@
 {% if book.owner == request.user %}
     {% include 'books/self_book_detail.html' with book=book %}
 {% else %}
-    {% include 'books/others_book_detail.html' with book=book %}
+    {% include 'books/others_book_detail.html' with book=book loan_state=loan_state not_valid_state=not_valid_state %}
 {% endif %}

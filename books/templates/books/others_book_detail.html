@@ -11,6 +11,8 @@
     {{ block.super }}
     <script type="application/javascript"
             src="{% static 'books/js/create_comment.js' %}"></script>
+    <script type="application/javascript"
+            src="{% static 'books/js/all_books.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -21,6 +23,25 @@
         <div class="row">
             <div class="three wide column">
                 <img src="{{ book.image_url }}">
+                {% if request.user.is_authenticated %}
+                    <input hidden id="create-loan-url" value="{% url 'api:create-loan' %}">
+                    <input hidden class="book-id" value="{{ book.pk }}">
+                    <button style="font-size: small;
+                            {% if not not_valid_state %}
+                                display: none
+                            {% endif %}"
+                            class="fluid ui button blue loan-request">
+                        درخواست امانت
+                    </button>
+                    <button disabled style="font-size: small;
+                            {% if not_valid_state %}
+                                display: none
+                            {% endif %}"
+                            class="fluid ui button blue loan-state">
+                        {{ loan_state }}
+                    </button>
+                {% endif %}
+
             </div>
             <div class="ten wide column" style="direction: rtl">
                 <h1 class="ui header">{{ book.title }}</h1>

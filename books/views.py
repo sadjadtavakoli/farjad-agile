@@ -53,6 +53,13 @@ class BookDetailView(PanelAreaSetter, DetailView):
         book = get_object_or_404(Books, id=pk)
         return book
 
+    def get_context_data(self, **kwargs):
+        context = super(BookDetailView, self).get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['not_valid_state'] = self.get_object().has_not_valid_state(self.request.user)
+            context['loan_state'] = self.get_object().loan_state(self.request.user)
+        return context
+
 
 class BookUpdateView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
     model = Books
