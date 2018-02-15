@@ -44,7 +44,7 @@ class CreateLoanRequestAPIView(CreateAPIView):
         book_id = self.request.data['book']
         book = get_object_or_404(Books, id=book_id)
         if book.price > self.request.user.balance:
-            raise ValidationError(detail='اعتبار شما کافی نمی‌باشد.')
+            return Response(data={'error': 'اعتبار شما کافی نمی‌باشد.'})
         loan = Loan.objects.create(book=book, borrower=self.request.user,
                                    date=datetime.date.today())
 

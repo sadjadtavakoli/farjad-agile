@@ -87,7 +87,7 @@ class Member(AbstractUser):
     city = models.CharField(max_length=60)
     province = models.CharField(max_length=60)
     address = models.CharField(max_length=60)
-    balance = models.IntegerField(default=1000)
+    balance = models.IntegerField(default=1000, unique=False)
     invitation_code = models.CharField(max_length=10, blank=True, null=True)
     objects = MemberManager()
     invited_with = models.CharField(max_length=10, blank=True, null=True)

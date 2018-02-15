@@ -18,8 +18,9 @@ class LoanManager(Manager):
             state__state=LoanState.STATE_BORROWED)
 
     def create(self, **kwargs):
-        obj = super(LoanManager, self).create()
-        obj.borrower.decrease_balance(obj.book.balance)
+        obj = self.model(**kwargs)
+        obj.borrower.decrease_balance(obj.book.price)
+        obj.save(force_insert=True, using=self.db)
         return obj
 
 
