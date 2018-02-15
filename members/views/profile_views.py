@@ -39,8 +39,8 @@ class SelfProfileView(PanelAreaSetter, PermissionCheckerMixin, DetailView):
 
 class EditProfileView(PanelAreaSetter, PermissionCheckerMixin, UpdateView):
     model = Member
-    fields = ['first_name', 'last_name', 'username', 'birth_date', 'phone',
-              'age', 'profession',
+    fields = ['first_name', 'last_name', 'birth_date', 'phone',
+               'profession',
               'education', 'city', 'province', 'address', 'email']
 
     permission_classes = [LoginRequired]
