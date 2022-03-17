@@ -9,7 +9,7 @@ django-jwt-auth==0.0.2
 django-nose==1.4.5
 django-static-precompiler==1.5
 django-webtest==1.9.2
-djangorestframework==3.7.3
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 gunicorn==19.6.0
 idna==2.6
