@@ -21,7 +21,7 @@ pbr==3.1.1
 pep8==1.7.0
 Pillow==9.0.1
 psycopg2==2.6.2
-PyJWT==1.5.3
+PyJWT==2.4.0
 python-dateutil==2.6.1
 pytz==2017.3
 reportlab==3.3.0
